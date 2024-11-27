@@ -1,6 +1,6 @@
 title: "My Course Site"
 description: "A site for course listings and details."
-baseurl: ""
+baseurl: "/teachings"
 url: "" # Replace with your GitHub Pages URL
 # theme: minima
 
