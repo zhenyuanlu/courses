@@ -1,0 +1,6 @@
+- name: "Dr. Alice Chen"
+  title: "Senior Algorithm Engineer, Google"
+  topic: "Real-world Applications of Graph Algorithms"
+  date: "March 15, 2024"
+  image: "/assets/images/guest_alice_chen.jpg"
+  description: "Exploring how graph algorithms solve practical problems in the tech industry"

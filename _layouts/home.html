@@ -1,0 +1,152 @@
+---
+layout: default
+---
+
+<!-- Instructor Hero Section -->
+<section class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="relative w-40 h-40 md:w-48 md:h-48">
+        <img
+          src="{{ '/assets/images/z.png' | relative_url }}"
+          alt="Zhenyuan Lu"
+          class="rounded-full object-cover shadow-lg ring-4 ring-gray-50"
+        />
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">Course Directory</h1>
+        <p class="text-xl text-gray-600 mb-6">
+          AI/ML Adjunct Faculty at Northeastern University. Teaching computer science and
+          data science courses with a focus on algorithms, machine learning, and AI applications.
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <a
+            href="mailto:zh.lu@northeastern.edu"
+            class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg
+                     hover:bg-gray-200 transition-colors duration-200"
+            aria-label="Send email"
+          >
+            <!-- Mail Icon -->
+            Email
+          </a>
+          <a
+            href="https://github.com/zhenyuanlu"
+            class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg
+                     hover:bg-gray-200 transition-colors duration-200"
+            aria-label="View GitHub profile"
+          >
+            <!-- Github Icon -->
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/zhenyuanlu"
+            class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg
+                     hover:bg-gray-200 transition-colors duration-200"
+            aria-label="View LinkedIn profile"
+          >
+            <!-- LinkedIn Icon -->
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Course Listing Section -->
+<section class="py-12">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Search and Filters -->
+    <div class="mb-8 space-y-4">
+      <div class="relative">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search courses..."
+          class="w-full px-12 py-3 rounded-xl border bg-white
+                   focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          aria-label="Search courses"
+          onkeyup="filterCourses()"
+        />
+        <!-- Search Icon -->
+      </div>
+
+      <div class="flex flex-wrap gap-4">
+        <!-- Level Filter -->
+        <select id="levelFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+          <option value="all">All Levels</option>
+          <option value="Undergraduate">Undergraduate</option>
+          <option value="Graduate">Graduate</option>
+        </select>
+        <!-- Term Filter -->
+        <select id="termFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+          <option value="all">All Terms</option>
+          <option value="Spring 2024">Spring 2024</option>
+          <option value="Fall 2023">Fall 2023</option>
+        </select>
+        <!-- Department Filter -->
+        <select id="departmentFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+          <option value="all">All Departments</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Data Science">Data Science</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Course Grid -->
+    <div id="courseGrid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {% for course in site.data.courses %}
+      {% include course_card.html course=course %}
+      {% endfor %}
+    </div>
+
+    <!-- Empty State -->
+    <div id="noCoursesMessage" class="text-center py-12 hidden">
+      <p class="text-gray-600">
+        No courses found matching your criteria. Try adjusting your filters.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function filterCourses() {
+    var searchInput = document.getElementById('searchInput').value.toLowerCase();
+    var levelFilter = document.getElementById('levelFilter').value;
+    var termFilter = document.getElementById('termFilter').value;
+    var departmentFilter = document.getElementById('departmentFilter').value;
+    var courses = document.querySelectorAll('.course-card');
+    var noCoursesMessage = document.getElementById('noCoursesMessage');
+    var courseGrid = document.getElementById('courseGrid');
+    var visibleCount = 0;
+
+    courses.forEach(function(course) {
+      var title = course.getAttribute('data-title').toLowerCase();
+      var code = course.getAttribute('data-code').toLowerCase();
+      var description = course.getAttribute('data-description').toLowerCase();
+      var level = course.getAttribute('data-level');
+      var term = course.getAttribute('data-term');
+      var department = course.getAttribute('data-department');
+
+      var matchesSearch = title.includes(searchInput) || code.includes(searchInput) || description.includes(searchInput);
+      var matchesLevel = levelFilter === 'all' || level === levelFilter;
+      var matchesTerm = termFilter === 'all' || term === termFilter;
+      var matchesDepartment = departmentFilter === 'all' || department === departmentFilter;
+
+      if (matchesSearch && matchesLevel && matchesTerm && matchesDepartment) {
+        course.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        course.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0) {
+      noCoursesMessage.classList.remove('hidden');
+      courseGrid.classList.add('hidden');
+    } else {
+      noCoursesMessage.classList.add('hidden');
+      courseGrid.classList.remove('hidden');
+    }
+  }
+</script>

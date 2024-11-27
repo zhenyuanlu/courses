@@ -1,0 +1,64 @@
+<div
+  class="course-card group bg-white rounded-xl shadow-sm hover:shadow-md transition-all
+         overflow-hidden border border-gray-100 hover:border-gray-200"
+  data-title="{{ course.title }}"
+  data-code="{{ course.code }}"
+  data-description="{{ course.description }}"
+  data-level="{{ course.level }}"
+  data-term="{{ course.term }}"
+  data-department="{{ course.department }}"
+>
+  <div class="relative h-48 overflow-hidden">
+    <img
+      src="{{ course.image | relative_url }}"
+      alt="{{ course.title }} course thumbnail"
+      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+    />
+    <div class="absolute top-4 right-4">
+      <span class="px-3 py-1 rounded-full text-sm font-medium
+        {% if course.status == 'Active' %}
+          bg-green-100 text-green-800
+        {% else %}
+          bg-gray-100 text-gray-800
+        {% endif %}">
+        {{ course.status }}
+      </span>
+    </div>
+  </div>
+
+  <div class="p-6">
+    <div class="mb-4">
+      <div class="text-sm font-medium text-gray-500 mb-1">{{ course.code }}</div>
+      <h3
+        class="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors"
+      >
+        {{ course.title }}
+      </h3>
+      <p class="text-gray-600 mb-4">{{ course.description | truncate: 150 }}</p>
+    </div>
+
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+      <div class="flex items-center">
+        <!-- Calendar Icon -->
+        {{ course.term }}
+      </div>
+      <div class="flex items-center">
+        <!-- BookOpen Icon -->
+        {{ course.level }}
+      </div>
+      <div class="flex items-center">
+        <!-- Users Icon -->
+        {{ course.enrollment_count }} students
+      </div>
+    </div>
+
+    <a
+      href="{{ '/courses/' | append: course.code | downcase | relative_url }}"
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 group"
+      aria-label="View details for {{ course.title }}"
+    >
+      View Course Details
+      <!-- ChevronRight Icon -->
+    </a>
+  </div>
+</div>

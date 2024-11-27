@@ -1,0 +1,9 @@
+- name: "Zhenyuan Lu"
+  role: "Primary Instructor"
+  image: "/assets/images/z.png"
+  email: "zh.lu@northeastern.edu"
+  office: "177 Huntington Ave, Boston"
+  office_hours: "Monday 2-4 PM"
+  links:
+    github: "https://github.com/zhenyuanlu"
+    linkedin: "https://linkedin.com/in/zhenyuanlu"

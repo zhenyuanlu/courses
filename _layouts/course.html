@@ -1,0 +1,207 @@
+---
+layout: default
+---
+
+{% assign course = site.data.courses | where: "code", page.course_code | first %}
+
+<!-- Course Header -->
+<header class="bg-white border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-2 text-gray-600 mb-4">
+        <span>{{ course.term }}</span>
+        <span>•</span>
+        <span>{{ course.code }}</span>
+      </div>
+      <h1 class="text-4xl font-bold mb-6">{{ course.title }}</h1>
+      <div class="flex flex-wrap gap-6 text-gray-600">
+        <div class="flex items-center">
+          <!-- Calendar Icon -->
+          {{ course.schedule }}
+        </div>
+        <div class="flex items-center">
+          <!-- MapPin Icon -->
+          {{ course.location }}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-12">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <!-- Main Content -->
+    <div class="lg:col-span-2 space-y-8">
+      <!-- Course Description -->
+      <section class="bg-white rounded-xl p-6 shadow-sm">
+        <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
+        <p class="text-gray-600 mb-6">{{ course.description }}</p>
+
+        <h3 class="font-bold text-lg mb-3">Learning Objectives</h3>
+        <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+          {% for objective in course.objectives %}
+          <li>{{ objective }}</li>
+          {% endfor %}
+        </ul>
+
+        <h3 class="font-bold text-lg mb-3">Prerequisites</h3>
+        <p class="text-gray-600 mb-6">{{ course.prerequisites }}</p>
+
+        <h3 class="font-bold text-lg mb-3">Textbooks</h3>
+        {% for book in course.textbooks %}
+        <div class="flex items-start gap-2 text-gray-600">
+          <!-- Book Icon -->
+          <div>
+            <p class="font-medium">{{ book.title }}</p>
+            <p>{{ book.authors }}</p>
+            <p>{{ book.edition }}{% if book.required %} - Required{% endif %}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+
+      <!-- Teaching Team -->
+      <section class="bg-white rounded-xl p-6 shadow-sm">
+        <h2 class="text-2xl font-bold mb-6">Teaching Team</h2>
+
+        <!-- Instructor -->
+        <div class="mb-8">
+          <h3 class="text-lg font-bold mb-4">Instructor</h3>
+          {% for instructor in site.data.instructors %}
+          <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+            <img
+              src="{{ instructor.image | relative_url }}"
+              alt="{{ instructor.name }}"
+              class="w-32 h-32 rounded-full"
+            />
+            <div class="flex-1 text-center sm:text-left">
+              <h4 class="text-xl font-bold">{{ instructor.name }}</h4>
+              <p class="text-gray-600 mb-3">{{ instructor.role }}</p>
+
+              <div class="space-y-2 text-gray-600">
+                <p class="flex items-center gap-2">
+                  <!-- Mail Icon -->
+                  {{ instructor.email }}
+                </p>
+                <p class="flex items-center gap-2">
+                  <!-- MapPin Icon -->
+                  {{ instructor.office }}
+                </p>
+                <p class="flex items-center gap-2">
+                  <!-- Clock Icon -->
+                  {{ instructor.office_hours }}
+                </p>
+              </div>
+
+              <div class="flex gap-3 mt-4">
+                {% if instructor.links.github %}
+                <a href="{{ instructor.links.github }}" class="text-gray-600 hover:text-gray-900">
+                  <!-- Github Icon -->
+                </a>
+                {% endif %}
+                {% if instructor.links.linkedin %}
+                <a href="{{ instructor.links.linkedin }}" class="text-gray-600 hover:text-gray-900">
+                  <!-- LinkedIn Icon -->
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Teaching Assistants -->
+        <div>
+          <h3 class="text-lg font-bold mb-4">Teaching Assistant</h3>
+          <div class="grid grid-cols-1 gap-6">
+            {% for ta in site.data.teaching_assistants %}
+            <div class="flex gap-4">
+              <img
+                src="{{ ta.image | relative_url }}"
+                alt="{{ ta.name }}"
+                class="w-20 h-20 rounded-full"
+              />
+              <div>
+                <h4 class="font-bold">{{ ta.name }}</h4>
+                <p class="text-sm text-gray-600">{{ ta.role }}</p>
+                <p class="text-sm text-gray-600">{{ ta.section }}</p>
+                <p class="text-sm text-gray-600">Office Hours: {{ ta.office_hours }}</p>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Course Schedule -->
+      <section class="bg-white rounded-xl p-6 shadow-sm">
+        <h2 class="text-2xl font-bold mb-4">Course Schedule</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="border-b border-gray-200">
+                <th class="py-3 text-left">Week</th>
+                <th class="py-3 text-left">Topic</th>
+                <th class="py-3 text-left">Materials</th>
+                <th class="py-3 text-left">Assignments</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for week in course.schedule_weeks %}
+              <tr class="border-b border-gray-100">
+                <td class="py-4 text-gray-600">Week {{ week.week_num }}</td>
+                <td class="py-4">
+                  <p class="font-medium">{{ week.topic }}</p>
+                  <p class="text-sm text-gray-600">{{ week.description }}</p>
+                </td>
+                <td class="py-4">
+                  <ul class="list-disc pl-5 text-gray-600">
+                    {% for material in week.materials %}
+                    <li>{{ material }}</li>
+                    {% endfor %}
+                  </ul>
+                </td>
+                <td class="py-4 text-gray-600">{{ week.assignments }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="space-y-6">
+      <!-- Quick Links -->
+      <section class="bg-white rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Course Resources</h2>
+        <div class="space-y-3">
+          <!-- Add your resources here -->
+        </div>
+      </section>
+
+      <!-- Guest Lectures -->
+      {% if site.data.guest_lecturers %}
+      <section class="bg-white rounded-xl p-6 shadow-sm">
+        <h2 class="text-xl font-bold mb-4">Guest Lecture</h2>
+        {% for guest in site.data.guest_lecturers %}
+        <div class="flex gap-4">
+          <img
+            src="{{ guest.image | relative_url }}"
+            alt="{{ guest.name }}"
+            class="w-20 h-20 rounded-full"
+          />
+          <div>
+            <h3 class="font-bold">{{ guest.name }}</h3>
+            <p class="text-sm text-gray-600 mb-2">{{ guest.title }}</p>
+            <p class="text-sm font-medium">{{ guest.topic }}</p>
+            <p class="text-sm text-gray-600">{{ guest.date }}</p>
+            <p class="text-sm text-gray-600 mt-2">{{ guest.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+      {% endif %}
+    </div>
+  </div>
+</main>

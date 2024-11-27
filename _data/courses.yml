@@ -1,0 +1,37 @@
+- id: 1
+  code: "CS5800"
+  title: "Algorithms"
+  description: "Advanced algorithm design and analysis techniques..."
+  term: "Spring 2024"
+  level: "Graduate"
+  department: "Computer Science"
+  enrollment_count: 120
+  image: "/assets/images/course_cs5800.jpg"
+  status: "Active"
+  schedule: "Mon/Wed 11:45 AM - 1:25 PM"
+  location: "West Village H 110"
+  prerequisites: "Data Structures and Basic Discrete Mathematics"
+  objectives:
+    - "Master core algorithm design techniques"
+    - "Analyze algorithm efficiency and complexity"
+    - "Implement and evaluate algorithmic solutions"
+  textbooks:
+    - title: "Introduction to Algorithms"
+      authors: "Cormen, Leiserson, Rivest, and Stein"
+      edition: "4th Edition"
+      required: true
+  schedule_weeks:
+    - week_num: 1
+      topic: "Algorithm Analysis Foundations"
+      description: "Introduction to algorithm analysis and asymptotic notation"
+      materials:
+        - "Lecture Slides 1"
+        - "CLRS Chapter 1"
+      assignments: "HW1 Released"
+    - week_num: 2
+      topic: "Divide and Conquer"
+      description: "Solving problems by breaking them into smaller subproblems"
+      materials:
+        - "Lecture Slides 2"
+        - "CLRS Chapter 2"
+      assignments: "HW1 Due, HW2 Released"
