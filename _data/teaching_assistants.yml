@@ -1,6 +1,6 @@
-- name: "John Smith"
+- name: "TEST"
   role: "Teaching Assistant"
   image: "/assets/images/husky.jpg"
-  email: "smith.j@northeastern.edu"
+  email: "test@northeastern.edu"
   office_hours: "Tuesday 3-5 PM"
   section: "Section 1"

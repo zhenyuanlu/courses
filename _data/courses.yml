@@ -1,6 +1,6 @@
 - id: 1
-  code: "CS5800"
-  title: "Algorithms"
+  code: "IE6600"
+  title: "TEST"
   description: "Advanced algorithm design and analysis techniques..."
   term: "Spring 2024"
   level: "Graduate"
@@ -8,16 +8,16 @@
   enrollment_count: 120
   image: "/assets/images/course_cs5800.jpg"
   status: "Active"
-  schedule: "Mon/Wed 11:45 AM - 1:25 PM"
-  location: "West Village H 110"
-  prerequisites: "Data Structures and Basic Discrete Mathematics"
+  schedule: ""
+  location: ""
+  prerequisites: ""
   objectives:
-    - "Master core algorithm design techniques"
-    - "Analyze algorithm efficiency and complexity"
-    - "Implement and evaluate algorithmic solutions"
+    - ""
+    - ""
+    - ""
   textbooks:
-    - title: "Introduction to Algorithms"
-      authors: "Cormen, Leiserson, Rivest, and Stein"
+    - title: ""
+      authors: ""
       edition: "4th Edition"
       required: true
   schedule_weeks:
