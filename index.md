@@ -20,7 +20,7 @@ title: "Course Directory"
             AI/ML Adjunct Faculty at Northeastern University. Teaching computer science and data science courses with a focus on algorithms, machine learning, and AI applications.
           </p>
           <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-            <a href="mailto:zh.lu@northeastern.edu" class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200" aria-label="Send email">
+            <a href="mailto:" class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200" aria-label="Send email">
               <svg class="w-4 h-4 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 13L2 6.76V18a1 1 0 001 1h18a1 1 0 001-1V6.76L12 13z"></path><path d="M22 6H2l10 7 10-7z"></path></svg>
               Email
             </a>
