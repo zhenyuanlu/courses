@@ -1,6 +1,23 @@
-- name: "TEST"
-  role: "Teaching Assistant"
+- id: 'john_doe'
+  name: "John Doe"
+  title: "Teaching Assistant"
   image: "/assets/images/husky.jpg"
-  email: "test@northeastern.edu"
-  office_hours: "Tuesday 3-5 PM"
-  section: "Section 1"
+  bio: "Graduate student specializing in machine learning."
+  office: 'Room 102, University Building'
+  office_hours: "Wednesday 3-5 PM"
+  links:
+    - name: "Email"
+      url: "mailto:john.doe@northeastern.edu"
+      icon: "fas fa-envelope"
+
+- id: 'bob_smith'
+  name: "Bob Smith"
+  title: "Teaching Assistant"
+  image: "/assets/images/husky.jpg"
+  bio: "Graduate student specializing in machine learning."
+  office: 'Room 102, University Building'
+  office_hours: "Wednesday 3-5 PM"
+  links:
+    - name: "Email"
+      url: "mailto:john.doe@northeastern.edu"
+      icon: "fas fa-envelope"

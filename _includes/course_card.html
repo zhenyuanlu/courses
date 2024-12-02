@@ -1,64 +1,64 @@
+{% assign course = include.course %}
+
 <div
-  class="course-card group bg-white rounded-xl shadow-sm hover:shadow-md transition-all
-         overflow-hidden border border-gray-100 hover:border-gray-200"
+  class="course-card relative bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 p-6"
   data-title="{{ course.title }}"
-  data-code="{{ course.code }}"
+  data-code="{{ course.course_code }}"
   data-description="{{ course.description }}"
   data-level="{{ course.level }}"
-  data-term="{{ course.term }}"
-  data-department="{{ course.department }}"
+  data-semester="{{ course.semester }}"
+  data-status="{{ course.status }}"
 >
-  <div class="relative h-48 overflow-hidden">
-    <img
-      src="{{ course.image | relative_url }}"
-      alt="{{ course.title }} course thumbnail"
-      class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-    />
-    <div class="absolute top-4 right-4">
-      <span class="px-3 py-1 rounded-full text-sm font-medium
-        {% if course.status == 'Active' %}
-          bg-green-100 text-green-800
-        {% else %}
-          bg-gray-100 text-gray-800
-        {% endif %}">
-        {{ course.status }}
-      </span>
-    </div>
+  <!-- Status Badge at Top Right -->
+  <div class="absolute top-4 right-4">
+    <span class="px-2 py-0.5 rounded-full text-xs font-medium {% if course.status == 'active' %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-600{% endif %}">
+      {{ course.status | capitalize }}
+    </span>
   </div>
 
-  <div class="p-6">
+  <!-- Course Content -->
+  <a href="{{ course.url | relative_url }}" class="block hover:text-grey-600">
     <div class="mb-4">
-      <div class="text-sm font-medium text-gray-500 mb-1">{{ course.code }}</div>
-      <h3
-        class="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors"
-      >
-        {{ course.title }}
-      </h3>
-      <p class="text-gray-600 mb-4">{{ course.description | truncate: 150 }}</p>
+      <!-- Course Code and Level -->
+      <div class="flex items-baseline justify-between mb-2">
+        <div class="flex items-center gap-2">
+          <span class="text-sm font-medium text-gray-500">{{ course.course_code }}</span>
+          <span class="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium {% if course.level == 'Graduate' %}bg-purple-100 text-purple-800{% else %}bg-blue-100 text-blue-800{% endif %}">
+            <i class="fas fa-graduation-cap"></i>
+            {{ course.level }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Course Title and Description -->
+      <h3 class="text-xl font-bold mb-2">{{ course.title }}</h3>
+      <p class="text-gray-600 text-sm">{{ course.description }}</p>
     </div>
 
-    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-      <div class="flex items-center">
-        <!-- Calendar Icon -->
-        {{ course.term }}
+    <!-- Semester and Technologies -->
+    <div class="flex items-center justify-between text-sm">
+      <div class="flex items-center gap-3 text-gray-600">
+        {% if course.season == 'spring' %}
+          <i class="fa-solid fa-snowflake text-blue-500"></i>
+        {% elsif course.season == 'summer' %}
+          <i class="fa-solid fa-sun text-yellow-500"></i>
+        {% elsif course.season == 'fall' %}
+          <i class="fa-solid fa-leaf text-orange-500"></i>
+        {% endif %}
+        {{ course.semester }}
+        <!-- <span class="text-sm text-gray-600">{{ course.semester }}</span> -->
       </div>
-      <div class="flex items-center">
-        <!-- BookOpen Icon -->
-        {{ course.level }}
-      </div>
-      <div class="flex items-center">
-        <!-- Users Icon -->
-        {{ course.enrollment_count }} students
+      <div class="flex items-center gap-3">
+        <div class="flex flex-wrap gap-2">
+          {% for tech in course.technologies %}
+            {% assign tech_clean = tech | strip | downcase %}
+            {% assign color = site.data.tech_colors[tech_clean] | default: 'bg-gray-100 text-gray-800' %}
+            <span class="px-2 py-0.5 rounded-full text-xs font-medium {{ color }}">
+              {{ tech }}
+            </span>
+          {% endfor %}
+        </div>
       </div>
     </div>
-
-    <a
-      href="{{ '/courses/' | append: course.code | downcase | relative_url }}"
-      class="inline-flex items-center text-blue-600 hover:text-blue-800 group"
-      aria-label="View details for {{ course.title }}"
-    >
-      View Course Details
-      <!-- ChevronRight Icon -->
-    </a>
-  </div>
+  </a>
 </div>

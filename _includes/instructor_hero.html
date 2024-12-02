@@ -1,0 +1,37 @@
+{% assign instructor = site.data.instructors | where: 'id', include.instructor_id | first %}
+
+<section class="bg-white border-b">
+  <div class="max-w-7xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+      <div class="relative w-40 h-40">
+        <img
+          src="{{ instructor.image | relative_url }}"
+          alt="{{ instructor.name }}"
+          class="rounded-full object-cover shadow-lg"
+        />
+      </div>
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-3xl font-bold mb-2">{{ instructor.name }}</h1>
+        <p class="text-xl text-gray-600 mb-4">
+          {{ instructor.title }}
+        </p>
+        <p class="text-gray-600 mb-6">
+          {{ instructor.bio }}
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          {% for link in instructor.links %}
+          <a
+            href="{{ link.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 bg-gray-100 rounded-lg hover:bg-gray-200"
+          >
+            <i class="{{ link.icon }} w-4 h-4 mr-2"></i>
+            {{ link.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

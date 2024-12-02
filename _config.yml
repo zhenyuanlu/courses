@@ -1,14 +1,23 @@
 title: "My Course Site"
 description: "A site for course listings and details."
 baseurl: "/teachings"
-url: "" # Replace with your GitHub Pages URL
-# theme: minima
+url: "https://zhenyuanlu.com/teachings"
+
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
+
+author:
+  name: "Zhenyuan Lu"
+  email: "lu.zhenyua@northeastern.edu"
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  
 
 exclude:
   - node_modules
@@ -16,3 +25,8 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
+
+collections:
+  courses:
+    output: true
+    permalink: /teachings/:slug/

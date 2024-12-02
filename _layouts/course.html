@@ -2,206 +2,306 @@
 layout: default
 ---
 
-{% assign course = site.data.courses | where: "code", page.course_code | first %}
-
+{% assign course = page %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="{{ '/assets/css/custom.css' | relative_url }}" rel="stylesheet">
+</head>
 <!-- Course Header -->
 <header class="bg-white border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 py-12">
-    <div class="max-w-3xl">
-      <div class="flex items-center gap-2 text-gray-600 mb-4">
-        <span>{{ course.term }}</span>
-        <span>•</span>
-        <span>{{ course.code }}</span>
-      </div>
-      <h1 class="text-4xl font-bold mb-6">{{ course.title }}</h1>
-      <div class="flex flex-wrap gap-6 text-gray-600">
-        <div class="flex items-center">
-          <!-- Calendar Icon -->
-          {{ course.schedule }}
+  <div class="max-w-7xl mx-auto px-4 py-6">
+    <a href="{{ '/teachings/' }}" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8">
+      <i class="fas fa-chevron-left w-4 h-4 mr-1"></i>
+      Back to Previous Page
+    </a>
+
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <img
+        src="{{ '/assets/images/courses/neu.png' | relative_url }}"
+        alt="{{ course.title }}"
+        class="w-32 h-32 rounded-xl object-cover"
+      />
+      <div class="flex-1">
+        <div class="flex items-baseline gap-3 mb-2">
+          <span class="text-sm font-medium text-blue-600">{{ course.course_code }}</span>
+          <span class="text-sm text-gray-600">{{ course.semester }}</span>
+          <span class="px-2 py-0.5 rounded-full text-xs font-medium {% if course.status == 'active' %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-600{% endif %}">
+            {{ course.status | capitalize }}
+          </span>
         </div>
-        <div class="flex items-center">
-          <!-- MapPin Icon -->
-          {{ course.location }}
+
+        <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ course.title }}</h1>
+        <div class="flex gap-2 mb-4">
+          {% for tech in course.technologies %}
+          {% assign tech_clean = tech | strip | downcase %}
+          {% assign color = site.data.tech_colors[tech_clean] | default: 'bg-gray-100 text-gray-800' %}
+          <span class="px-3 py-1 rounded-full text-sm font-medium {{ color }}">
+            {{ tech }}
+          </span>
+          {% endfor %}
+        </div>
+        <p class="text-md text-gray-600">{{ course.description }}</p>
+
+        <!-- Additional course details -->
+        <div class="flex flex-wrap gap-6 mt-4">
+          {% if course.schedule %}
+          <div class="flex items-center gap-2 text-gray-600">
+            <i class="fa-regular fa-clock w-4 h-4"></i>
+            {{ course.schedule }}
+          </div>
+          {% endif %}
+          {% if course.location %}
+          <div class="flex items-center gap-2 text-gray-600">
+            <i class="fa-solid fa-map-marker-alt w-4 h-4"></i>
+            {{ course.location }}
+          </div>
+          {% endif %}
+          {% if course.enrollment_status %}
+          <div class="flex items-center gap-2 text-gray-600">
+            <i class="fa-solid fa-users w-4 h-4"></i>
+            {{ course.enrollment_status }}
+          </div>
+          {% endif %}
+          {% if course.zoom %}
+          <div class="flex items-center gap-2 text-gray-600">
+            <i class="fa-brands fa-zoom w-4 h-4"></i>
+            {{ course.zoom }}
+          {% endif %}
         </div>
       </div>
     </div>
   </div>
 </header>
 
-<main class="max-w-7xl mx-auto px-4 py-12">
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Main Content -->
-    <div class="lg:col-span-2 space-y-8">
-      <!-- Course Description -->
-      <section class="bg-white rounded-xl p-6 shadow-sm">
-        <h2 class="text-2xl font-bold mb-4">Course Overview</h2>
-        <p class="text-gray-600 mb-6">{{ course.description }}</p>
+<!-- Announcements -->
+{% if course.announcements %}
+  {% for announcement in course.announcements %}
+  <div class="max-w-7xl mx-auto px-4 mt-4">
+    <div class="flex items-start bg-yellow-50 border-l-4 border-yellow-400 p-4">
+      <div class="flex-shrink-0">
+        <i class="fa-solid fa-exclamation-circle text-yellow-400 w-5 h-5 mt-0.5"></i>
+      </div>
+      <div class="ml-3">
+        <p class="text-sm font-medium text-yellow-700">
+          <strong>{{ announcement.title }}:</strong> {{ announcement.content }}
+        </p>
+        {% assign dateParts = announcement.date | split: "-" %}
+        {% assign formattedDate = dateParts[2] | append: "-" | append: dateParts[0] | append: "-" | append: dateParts[1] %}
+        <p class="text-xs text-yellow-600">{{ formattedDate | date: "%b %-d, %Y" }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% endif %}
 
-        <h3 class="font-bold text-lg mb-3">Learning Objectives</h3>
-        <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
-          {% for objective in course.objectives %}
-          <li>{{ objective }}</li>
-          {% endfor %}
-        </ul>
+{% assign schedule_data = site.data.schedules[page.schedule_file] %}
+{% assign current_date = 'now' | date: "%s" %}
+{% assign upcoming_deadlines = "" | split: "" %}
 
-        <h3 class="font-bold text-lg mb-3">Prerequisites</h3>
-        <p class="text-gray-600 mb-6">{{ course.prerequisites }}</p>
+{% for item in schedule_data %}
+  {% if item.assignments.deadline %}
+    {% assign deadline = item.assignments.deadline %}
+    {% if deadline.date %}
+      {% assign date_parts = deadline.date | split: '/' %}
+      {% assign month = date_parts[0] | strip %}
+      {% assign day = date_parts[1] | strip %}
+      {% assign year = date_parts[2] | strip %}
+      
+      {% if month.size == 1 %}{% assign month = '0' | append: month %}{% endif %}
+      {% if day.size == 1 %}{% assign day = '0' | append: day %}{% endif %}
+      
+      {% assign date_iso = year | append: '-' | append: month | append: '-' | append: day %}
+      {% assign deadline_timestamp = date_iso | date: "%s" %}
+      
+      {% if deadline_timestamp >= current_date %}
+        {% assign deadline_info = deadline %}
+        {% assign deadline_info.date_formatted = date_iso | date: "%b %e, %Y" %}
+        {% assign upcoming_deadlines = upcoming_deadlines | push: deadline_info %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
 
-        <h3 class="font-bold text-lg mb-3">Textbooks</h3>
-        {% for book in course.textbooks %}
-        <div class="flex items-start gap-2 text-gray-600">
-          <!-- Book Icon -->
+{% assign upcoming_deadlines = upcoming_deadlines | sort: 'date' %}
+
+
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 py-8">
+  
+  <!-- Upcoming Deadlines -->
+  {% if upcoming_deadlines.size > 0 %}
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold mb-6">Upcoming Deadlines</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {% for deadline in upcoming_deadlines %}
+      <div class="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm">
+        <div>
+          <div class="font-medium">{{ deadline.title }}</div>
+          {% assign dateParts = deadline.date | split: "/" %}
+          {% assign formattedDate = dateParts[2] | append: "-" | append: dateParts[0] | append: "-" | append: dateParts[1] %}
+          <div class="text-sm text-gray-600">{{ formattedDate | date: "%b %-d, %Y" }}</div>
+        </div>
+        {% assign color_class = '' %}
+        {% if deadline.type == 'project' %}
+          {% assign color_class = 'bg-purple-100 text-purple-800' %}
+        {% elsif deadline.type == 'homework' %}
+          {% assign color_class = 'bg-blue-100 text-blue-800' %}
+        {% elsif deadline.type == 'quiz' %}
+          {% assign color_class = 'bg-yellow-100 text-yellow-800' %}
+        {% else %}
+          {% assign color_class = 'bg-gray-100 text-gray-800' %}
+        {% endif %}
+        <span class="px-3 py-1 rounded-full text-sm font-medium {{ color_class }}">
+          {{ deadline.type | capitalize }}
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+
+  <!-- Course Schedule -->
+  {% include course_platform.html %}
+
+
+  <!-- Teaching Staff -->
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Teaching Staff</h2>
+    <div class="space-y-6">
+      <!-- Instructor -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for instructor_id in course.instructors %}
+      {% assign instructor = site.data.instructors | where: 'id', instructor_id | first %}
+      <div class="bg-white rounded-xl p-6 shadow-sm">
+        <div class="flex gap-4">
+          <img
+            src="{{ instructor.image | relative_url }}"
+            alt="{{ instructor.name }}"
+            class="w-26 h-26 rounded-full object-cover"
+          />
           <div>
-            <p class="font-medium">{{ book.title }}</p>
-            <p>{{ book.authors }}</p>
-            <p>{{ book.edition }}{% if book.required %} - Required{% endif %}</p>
+            <h4 class="font-bold mb-1">{{ instructor.name }}</h4>
+            <p class="text-gray-600 mb-1">{{ instructor.title }}</p>
+            <div class="space-y-1 text-sm text-gray-600">
+              {% if instructor.email %}
+              <div class="flex items-center gap-2">
+                <i class="fa-regular fa-envelope w-4 h-4"></i>
+                <a href="mailto:{{ instructor.email }}" class="hover:text-blue-600">
+                  {{ instructor.email }}
+                </a>
+              </div>
+              {% endif %}
+              {% if instructor.office_hours %}
+              <div class="flex items-center gap-2">
+                <i class="fa-regular fa-clock w-4 h-4"></i>
+                <span>Office Hours: {{ instructor.office_hours }}</span>
+              </div>
+              {% endif %}
+              {% if instructor.office %}
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-map-marker-alt w-4 h-4"></i>
+                <span>{{ instructor.office }}</span>
+              </div>
+              {% endif %}
+            </div>
+
+            <!-- <p class="text-sm text-gray-600 mt-2">{{ instructor.bio }}</p> -->
+          </div>
+        </div>
+      </div>
+      </div>
+      {% endfor %}
+
+      <!-- Teaching Assistants -->
+      {% if course.teaching_assistants %}
+      <!-- <h3 class="text-lg font-bold mt-8 mb-4">Teaching Assistants</h3> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for ta_id in course.teaching_assistants %}
+        {% assign ta = site.data.teaching_assistants | where: 'id', ta_id | first %}
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="flex gap-4">
+            <img
+              src="{{ ta.image | relative_url }}"
+              alt="{{ ta.name }}"
+              class="w-26 h-26 rounded-full object-cover"
+            />
+            <div>
+              <h4 class="font-bold mb-1">{{ ta.name }}</h4>
+              <div class="text-sm text-gray-600">{{ ta.title }}</div>
+              {% if ta.section %}
+              <div class="text-sm text-gray-600">{{ ta.section }}</div>
+              {% endif %}
+              <div class="text-sm text-gray-600 mt-1">
+                Office Hours: {{ ta.office_hours }}
+              </div>
+              {% if ta.email %}
+              <div class="flex items-center gap-2 mt-1">
+                <i class="fa-regular fa-envelope w-4 h-4"></i>
+                <a href="mailto:{{ ta.email }}" class="hover:text-blue-600">
+                  {{ ta.email }}
+                </a>
+              </div>
+              {% endif %}
+            </div>
           </div>
         </div>
         {% endfor %}
-      </section>
+      </div>
+      {% endif %}
 
-      <!-- Teaching Team -->
-      <section class="bg-white rounded-xl p-6 shadow-sm">
-        <h2 class="text-2xl font-bold mb-6">Teaching Team</h2>
-
-        <!-- Instructor -->
-        <div class="mb-8">
-          <h3 class="text-lg font-bold mb-4">Instructor</h3>
-          {% for instructor in site.data.instructors %}
-          <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-            <img
-              src="{{ instructor.image | relative_url }}"
-              alt="{{ instructor.name }}"
-              class="w-32 h-32 rounded-full"
-            />
-            <div class="flex-1 text-center sm:text-left">
-              <h4 class="text-xl font-bold">{{ instructor.name }}</h4>
-              <p class="text-gray-600 mb-3">{{ instructor.role }}</p>
-
-              <div class="space-y-2 text-gray-600">
-                <p class="flex items-center gap-2">
-                  <!-- Mail Icon -->
-                  {{ instructor.email }}
-                </p>
-                <p class="flex items-center gap-2">
-                  <!-- MapPin Icon -->
-                  {{ instructor.office }}
-                </p>
-                <p class="flex items-center gap-2">
-                  <!-- Clock Icon -->
-                  {{ instructor.office_hours }}
-                </p>
-              </div>
-
-              <div class="flex gap-3 mt-4">
-                {% if instructor.links.github %}
-                <a href="{{ instructor.links.github }}" class="text-gray-600 hover:text-gray-900">
-                  <!-- Github Icon -->
-                </a>
-                {% endif %}
-                {% if instructor.links.linkedin %}
-                <a href="{{ instructor.links.linkedin }}" class="text-gray-600 hover:text-gray-900">
-                  <!-- LinkedIn Icon -->
-                </a>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-
-        <!-- Teaching Assistants -->
-        <div>
-          <h3 class="text-lg font-bold mb-4">Teaching Assistant</h3>
-          <div class="grid grid-cols-1 gap-6">
-            {% for ta in site.data.teaching_assistants %}
-            <div class="flex gap-4">
-              <img
-                src="{{ ta.image | relative_url }}"
-                alt="{{ ta.name }}"
-                class="w-20 h-20 rounded-full"
-              />
-              <div>
-                <h4 class="font-bold">{{ ta.name }}</h4>
-                <p class="text-sm text-gray-600">{{ ta.role }}</p>
-                <p class="text-sm text-gray-600">{{ ta.section }}</p>
-                <p class="text-sm text-gray-600">Office Hours: {{ ta.office_hours }}</p>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </section>
-
-      <!-- Course Schedule -->
-      <section class="bg-white rounded-xl p-6 shadow-sm">
-        <h2 class="text-2xl font-bold mb-4">Course Schedule</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr class="border-b border-gray-200">
-                <th class="py-3 text-left">Week</th>
-                <th class="py-3 text-left">Topic</th>
-                <th class="py-3 text-left">Materials</th>
-                <th class="py-3 text-left">Assignments</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for week in course.schedule_weeks %}
-              <tr class="border-b border-gray-100">
-                <td class="py-4 text-gray-600">Week {{ week.week_num }}</td>
-                <td class="py-4">
-                  <p class="font-medium">{{ week.topic }}</p>
-                  <p class="text-sm text-gray-600">{{ week.description }}</p>
-                </td>
-                <td class="py-4">
-                  <ul class="list-disc pl-5 text-gray-600">
-                    {% for material in week.materials %}
-                    <li>{{ material }}</li>
-                    {% endfor %}
-                  </ul>
-                </td>
-                <td class="py-4 text-gray-600">{{ week.assignments }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-
-    <!-- Sidebar -->
-    <div class="space-y-6">
-      <!-- Quick Links -->
-      <section class="bg-white rounded-xl p-6 shadow-sm">
-        <h2 class="text-xl font-bold mb-4">Course Resources</h2>
-        <div class="space-y-3">
-          <!-- Add your resources here -->
-        </div>
-      </section>
-
-      <!-- Guest Lectures -->
-      {% if site.data.guest_lecturers %}
-      <section class="bg-white rounded-xl p-6 shadow-sm">
-        <h2 class="text-xl font-bold mb-4">Guest Lecture</h2>
-        {% for guest in site.data.guest_lecturers %}
+      <!-- Guest Lecturers -->
+      {% if course.guest_lecturers %}
+      <!-- <h3 class="text-lg font-bold mt-8 mb-4">Guest Lecturers</h3> -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for guest_id in course.guest_lecturers %}
+      {% assign guest = site.data.guest_lecturers | where: 'id', guest_id | first %}
+      <div class="bg-white rounded-xl p-6 shadow-sm">
         <div class="flex gap-4">
           <img
             src="{{ guest.image | relative_url }}"
             alt="{{ guest.name }}"
-            class="w-20 h-20 rounded-full"
+            class="w-26 h-26 rounded-full object-cover"
           />
           <div>
-            <h3 class="font-bold">{{ guest.name }}</h3>
-            <p class="text-sm text-gray-600 mb-2">{{ guest.title }}</p>
-            <p class="text-sm font-medium">{{ guest.topic }}</p>
-            <p class="text-sm text-gray-600">{{ guest.date }}</p>
-            <p class="text-sm text-gray-600 mt-2">{{ guest.description }}</p>
+            <h4 class="font-bold mb-1">{{ guest.name }}</h4>
+            <div class="text-gray-600 mb-1">{{ guest.title }}</div>
+            <div class="text-sm">
+              <div class="font-medium">{{ guest.topic }}</div>
+              <div class="text-gray-600">{{ guest.date }}</div>
+            </div>
+            <p class="text-sm text-gray-600 mt-2">{{ guest.bio }}</p>
           </div>
         </div>
-        {% endfor %}
-      </section>
+      </div>
+      </div>
+      {% endfor %}
       {% endif %}
     </div>
   </div>
+
+
+  <!-- Course Schedule -->
+  {% include course_schedule.html schedule_file=page.schedule_file %}
+
+
+  <!-- Course Content -->
+  <div class="mb-12">
+    <!-- <h2 class="text-2xl font-bold mb-6">Course Content</h2>
+    <div class="bg-white rounded-xl p-6 shadow-sm"> -->
+      <div class="prose lg:prose-lg max-w-none ">
+      <!-- <div class="course-content"> -->
+        {{ content }}
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  
+  {% include share_buttons.html %}
+
+  <!-- Course Platforms and Policies -->
+  <!-- You can add these sections similarly, ensuring images are appropriately sized -->
+
 </main>
+

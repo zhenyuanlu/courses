@@ -1,0 +1,17 @@
+<!-- may add sticky to the nav class to make it stick on the top when scrolling-->
+ <!-- play around with the h-10 to adjust the height -->
+<nav class="border-b bg-white top-0 z-50 h-10"> 
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex items-center justify-between h-10">
+      <a href="https://zhenyuanlu.com" class="font-bold text-md">Zhenyuan Lu</a>
+
+      <div class="flex items-center gap-8">
+        <a href="https://zhenyuanlu.com" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Home</a>
+        <a href="{{ '/publications/' | relative_url }}" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Publications</a>
+        <a href="{{ '/blogs/' | relative_url }}" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Blogs</a>
+        <a href="{{ site.baseurl }}/" class="text-sm font-medium transition-colors text-blue-600 border-b-2 border-blue-600">Teachings</a>
+        <a href="https://zhenyuanlu.com/artLife/" class="text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Art Life</a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,6 +1,11 @@
-- name: ""
-  title: ""
-  topic: ""
-  date: "March 15, 2024"
-  image: "/assets/images/guest_alice_chen.jpg"
-  description: "Exploring how graph algorithms solve practical problems in the tech industry"
+- id: 'jane_doe'
+  name: "Jane Doe"
+  title: "Data Scientist at TechCorp"
+  image: "/assets/images/husky.jpg"
+  bio: "Expert in big data analytics and AI applications."
+  date: "Wed 03/15"
+  topic: "Real-world Applications of Graph Algorithms"
+  links:
+    - name: "LinkedIn"
+      url: "test"
+      icon: "fa-brands fa-linkedin-in"

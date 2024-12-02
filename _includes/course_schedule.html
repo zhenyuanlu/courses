@@ -1,0 +1,146 @@
+<!-- _includes/course_schedule.html -->
+
+{% assign schedule_data = site.data.schedules[page.schedule_file] %}
+{% assign current_date = 'now' | date: '%Y-%m-%d' %}
+{% assign highlighted = false %}
+
+<div class="mb-8">
+  <h3 class="text-2xl font-bold mb-4">Course Schedule</h3>
+  <div class="bg-white rounded-xl shadow-sm overflow-x-auto">
+    <table class="w-full max-w-full">
+      <thead>
+        <tr class="border-b">
+          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Date</th>
+          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Topic</th>
+          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Materials</th>
+          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Assignments</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in schedule_data %}
+          {% if item.module %}
+            <!-- Module Row -->
+            <tr class="border-b">
+              <td colspan="4" class="bg-{{ item.color }}-100 text-{{ item.color }}-800 px-4 py-2 font-semibold">
+                {{ item.module }}
+              </td>
+            </tr>
+          {% else %}
+            <!-- Session Row -->
+            {% assign date_parts = item.date | split: '/' %}
+            {% assign month = date_parts[0] | strip %}
+            {% assign day = date_parts[1] | strip %}
+            {% assign year = date_parts[2] | strip %}
+            
+            
+            {% if month.size == 1 %}{% assign month = '0' | append: month %}{% endif %}
+            {% if day.size == 1 %}{% assign day = '0' | append: day %}{% endif %}
+            {% assign date_iso = year | append: '-' | append: month | append: '-' | append: day %}
+
+            {% if highlighted == false and date_iso >= current_date %}
+              {% assign row_class = 'bg-yellow-50' %}
+              {% assign highlighted = true %}
+            {% else %}
+              {% assign row_class = '' %}
+            {% endif %}
+            <tr class="border-b {{ row_class }}">
+              <td class="px-4 py-2 text-sm text-gray-600">{{ date_iso | date: "%b %e" }}</td>
+              <td class="px-4 py-2">
+                {{ item.topic }}
+                {% if item.guest_lecturer %}
+                  {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
+                  <div class="text-sm text-gray-500">
+                    Guest Lecturer: {{ guest.name }}
+                  </div>
+                {% endif %}
+              </td>
+              <td class="px-4 py-2">
+                <div class="flex flex-col gap-2">
+                  {% for material in item.materials %}
+                    {% assign material_type = material.type | downcase %}
+                    {% case material_type %}
+                      {% when 'slides' %}
+                        {% assign icon = 'fa-file-powerpoint' %}
+                        {% assign color_class = 'bg-green-100 text-green-800' %}
+                      {% when 'book' %}
+                        {% assign icon = 'fa-book' %}
+                        {% assign color_class = 'bg-blue-100 text-blue-800' %}
+                      {% when 'video' %}
+                        {% assign icon = 'fa-video' %}
+                        {% assign color_class = 'bg-red-100 text-red-800' %}
+                      {% when 'code' %}
+                        {% assign icon = 'fa-code' %}
+                        {% assign color_class = 'bg-purple-100 text-purple-800' %}
+                      {% when 'link' %}
+                        {% assign icon = 'fa-link' %}
+                        {% assign color_class = 'bg-yellow-100 text-yellow-800' %}
+                      {% else %}
+                        {% assign icon = 'fa-file' %}
+                        {% assign color_class = 'bg-gray-100 text-gray-800' %}
+                    {% endcase %}
+                    <div class="flex items-center gap-4">
+                      <!-- <a href="{{ material.url }}" class="ml-2 text-sm text-black hover:text-blue-600">
+                        {{ material.title }}:
+                      </a>
+                      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
+                        <i class="fa {{ icon }} mr-1"></i>{{ material.type | capitalize }}
+                      </span> -->
+                      <span  class="text-sm text-black">
+                        {{ material.title }}:
+                      </span>
+                      <a href="{{ material.url }}" class="hover:text-blue-600 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
+                        {{ material.type | capitalize }}
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              </td>
+              <td class="px-4 py-2">
+                <div class="space-y-2">
+                  {% if item.assignments.release %}
+                    {% assign release = item.assignments.release %}
+                    <div class="flex items-center gap-2">
+                      <!-- <i class="fa-regular fa-bell w-4 h-4 text-green-600"></i> -->
+                      <span class="text-sm text-green-600 ">
+                        {{ release.title }} Released
+                      </span>
+                    </div>
+                  {% endif %}
+                  {% if item.assignments.deadline %}
+                    {% assign deadline = item.assignments.deadline %}
+                    <div class="flex items-center gap-2">
+                      <!-- <i class="fa-regular fa-calendar w-4 h-4 text-red-600"></i> -->
+                      <span class="text-sm text-red-600 ">
+                        {% assign dateParts = deadline.date | split: "/" %}
+                        {% assign formattedDate = dateParts[2] | append: "-" | append: dateParts[0] | append: "-" | append: dateParts[1] %}
+
+                        {{ deadline.title }} Due by {{ formattedDate | date: "%b %-d" }}
+                      </span>
+                    </div>
+                    {% if deadline.submit_link %}
+                      {% assign platform = deadline.submit_link.platform | downcase %}
+                      {% if platform == 'gradescope' %}
+                        {% assign icon = 'fa-check-circle' %}
+                        {% assign color_class = 'bg-blue-100 text-blue-800' %}
+                      {% else %}
+                        {% assign icon = 'fa-external-link-alt' %}
+                        {% assign color_class = 'bg-gray-100 text-gray-800' %}
+                      {% endif %}
+                      <!-- <a href="{{ deadline.submit_link.url }}" class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }} ml-6">
+                        <i class="fa {{ icon }} mr-1"></i>{{ deadline.submit_link.platform }}
+                      </a> -->
+                      <a href="{{ deadline.submit_link.url }}" class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
+                        <i class="fa {{ icon }} mr-1"></i>{{ deadline.submit_link.platform }}
+                      </a>
+                    
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

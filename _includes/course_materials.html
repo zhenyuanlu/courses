@@ -1,0 +1,22 @@
+<!-- _includes/course_materials.html -->
+
+<div class="mb-8">
+    <h2 class="text-2xl font-bold mb-4">Course Materials</h2>
+    <div class="bg-white rounded-xl p-6 shadow-sm">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for material in page.course_materials %}
+        <div class="flex items-center bg-gray-50 p-4 rounded-lg">
+          {% assign icon_class = material.icon | default: 'fa-file' %}
+          <i class="fas {{ icon_class }} text-2xl text-blue-500 mr-4"></i>
+          <div>
+            <a href="{{ material.url }}" class="text-lg font-medium text-gray-800 hover:text-blue-600">
+              {{ material.title }}
+            </a>
+            <p class="text-sm text-gray-600">{{ material.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  

@@ -1,9 +1,20 @@
-- name: "Zhenyuan Lu"
-  role: "Primary Instructor"
+- id: 'zhenyuan_lu'
+  name: "Zhenyuan Lu"
+  title: "AI/ML Adjunct Faculty"
   image: "/assets/images/z.png"
-  email: 
-  office: 
-  office_hours: ""
+  bio: "Teaching computer science and data science courses with a focus on algorithms, machine learning, and artificial intelligence applications."
+  office: 'boston'
+  office_hours: "wed 1pm to 2pm"
   links:
-    github: ""
-    linkedin: ""
+  - name: "Email"
+    url: "mailto:test@northeastern.edu"
+    icon: "fa-regular fa-envelope"
+  - name: "GitHub"
+    url: "test"
+    icon: "fa-brands fa-github"
+  - name: "LinkedIn"
+    url: "test"
+    icon: "fa-brands fa-linkedin-in"
+  - name: "Website"
+    url: "https://yourwebsite.com"
+    icon: "fa-solid fa-globe"
