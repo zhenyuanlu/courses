@@ -5,7 +5,7 @@
 
 - date: "12/8/2024"
   topic: "Course Introduction & Algorithm Analysis"
-  instructor:
+  instructor: 
   guest_lecturer:
   materials:
     - title: "Lecture Slides"
@@ -23,8 +23,8 @@
 
 - date: "12/10/2024"
   topic: "Divide and Conquer Strategies"
-  instructor:
-  guest_lecturer:
+  instructor: "zhenyuan_lu"
+  guest_lecturer: "jane_doe"
   materials:
     - title: "Lecture Slides"
       url: "/materials/lecture2.pdf"

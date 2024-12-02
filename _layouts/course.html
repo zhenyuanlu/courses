@@ -10,20 +10,20 @@ layout: default
 </head>
 <!-- Course Header -->
 <header class="bg-white border-b border-gray-200">
-  <div class="max-w-7xl mx-auto px-4 py-6">
-    <a href="{{ '/teachings/' }}" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8">
-      <i class="fas fa-chevron-left w-4 h-4 mr-1"></i>
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <a href="{{ '/teachings/' }}" class="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8 text-sm">
+      <i class="fas fa-chevron-left w-3 h-3 mr-1"></i>
       Back to Previous Page
     </a>
 
-    <div class="flex flex-col md:flex-row gap-8 items-start">
+    <div class="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
       <img
         src="{{ '/assets/images/courses/neu.png' | relative_url }}"
         alt="{{ course.title }}"
-        class="w-32 h-32 rounded-xl object-cover"
+        class="w-32 h-32 rounded-xl object-cover mx-auto md:mx-0"
       />
       <div class="flex-1">
-        <div class="flex items-baseline gap-3 mb-2">
+        <div class="flex flex-wrap justify-center md:justify-start items-baseline gap-3 mb-2">
           <span class="text-sm font-medium text-blue-600">{{ course.course_code }}</span>
           <span class="text-sm text-gray-600">{{ course.semester }}</span>
           <span class="px-2 py-0.5 rounded-full text-xs font-medium {% if course.status == 'active' %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-600{% endif %}">
@@ -32,7 +32,7 @@ layout: default
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ course.title }}</h1>
-        <div class="flex gap-2 mb-4">
+        <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
           {% for tech in course.technologies %}
           {% assign tech_clean = tech | strip | downcase %}
           {% assign color = site.data.tech_colors[tech_clean] | default: 'bg-gray-100 text-gray-800' %}
@@ -44,7 +44,7 @@ layout: default
         <p class="text-md text-gray-600">{{ course.description }}</p>
 
         <!-- Additional course details -->
-        <div class="flex flex-wrap gap-6 mt-4">
+        <div class="flex flex-wrap justify-center md:justify-start gap-6 mt-4">
           {% if course.schedule %}
           <div class="flex items-center gap-2 text-gray-600">
             <i class="fa-regular fa-clock w-4 h-4"></i>
@@ -67,12 +67,14 @@ layout: default
           <div class="flex items-center gap-2 text-gray-600">
             <i class="fa-brands fa-zoom w-4 h-4"></i>
             {{ course.zoom }}
+          </div>
           {% endif %}
         </div>
       </div>
     </div>
   </div>
 </header>
+
 
 <!-- Announcements -->
 {% if course.announcements %}
@@ -164,118 +166,9 @@ layout: default
 
   <!-- Course Schedule -->
   {% include course_platform.html %}
-
+ 
   <!-- Teaching Staff -->
-  <div class="mb-8">
-    <h2 class="text-2xl font-bold mb-4">Teaching Staff</h2>
-    <div class="space-y-6">
-      <!-- Instructor -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for instructor_id in course.instructors %}
-          {% assign instructor = site.data.instructors | where: 'id', instructor_id | first %}
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <div class="flex gap-4">
-              <img
-                src="{{ instructor.image | relative_url }}"
-                alt="{{ instructor.name }}"
-                class="w-24 h-24 rounded-full object-cover"
-              />
-              <div>
-                <h4 class="font-bold mb-1">{{ instructor.name }}</h4>
-                <p class="text-gray-600 mb-1">{{ instructor.title }}</p>
-                <div class="space-y-1 text-sm text-gray-600">
-                  {% if instructor.email %}
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-envelope w-4 h-4"></i>
-                    <a href="mailto:{{ instructor.email }}" class="hover:text-blue-600">
-                      {{ instructor.email }}
-                    </a>
-                  </div>
-                  {% endif %}
-                  {% if instructor.office_hours %}
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-clock w-4 h-4"></i>
-                    <span>Office Hours: {{ instructor.office_hours }}</span>
-                  </div>
-                  {% endif %}
-                  {% if instructor.office %}
-                  <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-map-marker-alt w-4 h-4"></i>
-                    <span>{{ instructor.office }}</span>
-                  </div>
-                  {% endif %}
-                </div>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div> 
-
-      <!-- Teaching Assistants -->
-      {% if course.teaching_assistants %}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for ta_id in course.teaching_assistants %}
-          {% assign ta = site.data.teaching_assistants | where: 'id', ta_id | first %}
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <div class="flex gap-4">
-              <img
-                src="{{ ta.image | relative_url }}"
-                alt="{{ ta.name }}"
-                class="w-26 h-26 rounded-full object-cover"
-              />
-              <div>
-                <h4 class="font-bold mb-1">{{ ta.name }}</h4>
-                <div class="text-sm text-gray-600">{{ ta.title }}</div>
-                {% if ta.section %}
-                <div class="text-sm text-gray-600">{{ ta.section }}</div>
-                {% endif %}
-                <div class="text-sm text-gray-600 mt-1">
-                  Office Hours: {{ ta.office_hours }}
-                </div>
-                {% if ta.email %}
-                <div class="flex items-center gap-2 mt-1">
-                  <i class="fa-regular fa-envelope w-4 h-4"></i>
-                  <a href="mailto:{{ ta.email }}" class="hover:text-blue-600">
-                    {{ ta.email }}
-                  </a>
-                </div>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div> <!-- Close grid container after the loop -->
-      {% endif %}
-
-      <!-- Guest Lecturers -->
-      {% if course.guest_lecturers %}
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for guest_id in course.guest_lecturers %}
-          {% assign guest = site.data.guest_lecturers | where: 'id', guest_id | first %}
-          <div class="bg-white rounded-xl p-6 shadow-sm">
-            <div class="flex gap-4">
-              <img
-                src="{{ guest.image | relative_url }}"
-                alt="{{ guest.name }}"
-                class="w-26 h-26 rounded-full object-cover"
-              />
-              <div>
-                <h4 class="font-bold mb-1">{{ guest.name }}</h4>
-                <div class="text-gray-600 mb-1">{{ guest.title }}</div>
-                <div class="text-sm">
-                  <div class="font-medium">{{ guest.topic }}</div>
-                  <div class="text-gray-600">{{ guest.date }}</div>
-                </div>
-                <p class="text-sm text-gray-600 mt-2">{{ guest.bio }}</p>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </div> 
-      {% endif %}
-    </div>
-  </div>
-
+  {% include teaching_staff_card.html %}
 
   <!-- Course Schedule -->
   {% include course_schedule.html schedule_file=page.schedule_file %}

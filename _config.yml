@@ -1,7 +1,7 @@
-title: "My Course Site"
-description: "A site for course listings and details."
+title: "Zhenyuan Lu's Course Home Page"
+description: "This is the main course page for holding all the course sites that Zhenyuan Lu is teaching."
 baseurl: "/teachings"
-url: "https://zhenyuanlu.com/teachings"
+url: "https://zhenyuanlu.com"
 
 markdown: kramdown
 kramdown:
@@ -32,4 +32,4 @@ exclude:
 collections:
   courses:
     output: true
-    permalink: /teachings/:slug/
+    permalink: /:slug/

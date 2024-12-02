@@ -1,7 +1,7 @@
 - id: 'john_doe'
   name: "John Doe"
   title: "Teaching Assistant"
-  image: "/assets/images/husky.jpg"
+  image: "/assets/images/staff/husky.jpg"
   bio: "Graduate student specializing in machine learning."
   office: 'Room 102, University Building'
   office_hours: "Wednesday 3-5 PM"

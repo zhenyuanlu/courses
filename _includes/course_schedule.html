@@ -46,14 +46,57 @@
             <tr class="border-b {{ row_class }}">
               <td class="px-4 py-2 text-sm text-gray-600">{{ date_iso | date: "%b %e" }}</td>
               <td class="px-4 py-2">
-                {{ item.topic }}
+
+                <!-- Main Topic -->
+                <p class="font-semibold text-gray-800">{{ item.topic }}</p>
+                
+                 <!-- Instructor -->
+                 {% if item.instructor %}
+                 {% assign instructor = site.data.instructors | where: 'id', item.instructor | first %}
+                 <div class="text-sm text-gray-500">
+                   <span>Instructor: {{ instructor.name }}</span>
+                 </div>
+               {% endif %}
+
+               <!-- Guest Lecturer Topic -->
+               {% if item.guest_lecturer %}
+               {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
+               {% if guest.topic %}
+                 <p class="text-sm text-gray-600 mt-1">
+                   <i class="fa-regular fa-lightbulb w-4 h-4"></i> Guest Topic: {{ guest.topic }}
+                 </p>
+               {% endif %}
+             {% endif %}
+
+                <!-- Guest Lecturer -->
                 {% if item.guest_lecturer %}
-                  {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
-                  <div class="text-sm text-gray-500">
-                    Guest Lecturer: {{ guest.name }}
+                  <div class="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                    <span>Guest: {{ guest.name }}</span>
+                    {% if guest.company_logo %}
+                    <img
+                    src="{{ staff.company_logo.url }}"
+                    alt="{{ staff.company }}"
+                    class="inline-block rounded-full
+                      {% if staff.company_logo.width and staff.company_logo.width != '' and staff.company_logo.height and staff.company_logo.height != '' %}
+                      w-{{ staff.company_logo.width }} h-{{ staff.company_logo.height }}
+                      {% elsif staff.company_logo.width and staff.company_logo.width != '' %}
+                      w-{{ staff.company_logo.width }} h-auto
+                      {% elsif staff.company_logo.height and staff.company_logo.height != '' %}
+                      h-{{ staff.company_logo.height }} w-auto
+                      {% else %}
+                      w-6 h-6
+                      {% endif %}"
+                  />
+                    {% endif %}
                   </div>
                 {% endif %}
               </td>
+
+                
+              </td>
+
+
+              <!-- Materials -->
               <td class="px-4 py-2">
                 <div class="flex flex-col gap-2">
                   {% for material in item.materials %}

@@ -1,7 +1,12 @@
 - id: 'jane_doe'
   name: "Jane Doe"
-  title: "Data Scientist at TechCorp"
-  image: "/assets/images/husky.jpg"
+  title: "Data Scientist"
+  company: "TechCorp"
+  company_logo: 
+      url: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png"
+      width:  10   # Tailwind size (e.g., w-6 translates to width: 1.5rem)
+      height:    # Tailwind size (e.g., h-6 translates to height: 1.5rem)
+  image: "/assets/images/staff/husky.jpg"
   bio: "Expert in big data analytics and AI applications."
   date: "Wed 03/15"
   topic: "Real-world Applications of Graph Algorithms"
