@@ -1,14 +1,32 @@
 module.exports = {
   content: [
-    './_includes/**/*.html',
-    './_layouts/**/*.html',
-    './_courses/**/*.md',
-    './*.html',
-    './*.md',
+    './_includes/**/*.{html,md}',
+    './_layouts/**/*.{html,md}',
+    './_courses/**/*.{html,md}',
+    './_data/**/*.{yml,json}',
+    './*.{html,md}',
     './index.md',
   ],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              '@apply text-4xl font-bold mb-6': {},
+            },
+            h2: {
+              '@apply text-3xl font-bold mb-4': {},
+            },
+            h3: {
+              '@apply text-2xl font-bold mb-4': {},
+            },
+            h4: {
+              '@apply text-xl font-bold mb-3': {},
+            },
+          },
+        },
+      },
       spacing: {
       '0.5': '0.125rem',
       '1.5': '0.375rem',
@@ -49,5 +67,8 @@ module.exports = {
     'bg-teal-100', 'text-teal-800',   // C++
     'bg-gray-100', 'text-gray-800',   // Default tech tag
     'bg-red-100', 'text-red-800',     // Default status
+    // Spacing classes
+    'mb-2', 'mb-4', 'mb-6', 'mb-8', 'mb-12',
+    'mt-2', 'mt-4', 'mt-6', 'mt-8', 'mt-12',
   ],
 };

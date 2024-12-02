@@ -6,6 +6,7 @@ url: "https://zhenyuanlu.com/teachings"
 markdown: kramdown
 kramdown:
   parse_block_html: true
+  syntax_highlighter: rouge
 
 
 author:
@@ -16,8 +17,10 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-paginate
   
+include:
+  - _courses
+
 
 exclude:
   - node_modules
