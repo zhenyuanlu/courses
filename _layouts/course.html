@@ -26,12 +26,14 @@ layout: default
         <div class="flex flex-wrap justify-center md:justify-start items-baseline gap-3 mb-2">
           <span class="text-sm font-medium text-blue-600">{{ course.course_code }}</span>
           <span class="text-sm text-gray-600">{{ course.semester }}</span>
+          <span class="text-sm text-gray-600">{{ course.university }} • {{ course.campus }}</span>
           <span class="px-2 py-0.5 rounded-full text-xs font-medium {% if course.status == 'active' %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-600{% endif %}">
             {{ course.status | capitalize }}
           </span>
         </div>
 
         <h1 class="text-3xl md:text-4xl font-bold mb-4">{{ course.title }}</h1>
+        
         <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
           {% for tech in course.technologies %}
           {% assign tech_clean = tech | strip | downcase %}
@@ -54,9 +56,18 @@ layout: default
           {% if course.location %}
           <div class="flex items-center gap-2 text-gray-600">
             <i class="fa-solid fa-map-marker-alt w-4 h-4"></i>
-            {{ course.location }}
+            {{ course.location}}, {{ course.campus }}
           </div>
           {% endif %}
+
+          <!-- Credits Information -->
+          {% if course.credits %}
+          <div class="flex items-center gap-2 text-gray-600">
+            <i class="fa-solid fa-book w-4 h-4"></i>
+            {{ course.credits }} Credits
+          </div>
+          {% endif %}
+
           {% if course.enrollment_status %}
           <div class="flex items-center gap-2 text-gray-600">
             <i class="fa-solid fa-users w-4 h-4"></i>
@@ -91,6 +102,7 @@ layout: default
   
   <!-- Teaching Staff -->
   {% include teaching_staff_card.html %}
+
 
   <!-- Course Materials -->
   {% include course_materials.html %}

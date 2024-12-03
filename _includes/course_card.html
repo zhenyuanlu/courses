@@ -8,6 +8,8 @@
   data-level="{{ course.level }}"
   data-semester="{{ course.semester }}"
   data-status="{{ course.status }}"
+  data-university="{{ course.university }}" 
+  data-campus="{{ course.campus }}"         
 >
   <!-- Status Badge at Top Right -->
   <div class="absolute top-4 right-4">
@@ -30,6 +32,13 @@
         </div>
       </div>
 
+      <!-- University and Campus -->
+      <div class="flex items-center gap-1 mb-2 text-sm">
+        <span class="font-medium text-gray-700">{{ course.university }}</span>
+        <span class="text-gray-400">•</span>
+        <span class="text-gray-600">{{ course.campus }}</span>
+      </div>
+      
       <!-- Course Title and Description -->
       <h3 class="text-xl font-bold mb-2">{{ course.title }}</h3>
       <p class="text-gray-600 text-sm">{{ course.description }}</p>
@@ -38,11 +47,16 @@
     <!-- Semester and Technologies -->
     <div class="flex items-center justify-between text-sm">
       <div class="flex items-center gap-3 text-gray-600">
-        {% if course.season == 'spring' %}
+        <!-- Extract Season from Semester -->
+        {% assign semester_parts = course.semester | split: " " %}
+        {% assign season = semester_parts[0] | downcase %}
+
+        <!-- Display Season Icon -->
+        {% if season == 'spring' %}
           <i class="fa-solid fa-snowflake text-blue-500"></i>
-        {% elsif course.season == 'summer' %}
+        {% elsif season == 'summer' %}
           <i class="fa-solid fa-sun text-yellow-500"></i>
-        {% elsif course.season == 'fall' %}
+        {% elsif season == 'fall' %}
           <i class="fa-solid fa-leaf text-orange-500"></i>
         {% endif %}
         {{ course.semester }}

@@ -20,6 +20,15 @@ layout: default
     </div>
 
     <div class="flex flex-wrap gap-4">
+      <!-- Course Code Filter -->
+      <select id="courseCodeFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+        {% assign course_codes = site.courses | map: 'course_code' | uniq | sort %}
+        <option value="all">All Courses</option>
+        {% for code in course_codes %}
+          <option value="{{ code }}">{{ code }}</option>
+        {% endfor %}
+      </select>
+
       <!-- Level Filter -->
       <select id="levelFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
         {% assign levels = site.courses | map: 'level' | uniq | sort %}
@@ -46,6 +55,25 @@ layout: default
           <option value="{{ status }}">{{ status | capitalize }}</option>
         {% endfor %}
       </select>
+      
+      <!-- Campus Filter - Add this -->
+      <select id="campusFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+        {% assign campuses = site.courses | map: 'campus' | uniq | sort %}
+        <option value="all">All Campuses</option>
+        {% for campus in campuses %}
+          <option value="{{ campus }}">{{ campus }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- University Filter - Add this -->
+      <select id="universityFilter" onchange="filterCourses()" class="px-4 py-2 rounded-lg border bg-white">
+        {% assign universities = site.courses | map: 'university' | uniq | sort %}
+        <option value="all">All Universities</option>
+        {% for university in universities %}
+          <option value="{{ university }}">{{ university }}</option>
+        {% endfor %}
+      </select>
+
     </div>
   </div>
 
