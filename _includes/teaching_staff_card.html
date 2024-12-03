@@ -11,7 +11,7 @@
           {% assign staff = site.data.guest_lecturers | where: 'id', staff_id | first %}
         {% endif %}
   
-        <div class="bg-white rounded-lg shadow-sm p-4 flex gap-4 items-start">
+        <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
           <!-- Staff Image -->
           <img
             src="{{ staff.image | relative_url }}"
@@ -42,9 +42,9 @@
                   <span>at <span class="font-medium">{{ staff.company }}</span></span>
                   {% if staff.company_logo.url %}
                     <img
-                      src="{{ staff.company_logo.url }}"
-                      alt="{{ staff.company }}"
-                      class="inline-block rounded-full
+                    src="{{ staff.company_logo.url }}"
+                    alt="{{ staff.company }}"
+                    class="inline-block rounded-full
                         {% if staff.company_logo.width and staff.company_logo.width != '' and staff.company_logo.height and staff.company_logo.height != '' %}
                         w-{{ staff.company_logo.width }} h-{{ staff.company_logo.height }}
                         {% elsif staff.company_logo.width and staff.company_logo.width != '' %}

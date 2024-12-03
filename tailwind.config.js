@@ -9,6 +9,28 @@ module.exports = {
   ],
   theme: {
     extend: {
+      width: {
+        '2': '0.5rem',
+        '4': '0.75rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '16': '4rem',
+        '20': '5rem',
+        '24': '6rem',
+      },
+      height: {
+        '2': '0.5rem',
+        '4': '0.75rem',
+        '6': '1.5rem',
+        '8': '2rem',
+        '10': '2.5rem',
+        '12': '3rem',
+        '16': '4rem',
+        '20': '5rem',
+        '24': '6rem',
+      },
       typography: {
         DEFAULT: {
           css: {
@@ -70,5 +92,16 @@ module.exports = {
     // Spacing classes
     'mb-2', 'mb-4', 'mb-6', 'mb-8', 'mb-12',
     'mt-2', 'mt-4', 'mt-6', 'mt-8', 'mt-12',
+    // Width classes
+    'w-2', 'w-4', 'w-6', 'w-8', 'w-10', 'w-12', 'w-16', 'w-20', 'w-24',
+    // Height classes
+    'h-2', 'h-4', 'h-6', 'h-8', 'h-10', 'h-12', 'h-16', 'h-20', 'h-24',
+    // Typography classes
+    'text-4xl', 'text-3xl', 'text-2xl', 'text-xl', 'font-bold', 'mb-6', 'mb-4', 'mb-3',
+    // Spacing classes
+    'mb-6', 'mb-4', 'mb-3', 'mb-2', 'mb-1', 'mb-0',
+    'mt-6', 'mt-4', 'mt-3', 'mt-2', 'mt-1', 'mt-0',
+    'ml-6', 'ml-4', 'ml-3', 'ml-2', 'ml-1', 'ml-0',
+    'mr-6', 'mr-4', 'mr-3', 'mr-2', 'mr-1', 'mr-0',
   ],
 };

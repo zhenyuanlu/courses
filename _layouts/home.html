@@ -51,57 +51,18 @@ layout: default
 
   <!-- Course Grid -->
   <div id="courseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {% for course in site.courses %}
+    {% assign active_courses = site.courses | where: 'status', 'active' %}
+    {% assign past_courses = site.courses | where: 'status', 'past' %}
+    
+    <!-- Render Active Courses -->
+    {% for course in active_courses %}
+      {% include course_card.html course=course %}
+    {% endfor %}
+
+    <!-- Render Past Courses -->
+    {% for course in past_courses %}
       {% include course_card.html course=course %}
     {% endfor %}
   </div>
 
-  <!-- Empty State -->
-  <div id="noCoursesMessage" class="text-center py-12 hidden">
-    <p class="text-gray-600">
-      No courses found matching your criteria. Try adjusting your filters.
-    </p>
-  </div>
-</main>
-
-<script>
-  function filterCourses() {
-    var searchInput = document.getElementById('searchInput').value.toLowerCase();
-    var levelFilter = document.getElementById('levelFilter').value;
-    var semesterFilter = document.getElementById('semesterFilter').value;
-    var statusFilter = document.getElementById('statusFilter').value;
-    var courses = document.querySelectorAll('.course-card');
-    var noCoursesMessage = document.getElementById('noCoursesMessage');
-    var courseGrid = document.getElementById('courseGrid');
-    var visibleCount = 0;
-
-    courses.forEach(function(course) {
-      var title = course.getAttribute('data-title').toLowerCase();
-      var code = course.getAttribute('data-code').toLowerCase();
-      var description = course.getAttribute('data-description').toLowerCase();
-      var level = course.getAttribute('data-level');
-      var semester = course.getAttribute('data-semester');
-      var status = course.getAttribute('data-status');
-
-      var matchesSearch = title.includes(searchInput) || code.includes(searchInput) || description.includes(searchInput);
-      var matchesLevel = levelFilter === 'all' || level === levelFilter;
-      var matchesSemester = semesterFilter === 'all' || semester === semesterFilter;
-      var matchesStatus = statusFilter === 'all' || status === statusFilter;
-
-      if (matchesSearch && matchesLevel && matchesSemester && matchesStatus) {
-        course.classList.remove('hidden');
-        visibleCount++;
-      } else {
-        course.classList.add('hidden');
-      }
-    });
-
-    if (visibleCount === 0) {
-      noCoursesMessage.classList.remove('hidden');
-      courseGrid.classList.add('hidden');
-    } else {
-      noCoursesMessage.classList.add('hidden');
-      courseGrid.classList.remove('hidden');
-    }
-  }
-</script>
+<script src="{{ '/assets/js/filter_courses.js' | relative_url }}"></script>

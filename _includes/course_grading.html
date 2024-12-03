@@ -1,0 +1,44 @@
+<!-- _includes/course_grading.html -->
+<div class="mb-8">
+  <h3 class="text-2xl font-bold mb-4">{{ include.title | default: "Grading" }}</h3>
+  <div class="max-w-md">
+    <div class="bg-white rounded-xl p-6 shadow-sm">
+      <table class="min-w-full border-separate border-spacing-0">
+        <thead>
+          <tr>
+            <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-500 border-b border-gray-200">Component</th>
+            <th scope="col" class="px-4 py-2 text-left text-sm font-medium text-gray-500 border-b border-gray-200">Percentage</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          {% assign grading_data = include.grading %}
+          {% for item in grading_data %}
+            <tr>
+              <td class="px-4 py-2 text-sm whitespace-nowrap {% if item.parent %}pl-8 text-gray-600{% else %}font-medium{% endif %}">
+                {{ item.name }}
+              </td>
+              <td class="px-4 py-2 text-sm text-gray-600 whitespace-nowrap">
+                {{ item.percentage }}%
+              </td>
+            </tr>
+            {% if item.components %}
+              {% for subitem in item.components %}
+                <tr>
+                  <td class="px-4 py-2 text-sm whitespace-nowrap pl-8 text-gray-600">
+                    {{ subitem.name }}
+                  </td>
+                  <td class="px-4 py-2 text-sm text-gray-600 whitespace-nowrap">
+                    {{ subitem.percentage }}%
+                  </td>
+                </tr>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+      {% if include.note %}
+        <p class="text-sm text-gray-500 mt-4 italic">{{ include.note }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ url: "https://zhenyuanlu.com"
 markdown: kramdown
 kramdown:
   parse_block_html: true
+  parse_span_html: true
   syntax_highlighter: rouge
 
 

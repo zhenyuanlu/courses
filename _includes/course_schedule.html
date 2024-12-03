@@ -27,22 +27,35 @@
             </tr>
           {% else %}
             <!-- Session Row -->
-            {% assign date_parts = item.date | split: '/' %}
+            {% assign date_parts = item.date | replace: '-', '/' | split: '/' %}
             {% assign month = date_parts[0] | strip %}
             {% assign day = date_parts[1] | strip %}
             {% assign year = date_parts[2] | strip %}
-            
-            
-            {% if month.size == 1 %}{% assign month = '0' | append: month %}{% endif %}
-            {% if day.size == 1 %}{% assign day = '0' | append: day %}{% endif %}
+
+            <!-- Normalize year: If it's two digits, prepend '20' -->
+            {% if year.size == 2 %}
+              {% assign year = '20' | append: year %}
+            {% endif %}
+
+            <!-- Ensure month and day are two digits -->
+            {% if month.size == 1 %}
+              {% assign month = '0' | append: month %}
+            {% endif %}
+            {% if day.size == 1 %}
+              {% assign day = '0' | append: day %}
+            {% endif %}
+
+            <!-- Construct ISO format date -->
             {% assign date_iso = year | append: '-' | append: month | append: '-' | append: day %}
 
+            <!-- Highlight the row if the date is the next upcoming one -->
             {% if highlighted == false and date_iso >= current_date %}
               {% assign row_class = 'bg-yellow-50' %}
               {% assign highlighted = true %}
             {% else %}
               {% assign row_class = '' %}
             {% endif %}
+
             <tr class="border-b {{ row_class }}">
               <td class="px-4 py-2 text-sm text-gray-600">{{ date_iso | date: "%b %e" }}</td>
               <td class="px-4 py-2">
