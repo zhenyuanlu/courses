@@ -14,3 +14,60 @@
     - name: "LinkedIn"
       url: "test"
       icon: "fa-brands fa-linkedin-in"
+
+
+- id: 'xiaozang_li_fa24_van'
+  name: "Xiaozang Li"
+  title: "Cloud Architect" 
+  company: "Google"
+  company_logo:
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png?20230822192911"
+    width: 15
+    height:
+  image: "/assets/images/staff/lucian.jpg"
+  bio: "Google Cloud Customer Engineer with 10+ years experience, former Amazon engineer. Expertise in cloud architecture."
+  date: "TBD"
+  topic: "Cloud Architecture and Infrastructure"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/xiaozangli/"
+      icon: "fa-brands fa-linkedin-in"
+
+- id: 'jinhui_zhao_fa24_van'
+  name: "Jinhui Zhao" 
+  title: "Software Engineer"
+  company: "Tech Lead"
+  image: "/assets/images/staff/hui2.jpg"
+  bio: "Technical Lead and Full Stack Engineer with 10+ years experience, formerly at TikTok and Amazon."
+  date: "TBD"
+  topic: "Full Stack Development"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/jinhui-zhao-7ab2a186/"
+      icon: "fa-brands fa-linkedin-in"
+
+- id: 'shihan_tian_fa24_van'
+  name: "Shihan Tian"
+  title: "Software Engineer"
+  company: "Meta"
+  image: "/assets/images/staff/tian.jpg"
+  bio: "Meta Software Engineer with 7+ years experience, former Amazon engineer. Expertise in full stack development."
+  date: "TBD"
+  topic: "Software Engineering at Meta"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/shihan-tian-evesmilenice/"
+      icon: "fa-brands fa-linkedin-in"
+
+- id: 'zhuohan_yu_fa24_van'
+  name: "Zhuohan Yu"
+  title: "Senior Data Scientist"
+  company: "Current Company" 
+  image: "/assets/images/staff/zhuohan.jpg"
+  bio: "Senior Data Scientist with 7+ years experience in data science and machine learning."
+  date: "TBD" 
+  topic: "Data Science and Machine Learning"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/zhuohan-yu-a689488b/"
+      icon: "fa-brands fa-linkedin-in"

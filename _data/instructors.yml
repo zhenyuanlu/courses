@@ -18,3 +18,24 @@
   - name: "Website"
     url: "https://yourwebsite.com"
     icon: "fa-solid fa-globe"
+
+- id: 'zhenyuan_lu_fa24_van'
+  name: "Zhenyuan Lu"
+  title: "Instructor"
+  image: "/assets/images/staff/z.png"
+  bio: "I am a deep learning scientist and adjunct factulty at Northeastern University. I received my PhD from Northeastern University focusing on AI/ML."
+  office: 'Boston, MA, and Zoom'
+  office_hours: "Thursday 3:30-5:00pm PT"
+  links:
+  - name: "Email"
+    url: "mailto:test@northeastern.edu"
+    icon: "fa-regular fa-envelope"
+  - name: "GitHub"
+    url: "test"
+    icon: "fa-brands fa-github"
+  - name: "LinkedIn"
+    url: "test"
+    icon: "fa-brands fa-linkedin-in"
+  - name: "Website"
+    url: "https://yourwebsite.com"
+    icon: "fa-solid fa-globe"
