@@ -1,5 +1,4 @@
 <!-- _includes/course_schedule.html -->
-
 {% assign schedule_data = site.data.schedules[page.schedule_file] %}
 {% assign current_date = 'now' | date: '%Y-%m-%d' %}
 {% assign highlighted = false %}
@@ -7,10 +6,10 @@
 <div class="mb-8">
   <h3 class="text-2xl font-bold mb-4">Course Schedule</h3>
   <div class="bg-white rounded-xl shadow-sm overflow-x-auto">
-    <table class="w-full max-w-full">
+    <table class="w-full">
       <thead>
         <tr class="border-b">
-          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Date</th>
+          <th class="px-4 py-3 text-left text-sm font-medium text-gray-500 min-w-[90px] w-[90px]">Date</th>
           <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Topic</th>
           <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Materials</th>
           <th class="px-4 py-3 text-left text-sm font-medium text-gray-500">Assignments</th>
@@ -20,178 +19,177 @@
         {% for item in schedule_data %}
           {% if item.module %}
             <!-- Module Row -->
-            <tr class="border-b">
-              <td colspan="4" class="bg-{{ item.color }}-100 text-{{ item.color }}-800 px-4 py-2 font-semibold">
+            <tr class="border-b hover:bg-{{ item.color | default: 'gray' }}-100/80 transition-colors duration-150">
+              <td colspan="4" class="bg-{{ item.color | default: 'gray' }}-100 text-{{ item.color | default: 'gray' }}-800 px-4 py-2 font-semibold">
                 {{ item.module }}
               </td>
             </tr>
           {% else %}
             <!-- Session Row -->
-            {% assign date_parts = item.date | replace: '-', '/' | split: '/' %}
-            {% assign month = date_parts[0] | strip %}
-            {% assign day = date_parts[1] | strip %}
-            {% assign year = date_parts[2] | strip %}
+            {% if item.date %}
+              {% assign date_parts = item.date | replace: '-', '/' | split: '/' %}
+              {% assign month = date_parts[0] | strip %}
+              {% assign day = date_parts[1] | strip %}
+              {% assign year = date_parts[2] | strip %}
 
-            <!-- Normalize year: If it's two digits, prepend '20' -->
-            {% if year.size == 2 %}
-              {% assign year = '20' | append: year %}
+              {% if year.size == 2 %}{% assign year = '20' | append: year %}{% endif %}
+              {% if month.size == 1 %}{% assign month = '0' | append: month %}{% endif %}
+              {% if day.size == 1 %}{% assign day = '0' | append: day %}{% endif %}
+
+              {% assign date_iso = year | append: '-' | append: month | append: '-' | append: day %}
+              
+              {% if highlighted == false and date_iso >= current_date %}
+                {% assign row_class = 'bg-yellow-50' %}
+                {% assign highlighted = true %}
+              {% else %}
+                {% assign row_class = '' %}
+              {% endif %}
             {% endif %}
 
-            <!-- Ensure month and day are two digits -->
-            {% if month.size == 1 %}
-              {% assign month = '0' | append: month %}
-            {% endif %}
-            {% if day.size == 1 %}
-              {% assign day = '0' | append: day %}
-            {% endif %}
-
-            <!-- Construct ISO format date -->
-            {% assign date_iso = year | append: '-' | append: month | append: '-' | append: day %}
-
-            <!-- Highlight the row if the date is the next upcoming one -->
-            {% if highlighted == false and date_iso >= current_date %}
-              {% assign row_class = 'bg-yellow-50' %}
-              {% assign highlighted = true %}
-            {% else %}
-              {% assign row_class = '' %}
-            {% endif %}
-
-            <tr class="border-b {{ row_class }}">
-              <td class="px-4 py-2 text-sm text-gray-600">{{ date_iso | date: "%b %e" }}</td>
+            <tr class="border-b {{ row_class }} hover:bg-gray-50/70 transition-colors duration-150">
+              <td class="px-4 py-2 text-sm text-gray-600 min-w-[90px] w-[90px] whitespace-nowrap">
+                {% if item.date %}
+                  {{ date_iso | date: "%b %e" }}
+                {% endif %}
+              </td>
+              
               <td class="px-4 py-2">
-
-                <!-- Main Topic -->
-                <p class="font-semibold text-gray-800">{{ item.topic }}</p>
+                {% if item.topic %}
+                  <p class="font-semibold text-gray-800">{{ item.topic }}</p>
+                {% endif %}
                 
-                 <!-- Instructor -->
-                 {% if item.instructor %}
-                 {% assign instructor = site.data.instructors | where: 'id', item.instructor | first %}
-                 <div class="text-sm text-gray-500">
-                   <span>Instructor: {{ instructor.name }}</span>
-                 </div>
-               {% endif %}
+                {% if item.instructor %}
+                  {% assign instructor = site.data.instructors | where: 'id', item.instructor | first %}
+                  {% if instructor %}
+                    <div class="text-sm text-gray-500">
+                      <span>Instructor: {{ instructor.name }}</span>
+                    </div>
+                  {% endif %}
+                {% endif %}
 
-               <!-- Guest Lecturer Topic -->
-               {% if item.guest_lecturer %}
-               {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
-               {% if guest.topic %}
-                 <p class="text-sm text-gray-600 mt-1">
-                   <i class="fa-regular fa-lightbulb w-4 h-4"></i> Guest Topic: {{ guest.topic }}
-                 </p>
-               {% endif %}
-             {% endif %}
-
-                <!-- Guest Lecturer -->
                 {% if item.guest_lecturer %}
-                  <div class="flex items-center gap-2 text-sm text-gray-600 mt-1">
-                    <span>Guest: {{ guest.name }}</span>
-                    {% if guest.company_logo %}
-                    <img
-                    src="{{ staff.company_logo.url }}"
-                    alt="{{ staff.company }}"
-                    class="inline-block rounded-full
-                      {% if staff.company_logo.width and staff.company_logo.width != '' and staff.company_logo.height and staff.company_logo.height != '' %}
-                      w-{{ staff.company_logo.width }} h-{{ staff.company_logo.height }}
-                      {% elsif staff.company_logo.width and staff.company_logo.width != '' %}
-                      w-{{ staff.company_logo.width }} h-auto
-                      {% elsif staff.company_logo.height and staff.company_logo.height != '' %}
-                      h-{{ staff.company_logo.height }} w-auto
-                      {% else %}
-                      w-6 h-6
-                      {% endif %}"
-                  />
+                  {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
+                  {% if guest %}
+                    <!-- For Guest Section (update this part) -->
+                    {% if guest.topic %}
+                    <div class="mt-2 pl-3 border-l-2 border-purple-300">
+                      <p class="text-sm text-gray-600">
+                        <i class="fa-regular fa-lightbulb text-purple-400"></i>
+                        Guest Topic: {{ guest.topic }}
+                      </p>
+                      <div class="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                        <span>Guest: {{ guest.name }}</span>
+                        {% if guest.company_logo %}
+                          <img src="{{ guest.company_logo.url }}" alt="{{ guest.company }}"
+                            class="inline-block rounded-full {% if guest.company_logo.width %}w-{{ guest.company_logo.width }}{% endif %} {% if guest.company_logo.height %}h-{{ guest.company_logo.height }}{% endif %}" />
+                        {% endif %}
+                      </div>
+                    </div>
                     {% endif %}
-                  </div>
+                    </div>
+                  {% endif %}
                 {% endif %}
               </td>
 
-                
+              <td class="px-4 py-2">
+                {% if item.materials %}
+                  <ul class="space-y-2.5">
+                    {% for material in item.materials %}
+                      <li class="flex items-baseline gap-2">
+                        <span class="inline-block w-1.5 h-1.5 rounded-sm bg-gray-400 mt-1.5 flex-shrink-0"></span>
+                        <div class="flex-1">
+                          <div class="inline-flex items-center gap-1.5 flex-wrap">
+                            <span class="text-sm text-gray-800">{{ material.title }}</span>
+                            
+                            {% if material.url %}
+                              {% assign material_type = material.type | downcase %}
+                              {% case material_type %}
+                                {% when 'slides' %}{% assign color_class = 'bg-green-100 text-green-800' %}
+                                {% when 'book' %}{% assign color_class = 'bg-blue-100 text-blue-800' %}
+                                {% when 'video' %}{% assign color_class = 'bg-red-100 text-red-800' %}
+                                {% when 'code' %}{% assign color_class = 'bg-orange-100 text-orange-800' %}
+                                {% when 'link' %}{% assign color_class = 'bg-purple-100 text-purple-800' %}
+                                {% when 'paper' %}{% assign color_class = 'bg-indigo-100 text-indigo-800' %}
+                                {% when 'github' %}{% assign color_class = 'bg-gray-100 text-gray-800' %}
+                                {% when 'interactive' %}{% assign color_class = 'bg-pink-100 text-pink-800' %}
+                                {% when 'guide' %}{% assign color_class = 'bg-yellow-100 text-yellow-800' %}
+                                {% else %}{% assign color_class = 'bg-gray-100 text-gray-800' %}
+                              {% endcase %}
+                              
+                              <a href="{{ material.url }}" class="lowercase inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }} whitespace-nowrap">
+                                {{ material.type | capitalize }}
+                              </a>
+                            {% endif %}
+                          </div>
+                          
+                          {% if material.content %}
+                            <ul class="mt-1.5 space-y-1 pl-4 border-l-2 border-gray-200">
+                              {% for content_item in material.content %}
+                                <li class="text-sm text-gray-500">{{ content_item }}</li>
+                              {% endfor %}
+                            </ul>
+                          {% endif %}
+                        </div>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </td>
 
-
-              <!-- Materials -->
               <td class="px-4 py-2">
-                <div class="flex flex-col gap-2">
-                  {% for material in item.materials %}
-                    {% assign material_type = material.type | downcase %}
-                    {% case material_type %}
-                      {% when 'slides' %}
-                        {% assign icon = 'fa-file-powerpoint' %}
-                        {% assign color_class = 'bg-green-100 text-green-800' %}
-                      {% when 'book' %}
-                        {% assign icon = 'fa-book' %}
-                        {% assign color_class = 'bg-blue-100 text-blue-800' %}
-                      {% when 'video' %}
-                        {% assign icon = 'fa-video' %}
-                        {% assign color_class = 'bg-red-100 text-red-800' %}
-                      {% when 'code' %}
-                        {% assign icon = 'fa-code' %}
-                        {% assign color_class = 'bg-purple-100 text-purple-800' %}
-                      {% when 'link' %}
-                        {% assign icon = 'fa-link' %}
-                        {% assign color_class = 'bg-yellow-100 text-yellow-800' %}
-                      {% else %}
-                        {% assign icon = 'fa-file' %}
-                        {% assign color_class = 'bg-gray-100 text-gray-800' %}
-                    {% endcase %}
-                    <div class="flex items-center gap-4">
-                      <!-- <a href="{{ material.url }}" class="ml-2 text-sm text-black hover:text-blue-600">
-                        {{ material.title }}:
-                      </a>
-                      <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
-                        <i class="fa {{ icon }} mr-1"></i>{{ material.type | capitalize }}
-                      </span> -->
-                      <span  class="text-sm text-black">
-                        {{ material.title }}:
-                      </span>
-                      <a href="{{ material.url }}" class="hover:text-blue-600 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
-                        {{ material.type | capitalize }}
-                      </a>
-                    </div>
+                {% if item.assignments.deadline %}
+                <ul class="space-y-3">
+                  {% for deadline in item.assignments.deadline %}
+                    <li>
+                      <div class="flex flex-col gap-1.5">
+                        <div class="flex items-center gap-2">
+                          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                          <span class="text-sm font-medium text-gray-900">
+                            {{ deadline.title }}
+                          </span>
+                        </div>
+                        
+                        <div class="text-sm text-red-600 font-medium pl-4">
+                          Due {% if deadline.date %}
+                            {% assign dateParts = deadline.date | split: "/" %}
+                            {% if dateParts.size == 3 %}
+                              {% assign formattedDate = dateParts[2] | append: "-" | append: dateParts[0] | append: "-" | append: dateParts[1] %}
+                              {{ formattedDate | date: "%b %-d" }}
+                            {% else %}
+                              {{ deadline.date }}
+                            {% endif %}
+                          {% endif %}
+                          {% if deadline.time %}at {{ deadline.time }}{% endif %}
+                        </div>
+                        
+                        {% if deadline.submit_link %}
+                          {% assign platform = deadline.submit_link.platform | downcase %}
+                          {% case platform %}
+                            {% when 'gradescope' %}
+                              {% assign color_class = 'bg-blue-100 text-blue-800' %}
+                              {% assign icon = 'fa-check-circle' %}
+                            {% when 'outlook' %}
+                              {% assign color_class = 'bg-purple-100 text-purple-800' %}
+                              {% assign icon = 'fa-calendar' %}
+                            {% when 'onedrive' %}
+                              {% assign color_class = 'bg-indigo-100 text-indigo-800' %}
+                              {% assign icon = 'fa-cloud' %}
+                            {% else %}
+                              {% assign color_class = 'bg-gray-100 text-gray-800' %}
+                              {% assign icon = 'fa-external-link-alt' %}
+                          {% endcase %}
+                          
+                          <a href="{{ deadline.submit_link.url }}" 
+                            class="lowercase inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium {{ color_class }} w-fit whitespace-nowrap transition-colors duration-150 ml-4">
+                            <i class="fa {{ icon }} flex-shrink-0 mr-1"></i>
+                            {{ deadline.submit_link.platform }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    </li>
                   {% endfor %}
-                </div>
-              </td>
-              <td class="px-4 py-2">
-                <div class="space-y-2">
-                  {% if item.assignments.release %}
-                    {% assign release = item.assignments.release %}
-                    <div class="flex items-center gap-2">
-                      <!-- <i class="fa-regular fa-bell w-4 h-4 text-green-600"></i> -->
-                      <span class="text-sm text-green-600 ">
-                        {{ release.title }} Released
-                      </span>
-                    </div>
-                  {% endif %}
-                  {% if item.assignments.deadline %}
-                    {% assign deadline = item.assignments.deadline %}
-                    <div class="flex items-center gap-2">
-                      <!-- <i class="fa-regular fa-calendar w-4 h-4 text-red-600"></i> -->
-                      <span class="text-sm text-red-600 ">
-                        {% assign dateParts = deadline.date | split: "/" %}
-                        {% assign formattedDate = dateParts[2] | append: "-" | append: dateParts[0] | append: "-" | append: dateParts[1] %}
-
-                        {{ deadline.title }} Due by {{ formattedDate | date: "%b %-d" }}
-                      </span>
-                    </div>
-                    {% if deadline.submit_link %}
-                      {% assign platform = deadline.submit_link.platform | downcase %}
-                      {% if platform == 'gradescope' %}
-                        {% assign icon = 'fa-check-circle' %}
-                        {% assign color_class = 'bg-blue-100 text-blue-800' %}
-                      {% else %}
-                        {% assign icon = 'fa-external-link-alt' %}
-                        {% assign color_class = 'bg-gray-100 text-gray-800' %}
-                      {% endif %}
-                      <!-- <a href="{{ deadline.submit_link.url }}" class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }} ml-6">
-                        <i class="fa {{ icon }} mr-1"></i>{{ deadline.submit_link.platform }}
-                      </a> -->
-                      <a href="{{ deadline.submit_link.url }}" class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium {{ color_class }}">
-                        <i class="fa {{ icon }} mr-1"></i>{{ deadline.submit_link.platform }}
-                      </a>
-                    
-                    {% endif %}
-                  {% endif %}
-                </div>
+                </ul>
+              {% endif %}
               </td>
             </tr>
           {% endif %}

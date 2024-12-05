@@ -39,3 +39,42 @@
   - name: "Website"
     url: "https://yourwebsite.com"
     icon: "fa-solid fa-globe"
+
+- id: 'zhenyuan_lu_fa20_bos'
+  name: "Zhenyuan Lu"
+  title: "Instructor"
+  image: "/assets/images/staff/z.png"
+  office: 'Zoom'
+  office_hours: "Tue 01:00pm to 02:00pm ET"
+  links:
+  - name: "Email"
+    url: "mailto:lu.zhenyua@northeastern.edu"
+    icon: "fa-regular fa-envelope"
+  - name: "GitHub"
+    url: "test"
+    icon: "fa-brands fa-github"
+  - name: "LinkedIn"
+    url: "test"
+    icon: "fa-brands fa-linkedin-in"
+  - name: "Website"
+    url: "https://yourwebsite.com"
+    icon: "fa-solid fa-globe"
+
+- id: "kate_kryder_fa20"
+  name: "Kate Kryder"
+  title: "Data Visualization Specialist"
+  office: "See course slides for booking link"
+  office_hours: "By appointment"
+  links:
+    - name: "Email"
+      url: "mailto:k.kryder@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+
+- id: "jodi_bolognese_fa20"
+  name: "Jodi Bolognese"
+  title: "Engineering Librarian"
+  email: "j.bolognese@northeastern.edu"
+  image: "/assets/images/staff/jodi.jpg"
+  office_hours:
+    type: "By appointment"
+    booking: "See course slides for booking link"

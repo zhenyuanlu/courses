@@ -1,7 +1,7 @@
 - module: "Module 1: How To Start"
   color: "blue"
 
-- date: "2024/09/26"
+- date: "09/26/2024"
   topic: "Introduction and Expectations; Project Management"
   instructor: "zhenyuan_lu"
   materials:
@@ -17,18 +17,19 @@
   assignments:
     release: null
     deadline:
-      type: "check-in"
-      title: "Check-In I"
-      date: "2024/10/03"
-      submit_link:
-        platform: "Gradescope"
-        url: "https://www.gradescope.com/courses/876356"
-        type: "submission"
+      - title: "Check-In I"
+        type: "check-in"
+        date: "10/03/2024"
+        time: "23:59 PT"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+          type: "submission"
 
-- date: "2024/10/03"
+- date: "10/03/2024"
   topic: "Section: Literature Review; Industry in a Nutshell"
   instructor: "zhenyuan_lu"
-  guest_lecturer: "xiaozang_li"
+  guest_lecturer: "xiaozang_li_fa24_van"
   materials:
     - title: "How to write good article"
       url: "https://mitcommlab.mit.edu/be/commkit/journal-article/"
@@ -39,18 +40,19 @@
   assignments:
     release: null
     deadline:
-      type: "check-in"
-      title: "Check-In II"
-      date: "2024/10/03"
-      submit_link:
-        platform: "Gradescope"
-        url: "https://www.gradescope.com/courses/876356"
-        type: "submission"
+      - title: "Check-In II"
+        type: "check-in"
+        date: "10/03/2024"
+        time: "23:59 PT"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+          type: "submission"
 
-- date: "2024/10/10"
+- date: "10/10/2024"
   topic: "Section: Introduction and Background; Industry in a Nutshell II"
   instructor: "zhenyuan_lu"
-  guest_lecturer: "jinhui_zhao"
+  guest_lecturer: "jinhui_zhao_fa24_van"
   materials:
     - title: "How to write good article"
       url: "https://mitcommlab.mit.edu/be/commkit/journal-article/"
@@ -60,22 +62,23 @@
       type: "github"
     - title: "CVPR 2025 Latex template"
       url: "https://github.com/cvpr-org/author-kit/releases/tag/CVPR2025-v3(latex)"
-      type: "template"
+      type: "link"
   assignments:
     release: null
     deadline:
-      type: "proposal"
-      title: "Project proposal"
-      date: "2024/10/13"
-      submit_link:
-        platform: "Gradescope"
-        url: "https://www.gradescope.com/courses/876356"
-        type: "submission"
+      - title: "Project proposal"
+        date: "10/13/2024"
+        time: "23:59 PT"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+          type: "submission"
+        type: "proposal"
 
 - module: "Module 2: What's Next"
   color: "blue"
 
-- date: "2024/10/17"
+- date: "10/17/2024"
   topic: "Section: How to Organize Related Work and Methodology; Industry in a Nutshell III"
   instructor: "zhenyuan_lu"
   materials:
@@ -93,19 +96,21 @@
       type: "github"
     - title: "CVPR 2025 Latex template"
       url: "https://github.com/cvpr-org/author-kit/releases/tag/CVPR2025-v3(latex)"
-      type: "template"
+      type: "link"
   assignments:
     release: null
     deadline:
-      type: "check-in"
-      title: "Check-In III"
-      date: "2024/10/17"
-      submit_link:
-        platform: "Gradescope"
-        url: "https://www.gradescope.com/courses/876356"
-        type: "submission"
+      - title: "Check-In III"
+        type: "check-in"
+        date: "10/17/2024"
+        time: "23:59 PT"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+          type: "submission"
+        
 
-- date: "2024/10/24"
+- date: "10/24/2024"
   topic: "Panel Review Preparation"
   instructor: "zhenyuan_lu"
   materials:
@@ -116,33 +121,33 @@
         - "How - Methodology"
       type: "guide"
 
-- date: "2024/10/31"
+- date: "10/31/2024"
   topic: "Panel Review"
   instructor: "zhenyuan_lu"
   materials:
     - title: "Project Proposal Template"
       url: "https://github.com/zhenyuanlu/course-ie7945/blob/main/project_proposal/project_proposal_template.md"
-      type: "template"
+      type: "link"
     - title: "Panel Review Format"
       content: "20-30 minutes presentation per team"
-      type: "guide"
+      type: "link"
   assignments:
     release: null
     deadline:
-      type: "proposal"
-      title: "New Project Proposal"
-      date: "2024/10/31"
-      time: "15:30"
-      timezone: "PT"
-      submit_link:
-        platform: "Gradescope"
-        url: "https://www.gradescope.com/courses/876356"
-        type: "submission"
+      - title: "New Project Proposal"
+        type: "proposal"
+        date: "10/31/2024"
+        time: "15:30"
+        timezone: "PT"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+          type: "submission"
 
 - module: "Module 3: Final Stretch"
   color: "blue"
 
-- date: "2024/11/07"
+- date: "11/07/2024"
   topic: "Data Visualization in a Nutshell"
   instructor: "zhenyuan_lu"
   materials:
@@ -150,10 +155,10 @@
       url: "https://github.com/zhenyuanlu/course-ie7945/blob/main/dataviz_nutshell/Data_Viz_Zhenyuan_Lu.pdf"
       type: "slides"
 
-- date: "2024/11/14"
+- date: "11/142024"
   topic: "Section: Project Alignment; Industry in a Nutshell IV"
   instructor: "zhenyuan_lu"
-  guest_lecturer: "shihan_tian"
+  guest_lecturer: "shihan_tian_fa24_van"
   materials:
     - title: "MS Whiteboard for Guest Questions"
       url: "https://whiteboard.office.com/me/whiteboards/p/c3BvOmh0dHBzOi8vbm9ydGhlYXN0ZXJuLW15LnNoYXJlcG9pbnQuY29tL3BlcnNvbmFsL3poX2x1X25vcnRoZWFzdGVybl9lZHU%3D/b!m_J_swoA4U-F-51OMzrG7aR0C-BkFe5MtO08JhGWEPUr1lhY5cdvTrLZjnDru-79/01GDWMXU4QNCHN4KJKPJCKKZAM2WBRLBDT"
@@ -165,16 +170,16 @@
       url: "https://zhenyuanlu.com/python-notebook/07_oop/"
       type: "link"
 
-- date: "2024/11/21"
+- date: "11/21/2024"
   topic: "Section: Project Alignment; Industry in a Nutshell V"
   instructor: "zhenyuan_lu"
-  guest_lecturer: "zhuohan_yu"
+  guest_lecturer: "zhuohan_yu_fa24_van"
   materials:
     - title: "MS Whiteboard for Guest Questions"
       url: "https://whiteboard.office.com/me/whiteboards/p/c3BvOmh0dHBzOi8vbm9ydGhlYXN0ZXJuLW15LnNoYXJlcG9pbnQuY29tL3BlcnNvbmFsL3poX2x1X25vcnRoZWFzdGVybl9lZHU%3D/b!m_J_swoA4U-F-51OMzrG7aR0C-BkFe5MtO08JhGWEPUr1lhY5cdvTrLZjnDru-79/01GDWMXU4QNCHN4KJKPJCKKZAM2WBRLBDT"
       type: "interactive"
 
-- date: "2024/11/28"
+- date: "11/28/2024"
   topic: "Final Deliverables (No Class)"
   materials:
     - title: "Github Pages"
@@ -182,25 +187,26 @@
       type: "link"
     - title: "CVPR 2025 Latex template"
       url: "https://github.com/cvpr-org/author-kit/releases/tag/CVPR2025-v3(latex)"
-      type: "template"
+      type: "link"
   assignments:
     release: null
     deadline:
-      type: "final"
-      components:
-        - title: "Full paper"
-          submit_link:
-            platform: "Gradescope"
-            url: "https://www.gradescope.com/courses/876356"
-        - title: "Recorded presentation"
-          submit_link:
-            platform: "OneDrive"
-            url: "https://northeastern-my.sharepoint.com/:f:/r/personal/zh_lu_northeastern_edu/Documents/IE7945%20Final%20Recorded%20Presentation%20and%20Slides"
-      date: "2024/11/28"
-      time: "23:59"
-      timezone: "PT"
+      - title: "Full paper"
+        submit_link:
+          platform: "Gradescope"
+          url: "https://www.gradescope.com/courses/876356"
+        date: "11/28/2024"
+        time: "23:59 PT"
+        type: "final"
+      - title: "Recorded presentation"
+        submit_link:
+          platform: "OneDrive"
+          url: "https://northeastern-my.sharepoint.com/:f:/r/personal/zh_lu_northeastern_edu/Documents/IE7945%20Final%20Recorded%20Presentation%20and%20Slides"
+        date: "11/28/2024"
+        time: "23:59 PT"
+        type: "final"
 
-- date: "2024/12/05"
+- date: "12/05/2024"
   topic: "Exit Individual Interview"
   materials:
     - title: "Interview Format"
@@ -208,16 +214,18 @@
         - "One on one by appointment (Starting 3:30pm PT)"
         - "10 minutes per student"
       type: "guide"
+      url: 
   assignments:
     release: null
     deadline:
-      type: "interview"
-      title: "Interview + Feedback"
-      date: "2024/12/05"
-      booking_link:
-        platform: "Outlook"
-        url: "https://outlook.office.com/bookwithme/user/a7511ab92a9d4aab9a7d34e14a63b0d2@northeastern.edu/meetingtype/sJIiTLOi1EWF4cHZz0GIyQ2"
-        type: "booking"
+      - title: "Interview + Feedback"
+        type: "interview"
+        date: "12/05/2024"
+        time: "15:30 PT"
+        booking_link:
+          platform: "Outlook"
+          url: "https://outlook.office.com/bookwithme/user/a7511ab92a9d4aab9a7d34e14a63b0d2@northeastern.edu/meetingtype/sJIiTLOi1EWF4cHZz0GIyQ2"
+          type: "booking"
 
 - module: "Module: Happy Holidays!"
   color: "green"

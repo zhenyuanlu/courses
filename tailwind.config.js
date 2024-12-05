@@ -9,7 +9,16 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '2xl': '42rem', // 672px
+        '3xl': '48rem', // 768px
+        '4xl': '56rem', // 896px
+        '5xl': '64rem', // 1024px
+        '6xl': '72rem', // 1152px
+      },
       width: {
+        '1/2': '50%',
+        '1': '0.25rem',
         '2': '0.5rem',
         '4': '0.75rem',
         '6': '1.5rem',
@@ -21,6 +30,8 @@ module.exports = {
         '24': '6rem',
       },
       height: {
+        '1/2': '50%',
+        '1': '0.25rem',
         '2': '0.5rem',
         '4': '0.75rem',
         '6': '1.5rem',
@@ -94,6 +105,8 @@ module.exports = {
     'mt-2', 'mt-4', 'mt-6', 'mt-8', 'mt-12',
     // Width classes
     'w-2', 'w-4', 'w-6', 'w-8', 'w-10', 'w-12', 'w-16', 'w-20', 'w-24',
+    'max-w-7xl', 'max-w-2xl', 'max-w-4xl', 'max-w-3xl', 'max-w-5xl', 'max-w-6xl',
+    'max-w-lg', 'max-w-md', 'max-w-sm',
     // Height classes
     'h-2', 'h-4', 'h-6', 'h-8', 'h-10', 'h-12', 'h-16', 'h-20', 'h-24',
     // Typography classes
@@ -103,5 +116,13 @@ module.exports = {
     'mt-6', 'mt-4', 'mt-3', 'mt-2', 'mt-1', 'mt-0',
     'ml-6', 'ml-4', 'ml-3', 'ml-2', 'ml-1', 'ml-0',
     'mr-6', 'mr-4', 'mr-3', 'mr-2', 'mr-1', 'mr-0',
+    // Padding classes
+    'p-8', 'p-6', 'p-4', 'p-3', 'p-2', 'p-1', 'p-0.5', 'p-0',
+    'pt-8', 'pt-6', 'pt-4', 'pt-3', 'pt-2', 'pt-1', 'pt-0.5', 'pt-0',
+    'pb-8', 'pb-6', 'pb-4', 'pb-3', 'pb-2', 'pb-1', 'pb-0.5', 'pb-0',
+    'pl-8', 'pl-6', 'pl-4', 'pl-3', 'pl-2', 'pl-1', 'pl-0.5', 'pl-0',
+    'pr-8', 'pr-6', 'pr-4', 'pr-3', 'pr-2', 'pr-1', 'pr-0.5', 'pr-0',
+    // gap classes
+    'gap-8', 'gap-6', 'gap-4', 'gap-3', 'gap-2', 'gap-1', 'gap-0',
   ],
 };

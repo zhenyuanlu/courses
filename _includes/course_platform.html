@@ -3,27 +3,27 @@
   <h3 class="text-2xl font-bold mb-4">Course Platform</h3>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     {% for platform in page.course_platform %}
-    <!-- may add hover:shadow-md transition-shadow for animation -->
-      <div class="bg-white rounded-xl p-4 shadow-sm">
+      <a href="{{ platform.url }}" 
+         class="block bg-white rounded-xl p-4 shadow-sm no-underline"
+         target="_blank" 
+         rel="noopener noreferrer">
         <div class="flex items-center gap-4">
-          <!-- Dynamic Icon -->
-          <i class="w-5 h-5 
+          <i class="w-5 h-5 flex-shrink-0
             {% case platform.name %}
               {% when "Canvas" %}fa-solid fa-book text-blue-600
               {% when "Gradescope" %}fa-solid fa-check-circle text-purple-600
               {% when "Piazza" %}fa-solid fa-users text-green-600
               {% when "GitHub" %}fa-brands fa-github text-black
-              {% when "OverLeaf" %}fa-brands fa-overleaf text-teal-600
+              {% when "OverLeaf" %}fa-solid fa-leaf text-teal-600
+              {% when "Whiteboard" %}fa-solid fa-chalkboard text-blue-600
+              {% when "Jira" %}fa-brands fa-jira text-blue-600
+              {% when "Repository" %}fa-brands fa-github text-gray-600
               {% else %}fa-solid fa-link text-gray-600
             {% endcase %}
           "></i>
           
           <div>
-            <!-- Platform Name -->
-            <a href="{{ platform.url }}" class="no-underline" target="_blank" rel="noopener noreferrer">
-              <h3 class="font-semibold text-base mb-1">{{ platform.name }}</h3>
-            </a>
-            <!-- Dynamic Description -->
+            <h3 class="font-semibold text-base mb-1 text-gray-900">{{ platform.name }}</h3>
             <p class="text-sm text-gray-600">
               {% case platform.name %}
                 {% when "Canvas" %}Course materials and grades
@@ -31,12 +31,15 @@
                 {% when "Piazza" %}Course discussions
                 {% when "GitHub" %}Code repositories
                 {% when "OverLeaf" %}LaTeX documents
+                {% when "Whiteboard" %}Collaborative whiteboard
+                {% when "Jira" %}Project management
+                {% when "Repository" %}Course materials
                 {% else %}Visit {{ platform.name }}
               {% endcase %}
             </p>
           </div>
         </div>
-      </div>
+      </a>
     {% endfor %}
   </div>
 </div>

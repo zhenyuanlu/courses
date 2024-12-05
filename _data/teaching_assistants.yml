@@ -21,3 +21,13 @@
     - name: "Email"
       url: "mailto:john.doe@northeastern.edu"
       icon: "fas fa-envelope"
+
+
+- id: "anuja_nanal_fa20"
+  name: "Anuja Nanal"
+  title: "Teaching Assistant"
+  email: "nanal.a@northeastern.edu"
+  image: "/assets/images/staff/AnujaNanal.jpg"
+  office_hours:
+    time: "Thu 10:00am to 11:00am"
+    location: "Zoom"

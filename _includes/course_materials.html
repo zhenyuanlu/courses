@@ -1,38 +1,42 @@
+{% if page.course_materials %}
 <div class="mb-8">
   <h2 class="text-2xl font-bold mb-4">Course Materials</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {% for section in page.course_materials %}
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-        <h3 class="font-semibold text-base mb-2">{{ section.title }}</h3>
-        <div class="space-y-2">
-          {% for file in section.files %}
-          <a href="{{ file.url }}" 
-             class="flex items-center justify-between text-sm text-gray-600 no-underline hover:text-blue-600"
-             {% if file.type == 'url' or file.type == 'github' %}
-               target="_blank" 
-               rel="noopener noreferrer"
-             {% endif %}
-          >
-            <!-- Description -->
-            <span>{{ file.description }}</span>
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 ">
+        <a href="{{ section.files[0].url }}" 
+           class="block p-4 no-underline"
+           {% if section.files[0].type == 'url' or section.files[0].type == 'github' %}
+             target="_blank" 
+             rel="noopener noreferrer"
+           {% endif %}>
+          <h3 class="font-semibold text-base mb-2">{{ section.title }}</h3>
+          <div class="space-y-2">
+            {% for file in section.files %}
+            <div class="flex items-center justify-between text-sm text-gray-600 group-hover:text-blue-600">
+              <!-- Description -->
+              <span>{{ file.description }}</span>
 
-            <!-- Badge -->
-            <span class="px-2 py-0.5 text-xs font-medium rounded-full
-              {% case file.type %}
-                {% when 'pdf' %}bg-red-100 text-red-700
-                {% when 'code' %}bg-purple-100 text-purple-700
-                {% when 'url' %}bg-blue-100 text-blue-700
-                {% when 'github' %}bg-gray-100 text-gray-700
-                {% else %}bg-gray-100 text-gray-700
-              {% endcase %}
-            ">
-              {{ file.type | upcase }}
-            </span>
-          </a>
-          {% endfor %}
-        </div>
+              <!-- Badge -->
+              <span class="lowercase px-2 py-0.5 text-xs font-medium rounded-full
+                {% case file.type %}
+                  {% when 'pdf' %}bg-red-100 text-red-700
+                  {% when 'code' %}bg-purple-100 text-purple-700
+                  {% when 'url' %}bg-blue-100 text-blue-700
+                  {% when 'github' %}bg-gray-100 text-gray-700
+                  {% else %}bg-gray-100 text-gray-700
+                {% endcase %}
+              ">
+                {% assign type_capitalized = file.type | capitalize %}
+                {{ type_capitalized }}
+              </span>
+            </div>
+            {% endfor %}
+          </div>
+        </a>
       </div>
     {% endfor %}
   </div>
 </div>
+{% endif %}
