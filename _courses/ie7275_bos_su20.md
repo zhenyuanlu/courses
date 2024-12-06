@@ -1,26 +1,25 @@
 ---
 layout: course
-slug: "ie6600-sea-sp22"
-title: "Computation and Visualization for Analytics" 
-subtitle: "Introduction to data visualization using R and Shiny"
-campus: "Seattle"
+slug: "ie7275-bos-su20"
+title: "Data Mining in Engineering" 
+subtitle: "Introduction to data mining and machine learning."
+campus: "Boston"
 university: "Northeastern University"
-course_code: "IE6600"
-semester: "Spring 2022"
+course_code: "IE7275"
+semester: "Summer 2020"
 level: "Graduate"
 status: "past"
-schedule: "Mon, Wed 11:00am – 14:00am ET"
-dates: "01/19/2022 – 04/27/2022"
-location: "Room 416, 225 Terry Ave"
+schedule: "Tue 1:20pm – 03:00pm ET"
+dates: "05/04/2020 – 06/25/2020"
+location: "Room 409, 225 Terry Ave, or Zoom"
 credits: 4
-description: "This course covers basic of the R, and R Shiny for data preprocessing, and visualization. It introduces students to static and interactive visualization, dashboard, and platform that reveal information, patterns, interactions, and comparisons by paying attention to details such as color encoding, a shape selection, spatial layout, and annotation. Based on these fundamentals of analytical and creative thinking, the course then focuses on data visualization techniques and the use of the most current popular software tools that support data exploration, analytics-based storytelling and knowledge discovery, and decision-making in engineering, healthcare operations, manufacturing, and related applications."
+description: "This course covers the theory and applications of data mining in engineering. It reviews fundamentals and key concepts of data mining, discusses important data mining techniques, and presents algorithms for implementing these techniques."
 
-schedule_file: "ie6600_sea_sp22"
+schedule_file: "ie7275_bos_su20"
 
 technologies:
   - r
-  - shiny
-  - tableau
+  - python
 
 course_platform:
   - name: "Canvas"
@@ -28,83 +27,73 @@ course_platform:
   - name: "Piazza"
     url: "https://piazza.com"
 
-
 instructors:
   - zhenyuan_lu
-teaching_assistants:
-  - kushal_upadhyay
 
 
 course_materials:
-  - title: "R For Data Science (<b>R4DS</b>)"
+  - title: "Data Mining and Analysis: Fundamental Concepts and Algorithms <b>(DMA)</b>"
     files:
-      - description: "Author: Wickham, Hadley, and Garrett Grolemund"
-        url: "https://r4ds.had.co.nz/"
+      - description: "Author: Mohammed J. Zaki and Wagner Meira Jr."
+        url: "https://www.cambridge.org/us/academic/subjects/computer-science/pattern-recognition-and-machine-learning/data-mining-and-analysis-fundamental-concepts-and-algorithms?format=HB"
         type: "url"
-        importance: "required"
-  - title: "Shiny Tutorial"
+        importance: "recommended"
+  - title: "Introduction to Data Mining <b>(IDM)</b>"
     files:
-      - description: "RStudio Shiny Tutorial"
+      - description: "Author: Pang-Ning Tan, Michael Steinbach, and Vipin Kumar"
+        url: "https://www.pearson.com/store/p/introduction-to-data-mining/P100000000000292000"
+        type: "url"
+        importance: "recommended"
+  - title: "Data Mining for Business Analytics: Concepts, Techniques, and Applications in R <b>(DMBA)</b>"
+    files:
+      - description: "Author: Galit Shmueli, et al."
         url: "https://shiny.rstudio.com/tutorial/"
         type: "url"
         importance: "additional"
-  - title: "Tableau Public Knowledge Base"
+  - title: "An Introduction to Statistical Learning <b>(ISL)</b>"
     files:
-      - description: "Tableau Public Knowledge Base"
-        url: "http://kb.tableau.com/"
+      - description: "Authors: Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani"
+        url: "https://www.statlearning.com/"
         type: "url"
         importance: "additional"
-  - title: "R For Everyone <b>(RFE)</b>"
+  - title: "The Elements of Statistical Learning <b>(ESL)</b>"
     files:
-      - description: "Author: Lander, Jared P."
-        url: "https://onesearch.library.northeastern.edu/permalink/f/365rt0/NEU_ALMA51284955070001401"
+      - description: "Authors: Trevor Hastie, Robert Tibshirani, and Jerome Friedman"
+        url: "https://web.stanford.edu/~hastie/ElemStatLearn/"
         type: "url"
         importance: "additional"
+  - title: "Machine Learning <b>(ML)</b>"
+    files:
+      - description: "Author: Tom M. Mitchell"
+        url: "http://www.cs.cmu.edu/~tom/mlbook.html"
+        type: "url"
+        importance: "recommended"
+  - title: "Deep Learning <b>(DL)</b>"
+    files:
+      - description: "Authors: Ian Goodfellow, Yoshua Bengio, and Aaron Courville"
+        url: "http://www.deeplearningbook.org/"
+        type: "url"
+        importance: "recommended"
+  - title: "Linear Algebra"
+    files:
+      - description: "Author: G. Strang. Introduction to Linear Algebra. Wellesley-Cambridge Press, 2009. Ch 1-4."
+        url: "https://math.mit.edu/~gs/linearalgebra/ila5/indexila5.html"
+        type: "url"
+        importance: "supplementary"
   - title: "R Markdown <b>(RMD)</b>"
     files:
       - description: "Author: Xie, Yihui, et al."
         url: "https://bookdown.org/yihui/rmarkdown/"
         type: "url"
-        importance: "recommended"
-  - title: "R Graphics Cookbook <b>(RGC)</b>"
+        importance: "supplementary"
+  - title: "R for Data Science <b>(R4DS)</b>"
     files:
-      - description: "Author: Chang, Winston"
-        url: "https://r-graphics.org/"
+      - description: "Author: Hadley Wickham and Garrett Grolemund"
+        url: "https://r4ds.had.co.nz/"
         type: "url"
-        importance: "additional"
-  - title: "Advanced R <b>(ADR)</b>" 
-    files:
-      - description: "Author: Wickham, Hadley"
-        url: "http://adv-r.had.co.nz/"
-        type: "url"
-        importance: "recommended"
-  - title: "R Packages <b>(RPK)</b>" 
-    files:
-      - description: "Author: Wickham, Hadley"
-        url: "http://r-pkgs.had.co.nz/"
-        type: "url"
-        importance: "additional"
-  - title: "Text Mining with R <b>(TM)</b>" 
-    files:
-      - description: "Authors: Silge, Julia, and David Robinson"
-        url: "https://www.tidytextmining.com/"
-        type: "url"
-        importance: "recommended"
+        importance: "supplementary"
+
   
-
-
-grading:
-  categories:
-    - name: "Homework"
-      percentage: 42
-      items: ["6 homework assignments", "No late submissions"]
-    - name: "Final Project"
-      percentage: 50
-      items: ["Proposal: 10%", "Presentation: 40%"]
-    - name: "Class Participation"
-      percentage: 8
-      items: ["Class discussions", "Piazza participation"]
-
 
 ---
 
@@ -123,8 +112,8 @@ Plagiarism, cheating, and any form of unauthorized collaboration will not be tol
 <h3 class="text-2xl font-bold mb-4">Course Goals</h3>
   <div class="bg-white rounded-xl p-6 shadow-sm">
   <div class="flex flex-col items-center">
-  <img src="{{ '/assets/images/ie6600/goal.png' | relative_url }}" alt="Course Goals" class="max-w-full mb-4 rounded-lg" style="max-height: 400px;">
-  <p class="text-gray-700 text-base">R For Data Science, Wickham, Hadley, and Garrett Grolemund</p>
+  <img src="{{ '/assets/images/ie7275/goal.png' | relative_url }}" alt="Course Goals" class="max-w-full mb-4 rounded-lg" style="max-height: 400px;">
+  <p class="text-gray-700 text-base">Data Mining Work Flowl.</p>
   </div>
   </div>
 </div>
@@ -165,11 +154,11 @@ More details will be posted later in the semester.
   <div class="max-w-md bg-white rounded-xl pt-1.5 pb-1.5 pl-8 pr-8 shadow-sm" markdown='1'>
   | Component             | Percentage |
   |-----------------------|------------|
-  | **Homework**          | 42%        |
-  | **Final Project**     | 50%        |
-  | &nbsp;&nbsp;&nbsp;&nbsp;Proposal   | 10%        |
-  | &nbsp;&nbsp;&nbsp;&nbsp;Presentation | 40%        |
-  | **Class Participation** | 8%       |
+  | **Homework**          | 35%        |
+  | **Midterm Exam**     | 20%        |
+  | **Final Exam**   | 20%        |
+  | **Project** | 15%        |
+  | **Class Participation** | 10%       |
 
   *This course does not have any quizzes or exams.*
   </div>

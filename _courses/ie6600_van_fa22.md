@@ -3,7 +3,7 @@ layout: course
 slug: "ie6600-van-fa22"
 title: "Computation and Visualization for Analytics" 
 subtitle: "Introduction to data visualization using R and Shiny"
-campus: "Boston"
+campus: "Vancouver"
 university: "Northeastern University"
 course_code: "IE6600"
 semester: "Fall 2022"

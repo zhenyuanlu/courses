@@ -3,7 +3,7 @@ layout: course
 slug: "ie6600-sea-sp20"
 title: "Computation and Visualization for Analytics" 
 subtitle: "Introduction to data visualization using R and Shiny"
-campus: "Boston"
+campus: "Seattle"
 university: "Northeastern University"
 course_code: "IE6600"
 semester: "Spring 2020"

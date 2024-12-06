@@ -4,30 +4,32 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {% for section in page.course_materials %}
-      <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-4">
-        <!-- Importance Badge -->
-        {% assign importance = section.files[0].importance | downcase %}
-        {% assign color = site.data.tech_colors[importance] %}
-        {% if color %}
-          <span class="lowercase absolute top-4 right-4 px-2 py-0.5 text-xs font-medium rounded-full {{ color.bg }} {{ color.text }}">
-            {{ color.label }}
-          </span>
-        {% else %}
-          <!-- Default Badge for Undefined Importance Levels -->
-          <span class="lowercase absolute top-4 right-4 px-2 py-0.5 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
-            {{ importance }}
-          </span>
-        {% endif %}
+      <div class="relative bg-white rounded-xl shadow-sm border border-gray-100 p-4 flex flex-col justify-between">
+        <div class="flex justify-between items-start mb-4">
+          <!-- Section Title -->
+          <a href="{{ section.files[0].url }}" 
+             class="block no-underline flex-1"
+             {% if section.files[0].type == 'url' or section.files[0].type == 'github' %}
+               target="_blank" 
+               rel="noopener noreferrer"
+             {% endif %}>
+            <h3 class="font-semibold text-base break-words">{{ section.title }}</h3>
+          </a>
 
-        <!-- Section Title -->
-        <a href="{{ section.files[0].url }}" 
-           class="block no-underline"
-           {% if section.files[0].type == 'url' or section.files[0].type == 'github' %}
-             target="_blank" 
-             rel="noopener noreferrer"
-           {% endif %}>
-          <h3 class="font-semibold text-lg mb-2">{{ section.title }}</h3>
-        </a>
+          <!-- Importance Badge -->
+          {% assign importance = section.files[0].importance | downcase %}
+          {% assign color = site.data.tech_colors[importance] %}
+          {% if color %}
+            <span class="lowercase px-2 py-0.5 text-xs font-medium rounded-full {{ color.bg }} {{ color.text }}">
+              {{ color.label }}
+            </span>
+          {% else %}
+            <!-- Default Badge for Undefined Importance Levels -->
+            <span class="lowercase px-2 py-0.5 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
+              {{ importance }}
+            </span>
+          {% endif %}
+        </div>
 
         <!-- Files List -->
         <div class="space-y-2">
@@ -49,8 +51,7 @@
                 {% when 'url' %}bg-blue-100 text-blue-700
                 {% when 'github' %}bg-gray-100 text-gray-700
                 {% else %}bg-gray-100 text-gray-700
-              {% endcase %}
-            ">
+              {% endcase %}">
               {% assign type_capitalized = file.type | capitalize %}
               {{ type_capitalized }}
             </span>

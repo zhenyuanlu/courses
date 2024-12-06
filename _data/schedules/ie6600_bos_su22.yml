@@ -1,0 +1,385 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "05/09/2022"
+  topic: "Course introduction and expectations"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor's Brain"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "05/11/2022"
+  topic: "Basic of R I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T02</b>: Basic R I"
+      url: "/courses/slides/t02BasicR.pdf"
+      type: "slides"
+    - title: "<b>T02</b>: Intro R I"
+      url: "/courses/slides/t02IntroR.pdf"
+      type: "slides"
+    - title: "<b>R4E</b>: Basics of R"
+      url: ""
+      type: "text"
+    - title: "<b>R4E</b>: Advanced Data Structure"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "05/16/2022"
+  topic: "Basic of R II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T02</b>: Basic R II"
+      url: "/courses/slides/t02BasicR.pdf"
+      type: "slides"
+    - title: "<b>T02</b>: Intro R II"
+      url: "/courses/slides/t02IntroR.pdf"
+      type: "slides"
+    - title: "<b>R4E</b>: Basics of R"
+      url: ""
+      type: "text"
+    - title: "<b>R4E</b>: Advanced Data Structure"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "05/18/2022"
+  topic: "R functions and the grammar of visualization I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T03</b>: R Grammar I"
+      url: "/courses/slides/t03RGrammar.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b>: A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b>: Writing R functions"
+      url: ""
+      type: "text"
+  assignments:
+    release:
+      - title: "Group Arrangement Released"
+        type: "homework"
+        date: "05/17/2022"
+        time: "23:59 ET"
+
+- date: "05/23/2022"
+  topic: "R functions and the grammar of visualization II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T03</b>: R Grammar II"
+      url: "/courses/slides/t03RGrammar.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b>: A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b>: Writing R functions"
+      url: ""
+      type: "text"
+  assignments: []
+
+- module: "Module 2: Basic Visualization and Data Engineering"
+  color: "blue"
+
+- date: "05/25/2022"
+  topic: "Data Visualization Concepts I"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    release:
+      - title: "HW1 Released"
+        type: "homework"
+        date: "05/25/2022"
+        time: "23:59 ET"
+
+- module: "Reminder: 05/29 - Last Day to Drop a Class Without W Grade"
+  color: "orange"
+
+- date: "05/30/2022"
+  topic: "No classes - Memorial Day"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "06/01/2022"
+  topic: "Data Visualization Concepts II"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "06/06/2022"
+  topic: "Basic data visualization in R I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T05</b>: Data Viz I"
+      url: "/courses/slides/t05DataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "06/08/2022"
+  topic: "Basic data visualization in R II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T05</b>: Data Viz II"
+      url: "/courses/slides/t05DataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: "text"
+  assignments:
+    deadline:
+      - title: "HW1"
+        type: "homework"
+        date: "06/07/2022"
+        time: "23:59 ET"
+    release:
+      - title: "HW2 Released"
+        type: "homework"
+
+- date: "06/13/2022"
+  topic: "Data transformation with dplyr I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments: []
+
+- date: "06/15/2022"
+  topic: "Data transformation with dplyr II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW2"
+        type: "homework"
+        date: "06/14/2022"
+        time: "23:59 ET"
+    release:
+      - title: "HW3 Released"
+        type: "homework"
+
+- module: "Reminder: 06/20 - No classes - Juneteenth observed"
+  color: "orange"
+
+- date: "06/22/2022"
+  topic: "Data wrangling with tibbles, readr, and tidyr I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T07.1</b>: Data Wrangling - Strings and Factors"
+      url: "/courses/slides/t07DataWrg_sf.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+    - title: "(optional) <b>R4DS</b>: Strings with stringr, Factors with forcats"
+      url: ""
+      type: "text"
+  assignments:
+    deadline:
+      - title: "HW3"
+        type: "homework"
+        date: "06/21/2022"
+        time: "23:59 ET"
+    release:
+      - title: "HW4 Released"
+        type: "homework"
+
+- date: "06/27/2022"
+  topic: "Data wrangling with tibbles, readr, and tidyr II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T07.2</b>: Data Wrangling - Tibbles, Readr, and Tidyr II"
+      url: "/courses/slides/t07DataWrg_trt.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+    - title: "(optional) <b>R4DS</b>: Strings with stringr, Factors with forcats"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "06/29/2022"
+  topic: "Visualizing relational data"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T08</b>: Visualizing Relational Data"
+      url: "/courses/slides/t08RelationalData.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Relational Data with dplyr"
+      url: "https://r4ds.had.co.nz/relational-data.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW4"
+        type: "homework"
+        date: "06/28/2022"
+        time: "23:59 ET"
+
+- module: "Reminder: 07/04 - No classes - Independence Day"
+  color: "orange"
+
+- module: "Module 3: Advanced Visualization"
+  color: "blue"
+
+- date: "07/06/2022"
+  topic: "Introduction to Shiny interactive visualization web app I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T09</b>: Intro to Shiny I"
+      url: "/courses/slides/t09IntroToShiny.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "Project Proposal"
+        type: "project"
+        date: "07/05/2022"
+        time: "23:59 ET"
+    release:
+      - title: "HW5 Released"
+        type: "homework"
+
+- date: "07/11/2022"
+  topic: "Introduction to Shiny interactive visualization web app II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T09</b>: Intro to Shiny II"
+      url: "/courses/slides/t09IntroToShiny.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "07/13/2022"
+  topic: "Introduction to Shiny interactive visualization web app III"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T10</b>: Shiny App I"
+      url: "/courses/slides/t10ShinyApp.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "07/18/2022"
+  topic: "Exploratory data analysis and more data visualization I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T11</b>: Advanced Data Viz"
+      url: "/courses/slides/t11AppDataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Exploratory Data Analysis"
+      url: "https://r4ds.had.co.nz/exploratory-data-analysis.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW5"
+        type: "homework"
+        date: "07/21/2022"
+        time: "23:59 ET"
+    release:
+      - title: "HW6 Released"
+        type: "homework"
+
+- date: "07/20/2022"
+  topic: "Exploratory data analysis and more data visualization II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T11</b>: Advanced Data Viz"
+      url: "/courses/slides/t11AppDataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b>: Exploratory Data Analysis"
+      url: "https://r4ds.had.co.nz/exploratory-data-analysis.html"
+      type: "link"
+  assignments: []
+
+- date: "07/25/2022"
+  topic: "No classes"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "07/27/2022"
+  topic: ""
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    deadline:
+      - title: "HW6"
+        type: "homework"
+        date: "07/26/2022"
+        time: "23:59 ET"
+
+- module: "Reminder: Project and Slides due 07/31 @ 11:59pm ET"
+  color: "orange"
+
+- date: "08/01/2022"
+  topic: "Project presentation"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- module: "Reminder: Peer Review and Intra-group Evaluation due 08/01 @ 11:59pm ET"
+  color: "orange"

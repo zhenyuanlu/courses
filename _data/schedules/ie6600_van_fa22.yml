@@ -1,0 +1,175 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "09/12/2022"
+  topic: "Course introduction and expectations; Basics of R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor's brain"
+      url: ""
+      type: ""
+    - title: "<b>R4E</b> Intro to R"
+      url: ""
+      type: ""
+  assignments: []
+  slides: "/courses/slides/t02IntroR.pdf"
+
+- date: "09/19/2022"
+  topic: "Basics of R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4E</b> Basics of R"
+      url: ""
+      type: ""
+    - title: "<b>R4E</b> Advanced Data Structure"
+      url: ""
+      type: ""
+  assignments: []
+  slides: "/courses/slides/t02BasicR.pdf"
+  slides2: "/courses/slides/t02IntroR.pdf"
+
+- date: "09/26/2022"
+  topic: "R functions and the grammar of visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b> A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b> Writing R functions"
+      url: ""
+      type: ""
+  assignments: []
+  slides: "/courses/slides/t03RGrammar.pdf"
+
+- module: "Reminder: Last day to drop a full-semester fall class without a W grade"
+  color: "orange"
+
+- module: "Module 2: Basic Visualization and Data Engineering"
+  color: "blue"
+
+- date: "10/03/2022"
+  topic: "Data Visualization Concepts"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    deadline:
+      - title: "Group arrangement"
+        type: "project"
+        date: "10/02/2022"
+        time: "23:59 PT"
+        submit_link: null
+    release:
+      - title: "HW1 released"
+        type: "homework"
+  slides: ""
+
+- date: "10/10/2022"
+  topic: "No classes - Thanksgiving Day (CAN)"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "10/17/2022"
+  topic: "Basic data visualization in R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: ""
+  assignments:
+    deadline:
+      - title: "HW1"
+        type: "homework"
+        date: "10/16/2022"
+        time: "23:59 PT"
+        submit_link: null
+    release:
+      - title: "HW2 released"
+        type: "homework"
+  slides: "/courses/slides/t05DataViz.pdf"
+
+- date: "10/24/2022"
+  topic: "Data transformation with dplyr"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW2"
+        type: "homework"
+        date: "10/23/2022"
+        time: "23:59 PT"
+        submit_link: null
+    release:
+      - title: "HW3 released"
+        type: "homework"
+  slides: "/courses/slides/t06DataTrans.pdf"
+
+- date: "10/31/2022"
+  topic: "Data wrangling with tibbles, readr and tidyr<br>Optional: Data wrangling with stringr, forcats"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b> Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b> Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW3"
+        type: "homework"
+        date: "10/30/2022"
+        time: "23:59 PT"
+        submit_link: null
+    release:
+      - title: "HW4 released"
+        type: "homework"
+  slides: "/courses/slides/t07DataWrg_trt.pdf"
+  slides2: "/courses/slides/t07DataWrg_sf.pdf"
+
+- module: "Module 3: Advanced Visualization"
+  color: "blue"
+
+- date: "11/07/2022"
+  topic: "Visualizing relational data; Visualization by PCA"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Relational Data with dplyr"
+      url: "https://r4ds.had.co.nz/relational-data.html"
+      type: "link"
+    - title: "James, Gareth, et al. An Introduction to Statistical Learning"
+      url: "https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf"
+      type: "book"
+    - title: "Kilian Weinberger PCA for Visualization"
+      url: "https://www.cs.cornell.edu/courses/cs4780/2021fa/lectures/UnsupervisedLearning.html#pca"
+      type: "lecture"
+  assignments:
+    deadline:
+      - title: "HW4"
+        type: "homework"
+        date: "11/06/2022"
+        time: "23:59 PT"
+        submit_link: null
+  slides: "/courses/slides/t08RelationalData.pdf"
+  github: "https://github.com/zhenyuanlu/ML-workshop-IE6600"

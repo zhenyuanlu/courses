@@ -1,0 +1,236 @@
+- module: "Week 1: Introduction"
+  color: "blue"
+
+- date: "05/04/2020"
+  topic: "Introduction"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor's Brain"
+      url: ""
+      type: ""
+    - title: "<b>DMBA</b> Introduction"
+      url: ""
+      type: ""
+  assignments: []
+
+- date: "05/05/2020"
+  topic: "Basics of R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Overview of Data Mining Process"
+      url: ""
+      type: ""
+    - title: "<b>DMA</b> Chapter 1"
+      url: ""
+      type: ""
+  assignments: []
+
+- date: "05/06/2020"
+  topic: "Exploratory Data Analysis and Data Transformation"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Exploratory Data Analysis"
+      url: ""
+      type: "link"
+    - title: "<b>DMBA</b> Data Visualization"
+      url: ""
+      type: ""
+    - title: "(additional) R4DS Chapters 1-4"
+      url: ""
+      type: "additional"
+  assignments: []
+
+- module: "Week 2: Dimension Reduction and Evaluating Predictive Performance"
+  color: "blue"
+
+- date: "05/11/2020"
+  topic: "Dimension Reduction"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Dimension Reduction"
+      url: ""
+      type: "book"
+    - title: "<b>ISL</b> Chapter 6.3.1"
+      url: ""
+      type: "chapter"
+  assignments: []
+
+- date: "05/13/2020"
+  topic: "Evaluating Predictive Performance"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Evaluating Predictive Performance"
+      url: ""
+      type: ""
+    - title: "(additional) ISL Chapter 2.2; DMA Classification Assessment"
+      url: ""
+      type: "additional"
+  assignments:
+    deadline:
+      - title: "HW1 Due"
+        type: "homework"
+        date: "05/14/2020"
+        time: "23:59 ET"
+
+
+- module: "Week 3: Regression and Midterm Review"
+  color: "blue"
+
+- date: "05/18/2020"
+  topic: "Multiple Linear Regression"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Multiple Linear Regression"
+      url: ""
+      type: ""
+    - title: "(additional) ISL Chapter 3 Linear Regression"
+      url: ""
+      type: "additional"
+  assignments: []
+
+- date: "05/20/2020"
+  topic: "Midterm Review"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Dimension Reduction"
+      url: ""
+      type: ""
+    - title: "Evaluating Predictive Performance"
+      url: ""
+      type: ""
+    - title: "Multiple Linear Regression"
+      url: ""
+      type: ""
+  assignments: []
+
+- date: "05/21/2020"
+  topic: "k-Nearest Neighbors"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> k-Nearest Neighbors"
+      url: ""
+      type: "book"
+    - title: "(additional) DM Chapter 5.2; ESL Chapter 11.3"
+      url: ""
+      type: "additional"
+  assignments:
+    deadline:
+      - title: "HW2 Due"
+        type: "homework"
+        date: "05/21/2020"
+        time: "23:59 ET"
+
+
+- module: "Week 4: Classification Techniques"
+  color: "blue"
+
+- date: "05/26/2020"
+  topic: "Naïve Bayes Classifier"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Naive Bayes Classifier"
+      url: ""
+      type: "book"
+    - title: "(additional) ESL Chapter 6.6.3; DMA Chapter 18"
+      url: ""
+      type: "additional"
+  assignments: []
+
+- module: "Week 5: Advanced Techniques"
+  color: "blue"
+
+- date: "06/01/2020"
+  topic: "Logistic Regression, Generative vs. Discriminative Models"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Logistic Regression"
+      url: ""
+      type: "book"
+    - title: "(additional) ISL Chapter 4.3; ESL Chapter 4.4"
+      url: ""
+      type: "additional"
+  assignments: []
+
+- module: "Week 6: Deep Learning and Neural Networks"
+  color: "green"
+
+- date: "06/09/2020"
+  topic: "Linear Discriminant Analysis"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Linear Discriminant Analysis"
+      url: ""
+      type: "book"
+    - title: "(additional) DMA Chapter 20"
+      url: ""
+      type: "additional"
+  assignments: []
+
+- date: "06/10/2020"
+  topic: "Neural Networks and Deep Learning"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>DMBA</b> Neural Nets"
+      url: ""
+      type: "book"
+    - title: "(additional) DL Chapter 6"
+      url: ""
+      type: "additional"
+  assignments:
+    deadline:
+      - title: "HW4 Due"
+        type: "homework"
+        date: "06/13/2020"
+        time: "23:59 ET"
+
+
+- module: "Week 7: Final Review and Submission"
+  color: "purple"
+
+- date: "06/17/2020"
+  topic: "Association Rule and Clustering Analysis"
+  instructor: ""
+  guest_lecturer: 
+    - "jinhui_zhao"
+    - "qibin_tan"
+  materials:
+    - title: "<b>DMBA</b> Association Rule"
+      url: ""
+      type: "book"
+    - title: "<b>DMBA</b> Clustering Analysis"
+      url: ""
+      type: "book"
+  assignments:
+    deadline:
+      - title: "Project Slides and Files"
+        type: "project"
+        date: "06/17/2020"
+        time: "23:59 ET"
+
+
+- module: "Final Week"
+  color: "purple"
+
+- date: "06/25/2020"
+  topic: "Final Exam and Project Submission"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    deadline:
+      - title: "Final Exam"
+        type: "exam"
+        date: "06/25/2020"
+        time: "23:59 ET"

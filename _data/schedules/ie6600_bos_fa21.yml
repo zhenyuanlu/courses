@@ -1,7 +1,7 @@
 - module: "Module 1: Introduction"
   color: "blue"
 
-- date: "09/15/2020"
+- date: "09/15/2021"
   topic: "Course introduction and expectations"
   instructor: ""
   guest_lecturer: null
@@ -11,7 +11,7 @@
       type: ""
   assignments: []
 
-- date: "09/22/2020"
+- date: "09/22/2021"
   topic: "Basics of R"
   instructor: ""
   guest_lecturer: null
@@ -27,14 +27,14 @@
 - module: "Module 2: Basic Visualization and Data Engineering"
   color: "blue"
 
-- date: "09/28/2020"
+- date: "09/28/2021"
   topic: "Last day to drop a full-semester fall class without a W grade"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "09/29/2020"
+- date: "09/29/2021"
   topic: "R functions and the grammar of visualization"
   instructor: ""
   guest_lecturer: null
@@ -50,7 +50,7 @@
       type: ""
   assignments: []
 
-- date: "10/06/2020"
+- date: "10/06/2021"
   topic: "Data Visualization Concepts"
   instructor: ""
   guest_lecturer: null
@@ -59,14 +59,14 @@
     deadline:
       - title: "Group arrangement due"
         type: "project"
-        date: "10/05/2020"
+        date: "10/05/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW1 released"
         type: "homework"
 
-- date: "10/13/2020"
+- date: "10/13/2021"
   topic: "Basic data visualization in R"
   instructor: ""
   guest_lecturer: null
@@ -81,14 +81,14 @@
     deadline:
       - title: "HW1"
         type: "homework"
-        date: "10/12/2020"
+        date: "10/12/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW2 released"
         type: "homework"
 
-- date: "10/20/2020"
+- date: "10/20/2021"
   topic: "Data transformation with dplyr"
   instructor: ""
   guest_lecturer: null
@@ -100,14 +100,14 @@
     deadline:
       - title: "HW2"
         type: "homework"
-        date: "10/19/2020"
+        date: "10/19/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW3 released"
         type: "homework"
 
-- date: "10/27/2020"
+- date: "10/27/2021"
   topic: "Data wrangling with tibbles, readr and tidyr"
   instructor: ""
   guest_lecturer: null
@@ -125,14 +125,14 @@
     deadline:
       - title: "HW3"
         type: "homework"
-        date: "10/26/2020"
+        date: "10/26/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW4 released"
         type: "homework"
 
-- date: "11/03/2020"
+- date: "11/03/2021"
   topic: "Visualizing relational data"
   instructor: ""
   guest_lecturer: null
@@ -147,14 +147,14 @@
     deadline:
       - title: "HW4"
         type: "homework"
-        date: "11/02/2020"
+        date: "11/02/2021"
         time: "23:59 ET"
         submit_link: null
 
 - module: "Module 3: Advanced Visualization"
   color: "blue"
 
-- date: "11/10/2020"
+- date: "11/10/2021"
   topic: "Introduction to Shiny interactive visualization web app"
   instructor: ""
   guest_lecturer: null
@@ -166,21 +166,21 @@
     deadline:
       - title: "Project proposal"
         type: "project"
-        date: "11/09/2020"
+        date: "11/09/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW5 released"
         type: "homework"
 
-- date: "11/24/2020"
+- date: "11/24/2021"
   topic: "No Classes - Thanksgiving"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "12/01/2020"
+- date: "12/01/2021"
   topic: "Exploratory data analysis and more data visualization"
   instructor: ""
   guest_lecturer: null
@@ -192,7 +192,7 @@
     deadline:
       - title: "HW5"
         type: "homework"
-        date: "11/30/2020"
+        date: "11/30/2021"
         time: "23:59 ET"
         submit_link: null
     release:
@@ -200,14 +200,14 @@
         type: "homework"
 
 
-- date: "12/01/2020"
+- date: "12/01/2021"
   topic: "Project presentations"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "12/08/2020"
+- date: "12/08/2021"
   topic: "No Classes - Preparation for Presentation"
   instructor: ""
   guest_lecturer: null
@@ -215,11 +215,11 @@
     deadline:
       - title: "HW6"
         type: "homework"
-        date: "12/07/2020"
+        date: "12/07/2021"
         time: "23:59 ET"
         submit_link: null
 
-- date: "12/15/2020"
+- date: "12/15/2021"
   topic: "Project presentations"
   instructor: ""
   guest_lecturer: null

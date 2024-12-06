@@ -1,0 +1,233 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "01/19/2021"
+  topic: "Course introduction and expectations"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor’s Brain"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "01/26/2021"
+  topic: "Basic of R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4E</b>: Basics of R"
+      url: ""
+      type: "text"
+    - title: "<b>R4E</b>: Advanced Data Structure"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "02/02/2021"
+  topic: "R functions and the grammar of visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b>: A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b>: Writing R functions"
+      url: ""
+      type: "text"
+  assignments: []
+
+- module: "Reminder: 02/08 - Last Day to Drop a Class Without W Grade"
+  color: "orange"
+
+- module: "Module 2: Basic Visualization and Data Engineering"
+  color: "blue"
+
+- date: "02/09/2021"
+  topic: "Data Visualization Concepts"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    release:
+      - title: "HW1 Released"
+        type: "homework"
+    deadline:
+      - title: "Group arrangement"
+        type: "project"
+        date: "02/08/2021"
+        time: "23:59 PT"
+
+- date: "02/16/2021"
+  topic: "Basic data visualization in R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC: Quickly Exploring Data"
+      url: ""
+      type: "text"
+  assignments:
+    release:
+      - title: "HW2 Released"
+        type: "homework"
+    deadline:
+      - title: "HW1"
+        type: "homework"
+        date: "02/15/2021"
+        time: "23:59 PT"
+
+- date: "02/23/2021"
+  topic: "Data transformation with dplyr"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments:
+    release:
+      - title: "HW3 Released"
+        type: "homework"
+    deadline:
+      - title: "HW2"
+        type: "homework"
+        date: "02/22/2021"
+        time: "23:59 PT"
+
+- date: "03/02/2021"
+  topic: "Data wrangling with tibbles, readr and tidyr"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b>: Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+    - title: "(optional) <b>R4DS</b>: Strings with stringr, Factors with forcats"
+      url: ""
+      type: "text"
+  assignments:
+    release:
+      - title: "HW4 Released"
+        type: "homework"
+    deadline:
+      - title: "HW3"
+        type: "homework"
+        date: "03/01/2021"
+        time: "23:59 PT"
+
+- date: "03/09/2021"
+  topic: "Visualizing relational data"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Relational Data with dplyr"
+      url: "https://r4ds.had.co.nz/relational-data.html"
+      type: "link"
+    - title: "James, Gareth, et al.: An Introduction to Statistical Learning"
+      url: "https://www.statlearning.com/s/ISLR-Seventh-Printing-xwa7.pdf"
+      type: "paper"
+  assignments:
+    deadline:
+      - title: "Project proposal"
+        type: "project"
+        date: "03/08/2021"
+        time: "23:59 PT"
+      - title: "HW4"
+        type: "homework"
+        date: "03/08/2021"
+        time: "23:59 PT"
+
+- module: "Module 3: Advanced Visualization"
+  color: "blue"
+
+- date: "03/16/2021"
+  topic: "Introduction to Shiny interactive visualization web app I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments:
+    release:
+      - title: "HW5 Released"
+        type: "homework"
+
+- date: "03/23/2021"
+  topic: "Introduction to Shiny interactive visualization web app II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "03/30/2021"
+  topic: "Data analytics web apps with Shiny"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R Shiny</b>: Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "04/06/2021"
+  topic: "Exploratory data analysis and more data visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b>: Exploratory Data Analysis"
+      url: "https://r4ds.had.co.nz/exploratory-data-analysis.html"
+      type: "link"
+  assignments:
+    release:
+      - title: "HW6 Released"
+        type: "homework"
+    deadline:
+      - title: "HW5"
+        type: "homework"
+        date: "04/05/2021"
+        time: "23:59 PT"
+
+- date: "04/13/2021"
+  topic: "Additional R Workshop"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    deadline:
+      - title: "HW6"
+        type: "homework"
+        date: "04/12/2021"
+        time: "23:59 PT"
+
+- module: "Project and Slides due 04/19 @ 11:59pm PT"
+  color: "orange"
+
+- date: "04/20/2021"
+  topic: "Project presentation"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "04/27/2021"
+  topic: "Project presentation"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []

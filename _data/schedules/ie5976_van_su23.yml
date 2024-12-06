@@ -1,0 +1,107 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "05/10/2023"
+  topic: >
+    Introduction<br>
+    Data Types
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/02_data_types/' target='_blank'>02 Data Types</a>"
+      url: "https://zhenyuanlu.com/python-notebook/02_data_types/"
+      type: "link"
+  assignments: []
+
+- date: "05/17/2023"
+  topic: >
+    Control and Functions<br>
+    Advanced Formatting
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/03_control_functions/' target='_blank'>03 Control and Functions</a>"
+      url: "https://zhenyuanlu.com/python-notebook/03_control_functions/"
+      type: "link"
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/04_advanced_formatting/' target='_blank'>04 Advanced Formatting</a>"
+      url: "https://zhenyuanlu.com/python-notebook/04_advanced_formatting/"
+      type: "link"
+  assignments: []
+
+- module: "Module 2: Iteration and Comprehension"
+  color: "blue"
+
+- date: "05/24/2023"
+  topic: >
+    Loops and Comprehension<br>
+    Iterable, Iterator, and Generator
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/05_loops_comprehensions/' target='_blank'>05 Loops and Comprehensions</a>"
+      url: "https://zhenyuanlu.com/python-notebook/05_loops_comprehensions/"
+      type: "link"
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/06_iterable_iterator_generator/' target='_blank'>06 Iterable, Iterator, Generator</a>"
+      url: "https://zhenyuanlu.com/python-notebook/06_iterable_iterator_generator/"
+      type: "link"
+  assignments: []
+
+- module: "Module 3: Object-Oriented Programming"
+  color: "blue"
+
+- date: "05/31/2023"
+  topic: >
+    Object-Oriented Programming I<br>
+    Classes and Instances<br>
+    Class and Instance Variables<br>
+    Classmethods and Staticmethods
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/07_oop/' target='_blank'>07 Object-Oriented Programming</a>"
+      url: "https://zhenyuanlu.com/python-notebook/07_oop/"
+      type: "link"
+  assignments: []
+
+- date: "06/07/2023"
+  topic: >
+    Object-Oriented Programming II<br>
+    Inheritance<br>
+    Special Methods
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/07_oop/' target='_blank'>07 Object-Oriented Programming</a>"
+      url: "https://zhenyuanlu.com/python-notebook/07_oop/"
+      type: "link"
+  assignments: []
+
+- date: "06/14/2023"
+  topic: >
+    Object-Oriented Programming III<br>
+    Decorators<br>
+    Getters, Setters, and Deleters
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/07_oop/' target='_blank'>07 Object-Oriented Programming</a>"
+      url: "https://zhenyuanlu.com/python-notebook/07_oop/"
+      type: "link"
+  assignments: []
+
+- module: "Module 4: Error Handling"
+  color: "blue"
+
+- date: "06/21/2023"
+  topic: >
+    Error Handling and Exceptions
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>PyNote</b> <a href='https://zhenyuanlu.com/python-notebook/08_errors/' target='_blank'>08 Error Handling</a>"
+      url: "https://zhenyuanlu.com/python-notebook/08_errors/"
+      type: "link"
+  assignments: []
+
+- module: "Final Exam Week - No Class"
+  color: "orange"

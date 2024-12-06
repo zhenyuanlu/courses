@@ -1,0 +1,419 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "01/10/2023"
+  topic: "Course introduction and expectations"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor's Brain"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "01/13/2023"
+  topic: "Topic 2: Basic R I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T02</b>: Basic R I"
+      url: "/courses/slides/t02BasicR.pdf"
+      type: "slides"
+    - title: "<b>T02</b>: Intro R I"
+      url: "/courses/slides/t02IntroR.pdf"
+      type: "slides"
+    - title: "<b>R4E</b> Basics of R"
+      url: ""
+      type: "text"
+    - title: "<b>R4E</b> Advanced Data Structure"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "01/17/2023"
+  topic: "Topic 2: Basic R II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T02</b>: Basic R II"
+      url: "/courses/slides/t02BasicR.pdf"
+      type: "slides"
+    - title: "<b>T02</b>: Intro R II"
+      url: "/courses/slides/t02IntroR.pdf"
+      type: "slides"
+    - title: "<b>R4E</b> Basics of R"
+      url: ""
+      type: "text"
+    - title: "<b>R4E</b> Advanced Data Structure"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "01/20/2023"
+  topic: "Topic 3: R Functions and the Grammar of Visualization I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T03</b>: R Grammar I"
+      url: "/courses/slides/t03RGrammar.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b> A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b> Writing R functions"
+      url: ""
+      type: "text"
+  assignments:
+    release:
+      - title: "HW0 Released"
+        type: "homework"
+
+- date: "01/24/2023"
+  topic: "Topic 3: R Functions and the Grammar of Visualization II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T03</b>: R Grammar II"
+      url: "/courses/slides/t03RGrammar.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Workflow"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b> A layered grammar of graphics"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b> Writing R functions"
+      url: ""
+      type: "text"
+  assignments: []
+
+- module: "Module 2: Basic Visualization and Data Engineering"
+  color: "blue"
+
+- date: "01/27/2023"
+  topic: "Data Visualization Concepts I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Data Viz in A Nutshell I"
+      url: "/assets/projects/informs/zhenyuan_dataViz.pdf"
+      type: "slides"
+    - title: "GitHub Repository"
+      url: "https://github.com/zhenyuanlu/Data-Visualization-In-A-Nutshell/blob/main/zhenyuan_dataViz.pdf"
+      type: "github"
+  assignments:
+    deadline:
+      - title: "HW0"
+        type: "homework"
+        date: "01/27/2023"
+        time: "23:59 PT"
+
+- module: "Reminder: 01/30 - Last Day to Drop a Class Without W Grade"
+  color: "orange"
+
+- date: "01/31/2023"
+  topic: "Data Visualization Concepts II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Data Viz in A Nutshell II" 
+      url: "/assets/projects/informs/zhenyuan_dataViz.pdf"
+      type: "slides"
+    - title: "GitHub Repository"
+      url: "https://github.com/zhenyuanlu/Data-Visualization-In-A-Nutshell/blob/main/zhenyuan_dataViz.pdf"
+      type: "github"
+  assignments:
+    deadline:
+      - title: "Group Arrangement"
+        type: "project"
+        date: "01/30/2023"
+        time: "23:59 PT"
+    release:
+      - title: "HW1 Released"
+        type: "homework"
+
+- date: "02/03/2023"
+  topic: "Topic 5: Basic Data Visualization in R I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T05</b>: Data Viz I"
+      url: "/courses/slides/t05DataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "02/07/2023"
+  topic: "Topic 5: Basic Data Visualization in R II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T05</b>: Data Viz II"
+      url: "/courses/slides/t05DataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Data Visualization with ggplot2"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: "text"
+  assignments:
+    deadline:
+      - title: "HW1"
+        type: "homework"
+        date: "02/06/2023"
+        time: "23:59 PT"
+    release:
+      - title: "HW2 Released"
+        type: "homework"
+
+- date: "02/10/2023"
+  topic: "Topic 6: Data Transformation with dplyr I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments: []
+
+- date: "02/14/2023"
+  topic: "Topic 6: Data Transformation with dplyr II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> Data Transformation with dplyr"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW2"
+        type: "homework"
+        date: "02/13/2023"
+        time: "23:59 PT"
+    release:
+      - title: "HW3 Released"
+        type: "homework"
+
+- date: "02/17/2023"
+  topic: "Topic 7: Data Wrangling with Tibbles, Readr, and Tidyr I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T07.1</b>: Data Wrangling - Strings and Factors"
+      url: "/courses/slides/t07DataWrg_sf.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b> Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b> Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+    - title: "(optional) <b>R4DS</b> Strings with stringr, Factors with forcats"
+      url: ""
+      type: "text"
+  assignments: []
+
+- date: "02/21/2023"
+  topic: "Topic 7: Data Wrangling with Tibbles, Readr, and Tidyr II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T07.2</b>: Data Wrangling - Tibbles, Readr, and Tidyr II"
+      url: "/courses/slides/t07DataWrg_trt.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Tibbles with tibble"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b> Data Import with readr"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b> Tidy Data with tidyr"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+    - title: "(optional) <b>R4DS</b> Strings with stringr, Factors with forcats"
+      url: ""
+      type: "text"
+  assignments:
+    deadline:
+      - title: "HW3"
+        type: "homework"
+        date: "02/20/2023"
+        time: "23:59 PT"
+    release:
+      - title: "HW4 Released"
+        type: "homework"
+
+- date: "02/24/2023"
+  topic: "Topic 8: Visualizing Relational Data"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T08</b>: Visualizing Relational Data"
+      url: "/courses/slides/t08RelationalData.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Relational Data with dplyr"
+      url: "https://r4ds.had.co.nz/relational-data.html"
+      type: "link"
+  assignments: []
+
+- module: "Module 3: Advanced Visualization"
+  color: "blue"
+
+- date: "02/28/2023"
+  topic: "Topic 9: Introduction to Shiny Interactive Visualization Web App I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T09</b>: Intro to Shiny I"
+      url: "/courses/slides/t09IntroToShiny.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b> Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW4"
+        type: "homework"
+        date: "02/27/2023"
+        time: "23:59 PT"
+    release:
+      - title: "HW5 Released"
+        type: "homework"
+
+- date: "03/03/2023"
+  topic: "Topic 9: Introduction to Shiny Interactive Visualization Web App II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T09</b>: Intro to Shiny II"
+      url: "/courses/slides/t09IntroToShiny.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b> Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "Project Proposal"
+        type: "project"
+        date: "03/02/2023"
+        time: "23:59 PT"
+
+- date: "03/07/2023"
+  topic: "No Classes - Spring Break"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "03/10/2023"
+  topic: "No Classes - Spring Break"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "03/14/2023"
+  topic: "Topic 10: Shiny Interactive Visualization Web App II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T10</b>: Shiny App I"
+      url: "/courses/slides/t10ShinyApp.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b> Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "03/17/2023"
+  topic: "Topic 10: Shiny Interactive Visualization Web App III"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T10</b>: Shiny App II"
+      url: "/courses/slides/t10ShinyApp.pdf"
+      type: "slides"
+    - title: "<b>R Shiny</b> Shiny tutorial"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments: []
+
+- date: "03/21/2023"
+  topic: "Topic 11: Exploratory Data Analysis and More Data Visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>T11</b>: Advanced Data Viz"
+      url: "/courses/slides/t11AppDataViz.pdf"
+      type: "slides"
+    - title: "<b>R4DS</b> Exploratory Data Analysis"
+      url: "https://r4ds.had.co.nz/exploratory-data-analysis.html"
+      type: "link"
+  assignments: []
+
+- date: "03/24/2023"
+  topic: "Visualization by PCA I"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>S01</b>: Visualization by PCA I"
+      url: "/courses/slides/VizPCA_workshop.pdf"
+      type: "slides"
+    - title: "Kilian Weinberger: PCA for Visualization"
+      url: "https://www.cs.cornell.edu/courses/cs4780/2021fa/lectures/UnsupervisedLearning.html#pca"
+      type: "link"
+  assignments: []
+
+- date: "03/31/2023"
+  topic: "Visualization by PCA II"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>S01</b>: Visualization by PCA II"
+      url: "/courses/slides/VizPCA_workshop.pdf"
+      type: "slides"
+    - title: "Kilian Weinberger: PCA for Visualization"
+      url: "https://www.cs.cornell.edu/courses/cs4780/2021fa/lectures/UnsupervisedLearning.html#pca"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW5"
+        type: "homework"
+        date: "03/30/2023"
+        time: "23:59 PT"
+
+- date: "04/04/2023"
+  topic: "Additional Workshop - Deep Learning"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Deep Learning by Goodfellow - Ch.6 MLP"
+      url: "https://www.deeplearningbook.org/contents/mlp.html"
+      type: "link"
+    - title: "GitHub Repository"
+      url: "https://github.com/zhenyuanlu/ML-workshop-IE6600"
+      type: "link"
+  assignments: []
+
+- date: "04/11/2023"
+  topic: "Project Presentation"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- module: "Module: Happy Summer!"
+  color: "orange"
+  lessons: []

@@ -51,6 +51,13 @@
         url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
         width: 8
         height: 
+    - slug: "ie7275-bos-su20"
+      topic: "Industry in a Nutshell"
+      company: "TikTok"
+      company_logo:
+        url: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a9/TikTok_logo.svg/2560px-TikTok_logo.svg.png"
+        width: 8
+        height:
 
 - id: 'shihan_tian'
   name: "Shihan Tian"
@@ -112,6 +119,8 @@
   courses:
     - slug: "ie6600-bos-fa20"
       topic: "Job Search and Interviewing"
+    - slug: "ie7275-bos-su20"
+      topic: "Industry in a Nutshell"
 
 - id: 'wenxin_liu'
   name: "Wenxin Liu"

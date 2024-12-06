@@ -1,7 +1,7 @@
 - module: "Module 1: Introduction"
   color: "blue"
 
-- date: "05/10/2020"
+- date: "05/10/2021"
   topic: "Course introduction and expectations"
   instructor: ""
   guest_lecturer: null
@@ -11,7 +11,7 @@
       type: ""
   assignments: []
 
-- date: "05/12/2020"
+- date: "05/12/2021"
   topic: "Basics of R I"
   instructor: ""
   guest_lecturer: null
@@ -24,7 +24,7 @@
       type: ""
   assignments: []
 
-- date: "05/17/2020"
+- date: "05/17/2021"
   topic: "Basics of R II"
   instructor: ""
   guest_lecturer: null
@@ -37,7 +37,7 @@
       type: ""
   assignments: []
 
-- date: "05/19/2020"
+- date: "05/19/2021"
   topic: "R functions and the grammar of visualization I"
   instructor: ""
   guest_lecturer: null
@@ -53,14 +53,14 @@
       type: ""
   assignments: []
 
-- date: "05/24/2020"
+- date: "05/24/2021"
   topic: "No classes"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "05/26/2020"
+- date: "05/26/2021"
   topic: "R functions and the grammar of visualization II"
   instructor: ""
   guest_lecturer: null
@@ -79,7 +79,7 @@
 - module: "Reminder: 5/30 Last day to drop a class w/o a W grade"
   color: "orange"
 
-- date: "05/31/2020"
+- date: "05/31/2021"
   topic: "No classes - Memorial Day"
   instructor: ""
   guest_lecturer: null
@@ -89,7 +89,7 @@
 - module: "Module 2: Basic Visualization and Data Engineering"
   color: "blue"
 
-- date: "06/02/2020"
+- date: "06/02/2021"
   topic: "Data Visualization Concepts I"
   instructor: ""
   guest_lecturer: null
@@ -98,14 +98,14 @@
     deadline:
       - title: "Group arrangement due"
         type: "project"
-        date: "06/01/2020"
+        date: "06/01/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW1 released"
         type: "homework"
 
-- date: "06/07/2020"
+- date: "06/07/2021"
   topic: >
     Data Visualization Concepts II <br>
     Basic data visualization in R I
@@ -120,7 +120,7 @@
       type: ""
   assignments: []
 
-- date: "06/09/2020"
+- date: "06/09/2021"
   topic: "Basic data visualization in R II"
   instructor: ""
   guest_lecturer: null
@@ -135,14 +135,14 @@
     deadline:
       - title: "HW1"
         type: "homework"
-        date: "06/08/2020"
+        date: "06/08/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW2 released"
         type: "homework"
 
-- date: "06/14/2020"
+- date: "06/14/2021"
   topic: "Data transformation with dplyr I"
   instructor: ""
   guest_lecturer: null
@@ -152,7 +152,7 @@
       type: "link"
   assignments: []
 
-- date: "06/16/2020"
+- date: "06/16/2021"
   topic: "Data transformation with dplyr II"
   instructor: ""
   guest_lecturer: null
@@ -164,14 +164,14 @@
     deadline:
       - title: "HW2"
         type: "homework"
-        date: "06/15/2020"
+        date: "06/15/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW3 released"
         type: "homework"
 
-- date: "06/21/2020"
+- date: "06/21/2021"
   topic: "Data wrangling with tibbles, readr and tidyr I"
   instructor: ""
   guest_lecturer: null
@@ -187,7 +187,7 @@
       type: "link"
   assignments: []
 
-- date: "06/23/2020"
+- date: "06/23/2021"
   topic: >
     Data wrangling with tibbles, readr and tidyr II<br>
     (Optional): Data wrangling with stringr, forcats, and lubridate
@@ -210,14 +210,14 @@
     deadline:
       - title: "HW3"
         type: "homework"
-        date: "06/22/2020"
+        date: "06/22/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW4 released"
         type: "homework"
 
-- date: "06/28/2020"
+- date: "06/28/2021"
   topic: "Visualizing relational data"
   instructor: ""
   guest_lecturer: null
@@ -229,11 +229,11 @@
     deadline:
       - title: "Project proposal"
         type: "project"
-        date: "06/28/2020"
+        date: "06/28/2021"
         time: "23:59 ET"
         submit_link: null
 
-- date: "06/30/2020"
+- date: "06/30/2021"
   topic: "Introduction to Shiny interactive visualization web app I"
   instructor: ""
   guest_lecturer: null
@@ -245,14 +245,14 @@
     deadline:
       - title: "HW4"
         type: "homework"
-        date: "06/29/2020"
+        date: "06/29/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW5 released"
         type: "homework"
 
-- date: "07/05/2020"
+- date: "07/05/2021"
   topic: "No classes - Independence Day Weekend"
   instructor: ""
   guest_lecturer: null
@@ -262,7 +262,7 @@
 - module: "Module 3: Advanced Visualization"
   color: "blue"
 
-- date: "07/07/2020"
+- date: "07/07/2021"
   topic: "Introduction to Shiny interactive visualization web app II"
   instructor: ""
   guest_lecturer: null
@@ -272,7 +272,7 @@
       type: "link"
   assignments: []
 
-- date: "07/12/2020"
+- date: "07/12/2021"
   topic: "Introduction to Shiny interactive visualization web app III"
   instructor: ""
   guest_lecturer: null
@@ -282,7 +282,7 @@
       type: "link"
   assignments: []
 
-- date: "07/14/2020"
+- date: "07/14/2021"
   topic: "Data analytics web apps with Shiny"
   instructor: ""
   guest_lecturer: null
@@ -292,7 +292,7 @@
       type: "link"
   assignments: []
 
-- date: "07/19/2020"
+- date: "07/19/2021"
   topic: "Exploratory data analysis and more data visualization I"
   instructor: ""
   guest_lecturer: null
@@ -304,14 +304,14 @@
     deadline:
       - title: "HW5"
         type: "homework"
-        date: "07/18/2020"
+        date: "07/18/2021"
         time: "23:59 ET"
         submit_link: null
     release:
       - title: "HW6 released"
         type: "homework"
 
-- date: "07/21/2020"
+- date: "07/21/2021"
   topic: "Exploratory data analysis and more data visualization II"
   instructor: ""
   guest_lecturer: null
@@ -321,21 +321,21 @@
       type: "link"
   assignments: []
 
-- date: "07/26/2020"
+- date: "07/26/2021"
   topic: "Additional R Workshop"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "07/28/2020"
+- date: "07/28/2021"
   topic: "Preparing for the project presentation"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "08/02/2020"
+- date: "08/02/2021"
   topic: "Preparing for the project presentation"
   instructor: ""
   guest_lecturer: null
@@ -345,21 +345,21 @@
 - module: "Reminder: Project and Slides due 08/03 @ 11:59pm ET"
   color: "orange"
 
-- date: "08/04/2020"
+- date: "08/04/2021"
   topic: "Project presentation"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "08/09/2020"
+- date: "08/09/2021"
   topic: "Project presentation"
   instructor: ""
   guest_lecturer: null
   materials: []
   assignments: []
 
-- date: "08/11/2020"
+- date: "08/11/2021"
   topic: "Project presentation"
   instructor: ""
   guest_lecturer: null
