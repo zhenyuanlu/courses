@@ -4,6 +4,8 @@
   name: "Kate Kryder"
   title: "Data Visualization Specialist"
   image: "/assets/images/staff/kate.jpg"
+  office: "See course slides for booking link"
+  office_hours: "By appointment"
   bio: ""
   links:
     - name: "Email"
@@ -19,6 +21,8 @@
   name: "Jodi Bolognese"
   title: "Engineering Librarian"
   image: "/assets/images/staff/jodi.jpg"
+  office: "See course slides for booking link"
+  office_hours: "By appointment"
   bio: ""
   links:
     - name: "Email"

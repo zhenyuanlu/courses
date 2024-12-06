@@ -1,6 +1,7 @@
 {% assign instructors = course.instructors | default: empty_array %}
 {% assign teaching_assistants = course.teaching_assistants | default: empty_array %}
 {% assign guest_lecturers = course.guest_lecturers | default: empty_array %}
+{% assign specialists = course.specialists | default: empty_array %}
 
 <div class="mb-8">
   <h2 class="text-2xl font-bold mb-4">Teaching Staff</h2>
@@ -10,8 +11,13 @@
     <div class="mb-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {% for instructor_id in instructors %}
-          {% assign instructor = site.data.instructors | where: 'id', instructor_id | first %}
+          {% assign instructor = processed_instructors | where: 'id', instructor_id | first %}
           {% if instructor %}
+            {% assign course_entry = instructor.courses | where: 'slug', course_slug | first %}
+        
+            <!-- Override Fields if Course-Specific Entries Exist -->
+            {% assign office = course_entry.office | default: instructor.office %}
+            {% assign office_hours = course_entry.office_hours | default: instructor.office_hours %}
             <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
               <!-- Staff Image -->
               <img
@@ -33,20 +39,23 @@
                   {{ instructor.title }}
                 </p>
 
-                <div class="text-sm text-gray-600 mt-1">
-                  {% if instructor.office %}
-                    <div class="flex items-center gap-2">
-                      <i class="fas fa-location-dot w-4 h-4"></i>
-                      {{ instructor.office }}
-                    </div>
-                  {% endif %}
-                  {% if instructor.office_hours %}
-                    <div class="flex items-center gap-2">
-                      <i class="far fa-clock w-4 h-4"></i>
-                      Office Hours: {{ instructor.office_hours }}
-                    </div>
-                  {% endif %}
-                </div>
+                 <!-- Office and Office Hours -->
+                {% if office or office_hours %}
+                  <div class="text-sm text-gray-600 mt-1">
+                    {% if office %}
+                      <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                        {{ office }}
+                      </div>
+                    {% endif %}
+                    {% if office_hours %}
+                      <div class="flex items-center gap-2">
+                        <i class="far fa-clock w-4 h-4"></i>
+                        Office Hours: {{ office_hours }}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endif %}
 
                 <!-- Social/Contact Links -->
                 {% if instructor.links %}
@@ -77,8 +86,14 @@
     <div class="mb-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {% for ta_id in teaching_assistants %}
-          {% assign ta = site.data.teaching_assistants | where: 'id', ta_id | first %}
+          {% assign ta = processed_teaching_assistants | where: 'id', ta_id | first %}
           {% if ta %}
+            {% assign course_entry = ta.courses | where: 'slug', course_slug | first %}
+
+            <!-- Override Fields if Course-Specific Entries Exist -->
+            {% assign office = course_entry.office | default: ta.office %}
+            {% assign office_hours = course_entry.office_hours | default: ta.office_hours %}
+
             <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
               <!-- Staff Image -->
               <img
@@ -101,22 +116,23 @@
                   <p class="text-sm text-gray-600">Section: {{ ta.section }}</p>
                 {% endif %}
 
+                <!-- Office, Office Hours, and Email -->
+                {% if office or office_hours %}
                 <div class="text-sm text-gray-600 mt-1">
-                  {% if ta.office_hours %}
+                  {% if office %}
                     <div class="flex items-center gap-2">
-                      <i class="far fa-clock w-4 h-4"></i>
-                      Office Hours: {{ ta.office_hours }}
+                      <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                      {{ office }}
                     </div>
                   {% endif %}
-                  {% if ta.email %}
+                  {% if office_hours %}
                     <div class="flex items-center gap-2">
-                      <i class="fa-regular fa-envelope w-4 h-4"></i>
-                      <a href="mailto:{{ ta.email }}" class="hover:text-blue-600">
-                        {{ ta.email }}
-                      </a>
+                      <i class="far fa-clock w-4 h-4"></i>
+                      Office Hours: {{ office_hours }}
                     </div>
                   {% endif %}
                 </div>
+              {% endif %}
 
                 <!-- Social/Contact Links -->
                 {% if ta.links %}
@@ -147,8 +163,16 @@
     <div class="mb-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         {% for guest_id in guest_lecturers %}
-          {% assign guest = site.data.guest_lecturers | where: 'id', guest_id | first %}
+          {% assign guest = processed_guest_lecturers | where: 'id', guest_id | first %}
           {% if guest %}
+            {% assign course_entry = guest.courses | where: 'slug', course_slug | first %}
+
+            <!-- Override Fields if Course-Specific Entries Exist -->
+            {% assign topic = course_entry.topic | default: guest.topic %}
+            {% assign date = course_entry.date | default: guest.date %}
+            {% assign company = course_entry.company | default: guest.company %}
+            {% assign company_logo = course_entry.company_logo | default: guest.company_logo %}
+        
             <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
               <!-- Staff Image -->
               <img
@@ -168,19 +192,19 @@
                 <!-- Title and Company -->
                 <p class="text-sm text-gray-600 flex items-center gap-1">
                   {{ guest.title }}
-                  {% if guest.company %}
-                    <span>@<span class="font-medium">{{ guest.company }}</span></span>
-                    {% if guest.company_logo %}
+                  {% if company %}
+                    <span>@<span class="font-medium">{{ company }}</span></span>
+                    {% if company_logo %}
                     <img
-                      src="{{ guest.company_logo.url }}"
-                      alt="{{ guest.company }}"
-                      class="inline-block rounded-full
-                        {% if guest.company_logo.width and guest.company_logo.width != '' and guest.company_logo.height and guest.company_logo.height != '' %}
-                        w-{{ guest.company_logo.width }} h-{{ guest.company_logo.height }}
-                        {% elsif guest.company_logo.width and guest.company_logo.width != '' %}
-                        w-{{ guest.company_logo.width }} h-auto
-                        {% elsif guest.company_logo.height and guest.company_logo.height != '' %}
-                        h-{{ guest.company_logo.height }} w-auto
+                      src="{{ company_logo.url }}"
+                      alt="{{ company }}"
+                      class="inline-block 
+                        {% if company_logo.width and company_logo.width != '' and company_logo.height and guest.company_logo.height != '' %}
+                        w-{{ company_logo.width }} h-{{ company_logo.height }}
+                        {% elsif guest.company_logo.width and company_logo.width != '' %}
+                        w-{{ company_logo.width }} h-auto
+                        {% elsif guest.company_logo.height and company_logo.height != '' %}
+                        h-{{ company_logo.height }} w-auto
                         {% else %}
                         w-6 h-6
                         {% endif %}"
@@ -190,9 +214,9 @@
                 </p>
 
                 <!-- Topic and Bio -->
-                {% if guest.topic %}
+                {% if topic %}
                   <div class="mt-1 text-sm text-gray-600">
-                    <i class="far fa-calendar w-4 h-4"></i> Topic: {{ guest.topic }}
+                    <i class="far fa-calendar w-4 h-4"></i> Topic: {{ topic }}
                   </div>
                 {% endif %}
                 {% if guest.bio %}
@@ -223,74 +247,78 @@
     </div>
   {% endif %}
 
-  <!-- Specialists -->
-  {% if processed_specialists.size > 0 %}
+  {% if specialists.size > 0 %}
     <div class="mb-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {% for specialist in processed_specialists %}
-          <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
-            <!-- Staff Image -->
-            <img
-              src="{{ specialist.image | default: '/assets/images/default-avatar.png' | relative_url }}"
-              alt="{{ specialist.name }}"
-              class="w-20 h-20 rounded-full object-cover"
-              loading="lazy"
-            />
-            
-            <div class="flex-1">
-              <!-- Name and Role Badge -->
-              <div class="flex justify-between items-center mb-1">
-                <h4 class="font-bold text-lg">{{ specialist.name }}</h4>
-                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full lowercase">Specialist</span>
-              </div>
+        {% for specialist_id in specialists %}
+          {% assign specialist = processed_specialists | where: 'id', specialist_id | first %}
+          {% if specialist %}
 
-              <!-- Title -->
-              <p class="text-sm text-gray-600">{{ specialist.title }}</p>
+            {% assign course_entry = specialist.courses | where: 'slug', course_slug | first %}
+          
+            <!-- Override Fields if Course-Specific Entries Exist -->
+            {% assign office = course_entry.office | default: specialist.office %}
+            {% assign office_hours = course_entry.office_hours | default: specialist.office_hours %}
 
-              <!-- Office Hours and Email -->
-              <div class="text-sm text-gray-600 mt-1">
-                {% if specialist.office %}
-                  <div class="flex items-center gap-2">
-                    <i class="fas fa-location-dot w-4 h-4"></i>
-                    {{ specialist.office }}
-                  </div>
-                {% endif %}
-                {% if specialist.office_hours %}
-                  <div class="flex items-center gap-2">
-                    <i class="far fa-clock w-4 h-4"></i>
-                    Office Hours: {{ specialist.office_hours }}
-                  </div>
-                {% endif %}
-                {% if specialist.email %}
-                  <div class="flex items-center gap-2">
-                    <i class="fa-regular fa-envelope w-4 h-4"></i>
-                    <a href="mailto:{{ specialist.email }}" class="hover:text-blue-600">
-                      {{ specialist.email }}
-                    </a>
-                  </div>
-                {% endif %}
-              </div>
-
-              <!-- Social/Contact Links -->
-              {% if specialist.links %}
-                <div class="flex gap-2 mt-2">
-                  {% for link in specialist.links %}
-                    <a
-                      href="{{ link.url }}"
-                      class="text-gray-600 transition-all duration-300 hover:scale-110"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="{{ link.name }}"
-                    >
-                      <i class="{{ link.icon }} text-lg"></i>
-                    </a>
-                  {% endfor %}
+            <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
+              <!-- Staff Image -->
+              <img
+                src="{{ specialist.image | default: '/assets/images/default-avatar.png' | relative_url }}"
+                alt="{{ specialist.name }}"
+                class="w-20 h-20 rounded-full object-cover"
+                loading="lazy"
+              />
+              
+              <div class="flex-1">
+                <!-- Name and Role Badge -->
+                <div class="flex justify-between items-center mb-1">
+                  <h4 class="font-bold text-lg">{{ specialist.name }}</h4>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full lowercase">Specialist</span>
                 </div>
-              {% endif %}
+
+                <!-- Title -->
+                <p class="text-sm text-gray-600">{{ specialist.title }}</p>
+
+                <!-- Office Hours and Email -->
+                {% if office or office_hours or email %}
+                <div class="text-sm text-gray-600 mt-1">
+                  {% if office %}
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                      {{ office }}
+                    </div>
+                  {% endif %}
+                  {% if office_hours %}
+                    <div class="flex items-center gap-2">
+                      <i class="far fa-clock w-4 h-4"></i>
+                      Office Hours: {{ office_hours }}
+                    </div>
+                  {% endif %}
+                  </div>
+                {% endif %}
+              
+                <!-- Social/Contact Links -->
+                {% if specialist.links %}
+                  <div class="flex gap-2 mt-2">
+                    {% for link in specialist.links %}
+                      <a
+                        href="{{ link.url }}"
+                        class="text-gray-600 transition-all duration-300 hover:scale-110"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="{{ link.label | default: 'Social link' }}"
+                      >
+                        <i class="{{ link.icon }} text-lg"></i>
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
             </div>
-          </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
   {% endif %}
 </div>
+

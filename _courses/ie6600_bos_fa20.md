@@ -15,7 +15,7 @@ location: "Online via Zoom"
 credits: 4
 description: "This course covers basics of R and R Shiny for data preprocessing and visualization. Students learn static and interactive visualization, dashboard development, and platforms that reveal patterns through careful attention to color encoding, shape selection, spatial layout, and annotation."
 
-schedule_file: "ie6600-bos-fa20"
+schedule_file: "ie6600_bos_fa20"
 
 technologies:
   - r
@@ -34,7 +34,7 @@ instructors:
   - zhenyuan_lu
 teaching_assistants:
   - anuja_nanal
-specialist:
+specialists:
   - kate_kryder
   - jodi_bolognese
 guest_lecturers:

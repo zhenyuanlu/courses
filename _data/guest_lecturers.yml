@@ -18,7 +18,7 @@
       icon: "fa-brands fa-linkedin-in"
   courses: 
     - slug: "ie7945-van-fa24"
-      topic: "Cloud Architecture"
+      topic: "Industry in a Nutshell"
 
 - id: 'jinhui_zhao'
   name: "Jinhui Zhao" 
@@ -39,6 +39,18 @@
   courses: 
     - slug: "ie7945-van-fa24"
       topic: "Industry in a Nutshell"
+      company: "Suno"
+      company_logo:
+        url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67XAuEiPDDrQJ3g-TY6Zyy2kYe1wefm8OXQ&s"
+        width: 8
+        height: 
+    - slug: "ie6600-bos-fa20"
+      topic: "Software Engineering"
+      company: "Amazon"
+      company_logo:
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+        width: 8
+        height: 
 
 - id: 'shihan_tian'
   name: "Shihan Tian"
@@ -79,3 +91,24 @@
   courses: 
     - slug: "ie7945-van-fa24"
       topic: "Industry in a Nutshell"
+
+
+- id: 'qibin_tan'
+  name: "Qibin Tan"
+  title: "DevOps Engineer"
+  image: "/assets/images/staff/qibin.jpg"
+  bio: "Build and Release Engineer with 7+ years experience in DevOps."
+  company: "iRobot"
+  company_logo:
+    url: "https://media.irobot.com/image/iRobot+Logo+Print+%28002%29+400px.jpg"
+    width: 10
+    height:
+  date: "TBD"
+  topic: "DevOps"
+  links:
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/qibint/"
+      icon: "fa-brands fa-linkedin-in"
+  courses:
+    - slug: "ie6600-bos-fa20"
+      topic: "Software Engineering"

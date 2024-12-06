@@ -70,6 +70,63 @@
   {% endif %}
 {% endfor %}
 
+
+{% comment %} Process Guest Lecturers {% endcomment %}
+{% for guest in site.data.guest_lecturers %}
+  {% assign course_entry = guest.courses | where: 'slug', course_slug | first %}
+  {% if course_entry %}
+    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
+    {% assign merged_guest = guest %}
+
+    {% if course_entry.company %}
+      {% assign merged_guest = merged_guest | merge: {'company': course_entry.company} %}
+
+    {% endif %}
+    
+    
+    {% comment %} Handle nested company_logo structure {% endcomment %}
+    {% if course_entry.company_logo %}
+      {% comment %} Create a new merged company_logo structure {% endcomment %}
+      {% assign merged_logo = guest.company_logo | default: {} %}
+      
+      {% comment %} Override individual logo properties if they exist in course entry {% endcomment %}
+      {% if course_entry.company_logo.url %}
+        {% assign merged_logo = merged_logo | merge: {'url': course_entry.company_logo.url} %}
+      {% endif %}
+      
+      {% if course_entry.company_logo.width %}
+        {% assign merged_logo = merged_logo | merge: {'width': course_entry.company_logo.width} %}
+      {% endif %}
+      
+      {% if course_entry.company_logo.height %}
+        {% assign merged_logo = merged_logo | merge: {'height': course_entry.company_logo.height} %}
+      {% endif %}
+      
+      {% comment %} Add the merged logo to the guest structure {% endcomment %}
+      {% assign merged_guest = merged_guest | merge: {'company_logo': merged_logo} %}
+    {% elsif guest.company_logo %}
+      {% assign merged_guest = merged_guest | merge: {
+        'company_logo': {
+          'url': guest.company_logo.url,
+          'width': guest.company_logo.width,
+          'height': guest.company_logo.height
+        }
+      } %}
+    {% endif %}
+    
+    {% if course_entry.topic %}
+      {% assign merged_guest = merged_guest | merge: {'topic': course_entry.topic} %}
+    {% endif %}
+    
+    {% if course_entry.date %}
+      {% assign merged_guest = merged_guest | merge: {'date': course_entry.date} %}
+    {% endif %}
+    
+    {% assign processed_guest_lecturers = processed_guest_lecturers | push: merged_guest %}
+  {% endif %}
+{% endfor %}
+
+
 {% comment %} Process Specialists {% endcomment %}
 {% for specialist in site.data.specialists %}
   {% assign course_entry = specialist.courses | where: 'slug', course_slug | first %}
@@ -93,35 +150,6 @@
   {% endif %}
 {% endfor %}
 
-{% comment %} Process Guest Lecturers {% endcomment %}
-{% for guest in site.data.guest_lecturers %}
-  {% assign course_entry = guest.courses | where: 'slug', course_slug | first %}
-  {% if course_entry %}
-    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
-    {% assign merged_guest = guest %}
-    
-    {% comment %} Handle nested company_logo structure {% endcomment %}
-    {% if guest.company_logo %}
-      {% assign merged_guest = merged_guest | merge: {
-        'company_logo': {
-          'url': guest.company_logo.url,
-          'width': guest.company_logo.width,
-          'height': guest.company_logo.height
-        }
-      } %}
-    {% endif %}
-    
-    {% if course_entry.topic %}
-      {% assign merged_guest = merged_guest | merge: {'topic': course_entry.topic} %}
-    {% endif %}
-    
-    {% if course_entry.date %}
-      {% assign merged_guest = merged_guest | merge: {'date': course_entry.date} %}
-    {% endif %}
-    
-    {% assign processed_guest_lecturers = processed_guest_lecturers | push: merged_guest %}
-  {% endif %}
-{% endfor %}
 
 {% comment %} Make processed data available to templates {% endcomment %}
 {% assign processed_instructors = processed_instructors %}

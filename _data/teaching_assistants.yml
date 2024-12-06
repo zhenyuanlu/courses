@@ -4,6 +4,8 @@
   name: "Anuja Nanal"
   title: "Teaching Assistant"
   image: "/assets/images/staff/AnujaNanal.jpg"
+  office: "Boston"
+  office_hours: "Fri 10:00am to 11:00am ET"
   bio: ""
   links:
     - name: "Email"
