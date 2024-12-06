@@ -1,6 +1,6 @@
-title: "Zhenyuan Lu's Courses"
+title: "Teachings | Zhenyuan Lu | Machine Learning & Data Science"
 description: "This is the main course page for holding all the course sites that Zhenyuan Lu is teaching."
-baseurl: "/teachings"
+baseurl: "/courses"
 url: "https://zhenyuanlu.com"
 
 markdown: kramdown
@@ -14,12 +14,14 @@ kramdown:
 
 author:
   name: "Zhenyuan Lu"
-  email: "lu.zhenyua@northeastern.edu"
+  email: "zh.lu@northeastern.edu"
+  url: "https://zhenyuanlu.com"
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-email-protect
   
 include:
   - _courses

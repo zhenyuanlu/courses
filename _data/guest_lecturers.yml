@@ -45,7 +45,7 @@
         width: 8
         height: 
     - slug: "ie6600-bos-fa20"
-      topic: "Software Engineering"
+      topic: "Job Search and Interviewing"
       company: "Amazon"
       company_logo:
         url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
@@ -111,4 +111,21 @@
       icon: "fa-brands fa-linkedin-in"
   courses:
     - slug: "ie6600-bos-fa20"
-      topic: "Software Engineering"
+      topic: "Job Search and Interviewing"
+
+- id: 'wenxin_liu'
+  name: "Wenxin Liu"
+  title: "Cloud Infrastructure Architect"
+  image: "/assets/images/staff/wen.jpg"
+  bio: "Cloud Infrastructure Architect with 10+ years experience in cloud architecture."
+  company: "Amazon"
+  company_logo:
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+    width: 8
+    height:
+  date: "TBD"
+  topic: "Cloud Infrastructure"
+  courses:  
+    - slug: "ie6600-bos-fa20"
+      topic: "Job Search and Interviewing"
+

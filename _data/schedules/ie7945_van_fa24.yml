@@ -64,7 +64,7 @@
       url: "https://github.com/cvpr-org/author-kit/releases/tag/CVPR2025-v3(latex)"
       type: "link"
   assignments:
-    release: null
+    release:
     deadline:
       - title: "Project proposal"
         date: "10/13/2024"

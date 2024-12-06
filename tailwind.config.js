@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class', // Enable class-based dark mode
   content: [
     './_includes/**/*.{html,md}',
     './_layouts/**/*.{html,md}',

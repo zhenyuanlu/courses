@@ -16,3 +16,35 @@
       office: "Zoom"
       office_hours: "Thur 10:00am to 11:00am ET"
 
+- id: 'ameya_mande'
+  name: "Ameya Mande"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/ameya.png"
+  office: "Boston"
+  office_hours: "Fri 11:00am to 12:00pm ET"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:mande.a@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-bos-fa21"
+      office: "Zoom"
+      office_hours: "Fri 11:00am to 12:00pm on Zoom"
+
+- id: 'sucharitha_sai_e'
+  name: "Sucharitha Sai E"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/suchi.jpg"
+  office: "Boston"
+  office_hours: "Tue 2:30pm to 3:30pm ET"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:e.s@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-bos-fa21"
+      office: "Zoom"
+      office_hours: "Tue 2:30pm to 3:30pm on Zoom"
+

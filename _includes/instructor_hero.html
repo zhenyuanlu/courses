@@ -21,7 +21,7 @@
         <div class="flex flex-wrap gap-4 justify-center md:justify-start">
           {% for link in instructor.links %}
           <a
-            href="{{ link.url }}"
+            href="{{ link.url | email_protect }}"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center py-2 mr-2 text-gray-600 transition-all duration-300 hover:scale-110"

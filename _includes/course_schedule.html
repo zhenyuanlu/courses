@@ -68,26 +68,53 @@
                 {% endif %}
 
                 {% if item.guest_lecturer %}
-                  {% assign guest = processed_guest_lecturers | where: 'id', item.guest_lecturer | first %}
-                  {% if guest %}
-                    <!-- For Guest Section (update this part) -->
-                    {% if guest.topic %}
-                    <div class="mt-2 pl-3 border-l-2 border-purple-300">
-                      <p class="text-sm text-gray-600">
-                        <i class="fa-regular fa-lightbulb text-purple-400"></i>
-                        Guest Topic: {{ guest.topic }}
-                      </p>
-                      <div class="flex items-center gap-2 text-sm text-gray-600 mt-1">
-                        <span>Guest: {{ guest.name }}</span>
-                        {% if guest.company_logo %}
-                          <img src="{{ guest.company_logo.url }}" alt="{{ guest.company }}"
-                            class="inline-block rounded-full {% if guest.company_logo.width %}w-{{ guest.company_logo.width }}{% endif %} {% if guest.company_logo.height %}h-{{ guest.company_logo.height }}{% endif %}" />
-                        {% endif %}
-                      </div>
-                    </div>
-                    {% endif %}
-                    </div>
-                  {% endif %}
+                  <div class="mt-2 space-y-2">
+                    {% for guest_id in item.guest_lecturer %}
+                      {% assign guest = processed_guest_lecturers | where: 'id', guest_id | first %}
+                      {% if guest %}
+                        {% assign course_entry = guest.courses | where: 'slug', course_slug | first %}
+
+                        <!-- Override Fields if Course-Specific Entries Exist -->
+                        {% assign topic = course_entry.topic | default: guest.topic %}
+                        {% assign company = course_entry.company | default: guest.company %}
+                        {% assign company_logo = course_entry.company_logo | default: guest.company_logo %}
+
+                        <div class="pl-3 border-l-2 border-purple-300">
+                          <!-- Guest Topic -->
+                          {% if topic %}
+                            <p class="text-sm text-gray-600 flex items-center">
+                              <i class="fa-regular fa-lightbulb text-purple-400 mr-1"></i>
+                              Guest Topic: {{ topic }}
+                            </p>
+                          {% endif %}
+
+                          <!-- Guest Name and Company -->
+                          <div class="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                            <span>Guest: {{ guest.name }}</span>
+                            {% if company %}
+                              <span>@<span class="font-medium">{{ company }}</span></span>
+                            {% endif %}
+                            {% if company_logo %}
+                              <img
+                                src="{{ company_logo.url }}"
+                                alt="{{ company }}"
+                                class="inline-block 
+                              {% if company_logo.width and company_logo.width != '' and company_logo.height and guest.company_logo.height != '' %}
+                              w-{{ company_logo.width }} h-{{ company_logo.height }}
+                              {% elsif guest.company_logo.width and company_logo.width != '' %}
+                              w-{{ company_logo.width }} h-auto
+                              {% elsif guest.company_logo.height and company_logo.height != '' %}
+                              h-{{ company_logo.height }} w-auto
+                              {% else %}
+                              w-6 h-6
+                              {% endif %}"
+                              />
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
                 {% endif %}
               </td>
 
@@ -136,9 +163,25 @@
                 {% endif %}
               </td>
 
+              <!-- Assignment Release-->
+
               <td class="px-4 py-2">
-                {% if item.assignments.deadline %}
-                <ul class="space-y-3">
+                {% if item.assignments.release or item.assignments.deadline %}
+                  <ul class="space-y-3">
+                    {% if item.assignments.release %}
+                      {% for release in item.assignments.release %}
+                        <li>
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                            <span class="text-sm font-medium text-gray-900">
+                              {{ release.title }}
+                            </span>
+                          </div>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+
+
                   {% for deadline in item.assignments.deadline %}
                     <li>
                       <div class="flex flex-col gap-1.5">
@@ -159,7 +202,7 @@
                               {{ deadline.date }}
                             {% endif %}
                           {% endif %}
-                          {% if deadline.time %}at {{ deadline.time }}{% endif %}
+                          {% if deadline.time %}@{{ deadline.time }}{% endif %}
                         </div>
                         
                         {% if deadline.submit_link %}

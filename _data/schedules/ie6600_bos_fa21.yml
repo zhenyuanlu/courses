@@ -1,0 +1,230 @@
+- module: "Module 1: Introduction"
+  color: "blue"
+
+- date: "09/15/2020"
+  topic: "Course introduction and expectations"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "Instructor’s Brain"
+      url: ""
+      type: ""
+  assignments: []
+
+- date: "09/22/2020"
+  topic: "Basics of R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4E</b> Basics of R"
+      url: ""
+      type: ""
+    - title: "<b>R4E</b> Advanced Data Structure"
+      url: ""
+      type: ""
+  assignments: []
+
+- module: "Module 2: Basic Visualization and Data Engineering"
+  color: "blue"
+
+- date: "09/28/2020"
+  topic: "Last day to drop a full-semester fall class without a W grade"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "09/29/2020"
+  topic: "R functions and the grammar of visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/workflow-basics.html\" target=\"_blank\">Workflow</a>"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "<b>Wickham</b> <a href=\"https://vita.had.co.nz/papers/layered-grammar.pdf\" target=\"_blank\">A layered grammar of graphics</a>"
+      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+      type: "paper"
+    - title: "(optional) <b>R4E</b> Writing R functions"
+      url: ""
+      type: ""
+  assignments: []
+
+- date: "10/06/2020"
+  topic: "Data Visualization Concepts"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments:
+    deadline:
+      - title: "Group arrangement due"
+        type: "project"
+        date: "10/05/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW1 released"
+        type: "homework"
+
+- date: "10/13/2020"
+  topic: "Basic data visualization in R"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/workflow-basics.html\" target=\"_blank\">Data Visualization with ggplot2</a>"
+      url: "https://r4ds.had.co.nz/workflow-basics.html"
+      type: "link"
+    - title: "(optional) RGC Quickly Exploring Data"
+      url: ""
+      type: ""
+  assignments:
+    deadline:
+      - title: "HW1"
+        type: "homework"
+        date: "10/12/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW2 released"
+        type: "homework"
+
+- date: "10/20/2020"
+  topic: "Data transformation with dplyr"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/transform.html\" target=\"_blank\">Data Transformation with dplyr</a>"
+      url: "https://r4ds.had.co.nz/transform.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW2"
+        type: "homework"
+        date: "10/19/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW3 released"
+        type: "homework"
+
+- date: "10/27/2020"
+  topic: "Data wrangling with tibbles, readr and tidyr"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/tibbles.html\" target=\"_blank\">Tibbles with tibble</a>"
+      url: "https://r4ds.had.co.nz/tibbles.html"
+      type: "link"
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/data-import.html\" target=\"_blank\">Data Import with readr</a>"
+      url: "https://r4ds.had.co.nz/data-import.html"
+      type: "link"
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/tidy-data.html\" target=\"_blank\">Tidy Data with tidyr</a>"
+      url: "https://r4ds.had.co.nz/tidy-data.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW3"
+        type: "homework"
+        date: "10/26/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW4 released"
+        type: "homework"
+
+- date: "11/03/2020"
+  topic: "Visualizing relational data"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/relational-data.html\" target=\"_blank\">Relational Data with dplyr</a>"
+      url: "https://r4ds.had.co.nz/relational-data.html"
+      type: "link"
+    - title: "James, Gareth, et al. <a href=\"https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf\" target=\"_blank\">An Introduction to Statistical Learning</a>"
+      url: "https://web.stanford.edu/~hastie/ISLR2/ISLRv2_website.pdf"
+      type: "book"
+  assignments:
+    deadline:
+      - title: "HW4"
+        type: "homework"
+        date: "11/02/2020"
+        time: "23:59 ET"
+        submit_link: null
+
+- module: "Module 3: Advanced Visualization"
+  color: "blue"
+
+- date: "11/10/2020"
+  topic: "Introduction to Shiny interactive visualization web app"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R Shiny</b> <a href=\"https://shiny.rstudio.com/tutorial/\" target=\"_blank\">Shiny tutorial</a>"
+      url: "https://shiny.rstudio.com/tutorial/"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "Project proposal"
+        type: "project"
+        date: "11/09/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW5 released"
+        type: "homework"
+
+- date: "11/24/2020"
+  topic: "No Classes - Thanksgiving"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "12/01/2020"
+  topic: "Exploratory data analysis and more data visualization"
+  instructor: ""
+  guest_lecturer: null
+  materials:
+    - title: "<b>R4DS</b> <a href=\"https://r4ds.had.co.nz/exploratory-data-analysis.html\" target=\"_blank\">Exploratory Data Analysis</a>"
+      url: "https://r4ds.had.co.nz/exploratory-data-analysis.html"
+      type: "link"
+  assignments:
+    deadline:
+      - title: "HW5"
+        type: "homework"
+        date: "11/30/2020"
+        time: "23:59 ET"
+        submit_link: null
+    release:
+      - title: "HW6 released"
+        type: "homework"
+
+
+- date: "12/01/2020"
+  topic: "Project presentations"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- date: "12/08/2020"
+  topic: "No Classes - Preparation for Presentation"
+  instructor: ""
+  guest_lecturer: null
+  assignments:
+    deadline:
+      - title: "HW6"
+        type: "homework"
+        date: "12/07/2020"
+        time: "23:59 ET"
+        submit_link: null
+
+- date: "12/15/2020"
+  topic: "Project presentations"
+  instructor: ""
+  guest_lecturer: null
+  materials: []
+  assignments: []
+
+- module: "Happy Holiday!"
+  color: "green"

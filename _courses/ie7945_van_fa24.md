@@ -21,17 +21,6 @@ technologies:
   - python
   - latex
 
-platforms:
-  - name: "Gradescope"
-    url: "https://www.gradescope.com/courses/876356"
-  - name: "Piazza" 
-    url: "https://piazza.com/class/m18cwbnltqn4tc"
-  - name: "Course Repository"
-    url: "https://github.com/zhenyuanlu/course-ie7945"
-  - name: "Whiteboard"
-    url: "https://whiteboard.office.com/me/whiteboards..."
-  - name: "Jira"
-    url: "https://ie7945fa24.atlassian.net/jira/software/projects/VANFA24/boards/1"
 
 instructors:
   - zhenyuan_lu

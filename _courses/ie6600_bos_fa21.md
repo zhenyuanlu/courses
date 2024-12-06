@@ -1,12 +1,12 @@
 ---
 layout: course
-slug: "ie6600-bos-fa20"
+slug: "ie6600-bos-fa21"
 title: "Computation and Visualization for Analytics" 
 subtitle: "Introduction to data visualization using R and Shiny"
 campus: "Boston"
 university: "Northeastern University"
 course_code: "IE6600"
-semester: "Fall 2020"
+semester: "Fall 2021"
 level: "Graduate"
 status: "past"
 schedule: "Tue, Fri 08:30am – 10:10am (ET)"
@@ -15,7 +15,7 @@ location: "Online via Zoom"
 credits: 4
 description: "This course covers basic of the R, and R Shiny for data preprocessing, and visualization. It introduces students to static and interactive visualization, dashboard, and platform that reveal information, patterns, interactions, and comparisons by paying attention to details such as color encoding, a shape selection, spatial layout, and annotation. Based on these fundamentals of analytical and creative thinking, the course then focuses on data visualization techniques and the use of the most current popular software tools that support data exploration, analytics-based storytelling and knowledge discovery, and decision-making in engineering, healthcare operations, manufacturing, and related applications."
 
-schedule_file: "ie6600_bos_fa20"
+schedule_file: "ie6600_bos_fa21"
 
 technologies:
   - r
@@ -33,14 +33,9 @@ course_platform:
 instructors:
   - zhenyuan_lu
 teaching_assistants:
-  - anuja_nanal
-specialists:
-  - kate_kryder
-  - jodi_bolognese
-guest_lecturers:
-  - jinhui_zhao
-  - qibin_tan
-  - wenxin_liu
+  - sucharitha_sai_e
+  - ameya_mande
+
 
 course_materials:
   - title: "R For Data Science (<b>R4DS</b>)"

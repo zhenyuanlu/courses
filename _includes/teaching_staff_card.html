@@ -62,7 +62,7 @@
                   <div class="flex gap-2 mt-2">
                     {% for link in instructor.links %}
                       <a
-                        href="{{ link.url }}"
+                        href="{{ link.url | email_protect }}"
                         class="text-gray-600 transition-all duration-300 hover:scale-110"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -139,7 +139,7 @@
                   <div class="flex gap-2 mt-2">
                     {% for link in ta.links %}
                       <a
-                        href="{{ link.url }}"
+                        href="{{ link.url | email_protect }}"
                         class="text-gray-600 transition-all duration-300 hover:scale-110"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -228,7 +228,7 @@
                   <div class="flex gap-2 mt-2">
                     {% for link in guest.links %}
                       <a
-                        href="{{ link.url }}"
+                        href="{{ link.url | email_protect }}"
                         class="text-gray-600 transition-all duration-300 hover:scale-110"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -280,7 +280,7 @@
                 <p class="text-sm text-gray-600">{{ specialist.title }}</p>
 
                 <!-- Office Hours and Email -->
-                {% if office or office_hours or email %}
+                {% if office or office_hours %}
                 <div class="text-sm text-gray-600 mt-1">
                   {% if office %}
                     <div class="flex items-center gap-2">
@@ -302,7 +302,7 @@
                   <div class="flex gap-2 mt-2">
                     {% for link in specialist.links %}
                       <a
-                        href="{{ link.url }}"
+                        href="{{ link.url | email_protect }}"
                         class="text-gray-600 transition-all duration-300 hover:scale-110"
                         target="_blank"
                         rel="noopener noreferrer"
