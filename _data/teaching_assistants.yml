@@ -30,7 +30,7 @@
   courses:
     - slug: "ie6600-bos-fa21"
       office: "Zoom"
-      office_hours: "Fri 11:00am to 12:00pm on Zoom"
+      office_hours: "Fri 11:00am to 12:00pm"
 
 - id: 'sucharitha_sai_e'
   name: "Sucharitha Sai E"
@@ -46,5 +46,69 @@
   courses:
     - slug: "ie6600-bos-fa21"
       office: "Zoom"
-      office_hours: "Tue 2:30pm to 3:30pm on Zoom"
+      office_hours: "Tue 2:30pm to 3:30pm"
+
+- id: 'lekha_cheruku'
+  name: "Lekha Cheruku"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/lekha.jpg"
+  office: "Boston"
+  office_hours: "Thur 9:00am to 10:00am ET"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:cheruku.l@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-bos-su21"
+      office: "Zoom"
+      office_hours: "Thur 9:00am to 10:00am"
+
+
+- id: 'dongning_li'
+  name: "Dongning Li"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/dongNing.jpg"
+  office: "Boston"
+  office_hours: "TBA"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:"
+      icon: "fa-regular fa-envelope"
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/dongning-li/"
+      icon: "fa-brands fa-linkedin-in"
+
+- id: 'sai_gowtham_amburi'
+  name: "Sai Gowtham Amburi"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/gowtham.png"
+  office: "Boston"
+  office_hours: "Tue 10:00am to 11:00am ET"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:amburi.s@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-van-fa22"
+      office: "Zoom"
+      office_hours: "Tue 10:00am to 11:00am"
+
+- id: 'yong_shi'
+  name: "Yong Shi"
+  title: "Teaching Assistant"
+  image: "/assets/images/staff/yong.jpg"
+  office: "Boston"
+  office_hours: "During the class meeting"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:shi.yong@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-van-fa22"
+      office: "Zoom"
+      office_hours: "During the class meeting"
 
