@@ -222,4 +222,75 @@
       </div>
     </div>
   {% endif %}
+
+  <!-- Specialists -->
+  {% if processed_specialists.size > 0 %}
+    <div class="mb-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% for specialist in processed_specialists %}
+          <div class="bg-white rounded-lg shadow-sm p-6 flex gap-4 items-start">
+            <!-- Staff Image -->
+            <img
+              src="{{ specialist.image | default: '/assets/images/default-avatar.png' | relative_url }}"
+              alt="{{ specialist.name }}"
+              class="w-20 h-20 rounded-full object-cover"
+              loading="lazy"
+            />
+            
+            <div class="flex-1">
+              <!-- Name and Role Badge -->
+              <div class="flex justify-between items-center mb-1">
+                <h4 class="font-bold text-lg">{{ specialist.name }}</h4>
+                <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full lowercase">Specialist</span>
+              </div>
+
+              <!-- Title -->
+              <p class="text-sm text-gray-600">{{ specialist.title }}</p>
+
+              <!-- Office Hours and Email -->
+              <div class="text-sm text-gray-600 mt-1">
+                {% if specialist.office %}
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-location-dot w-4 h-4"></i>
+                    {{ specialist.office }}
+                  </div>
+                {% endif %}
+                {% if specialist.office_hours %}
+                  <div class="flex items-center gap-2">
+                    <i class="far fa-clock w-4 h-4"></i>
+                    Office Hours: {{ specialist.office_hours }}
+                  </div>
+                {% endif %}
+                {% if specialist.email %}
+                  <div class="flex items-center gap-2">
+                    <i class="fa-regular fa-envelope w-4 h-4"></i>
+                    <a href="mailto:{{ specialist.email }}" class="hover:text-blue-600">
+                      {{ specialist.email }}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+
+              <!-- Social/Contact Links -->
+              {% if specialist.links %}
+                <div class="flex gap-2 mt-2">
+                  {% for link in specialist.links %}
+                    <a
+                      href="{{ link.url }}"
+                      class="text-gray-600 transition-all duration-300 hover:scale-110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="{{ link.name }}"
+                    >
+                      <i class="{{ link.icon }} text-lg"></i>
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 </div>

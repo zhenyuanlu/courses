@@ -1,133 +1,133 @@
-- module: "Module 1: Introduction"
-  color: "blue"
+# - module: "Module 1: Introduction"
+#   color: "blue"
 
 
 
-- date: "09/11/2020"
-  topic: "Course introduction and expectations"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Course materials"
-      description: "Course overview and policies"
-      type: "notes"
+# - date: "09/11/2020"
+#   topic: "Course introduction and expectations"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Course materials"
+#       description: "Course overview and policies"
+#       type: "notes"
 
-- date: "09/15/2020" 
-  topic: "Basic of R I"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Basics of R"
-      description: "R4E Chapter: Basics of R"
-      type: "reading"
-    - title: "Advanced Data Structure"
-      description: "R4E Chapter: Advanced Data Structure"
-      type: "reading"
+# - date: "09/15/2020" 
+#   topic: "Basic of R I"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Basics of R"
+#       description: "R4E Chapter: Basics of R"
+#       type: "reading"
+#     - title: "Advanced Data Structure"
+#       description: "R4E Chapter: Advanced Data Structure"
+#       type: "reading"
 
-- date: "09/18/2020"
-  topic: "Basic of R II"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Basics of R"
-      description: "R4E Chapter: Basics of R"
-      type: "reading"
-    - title: "Advanced Data Structure"
-      description: "R4E Chapter: Advanced Data Structure" 
-      type: "reading"
+# - date: "09/18/2020"
+#   topic: "Basic of R II"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Basics of R"
+#       description: "R4E Chapter: Basics of R"
+#       type: "reading"
+#     - title: "Advanced Data Structure"
+#       description: "R4E Chapter: Advanced Data Structure" 
+#       type: "reading"
 
-- date: "09/22/2020"
-  topic: "R functions and the grammar of visualization I"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Workflow"
-      url: "https://r4ds.had.co.nz/workflow-basics.html"
-      type: "reading"
-    - title: "A layered grammar of graphics"
-      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
-      type: "paper"
-    - title: "Writing R functions"
-      description: "R4E Chapter: Writing R functions"
-      type: "reading"
-      optional: true
+# - date: "09/22/2020"
+#   topic: "R functions and the grammar of visualization I"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Workflow"
+#       url: "https://r4ds.had.co.nz/workflow-basics.html"
+#       type: "reading"
+#     - title: "A layered grammar of graphics"
+#       url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+#       type: "paper"
+#     - title: "Writing R functions"
+#       description: "R4E Chapter: Writing R functions"
+#       type: "reading"
+#       optional: true
 
-- date: "09/25/2020"
-  topic: "R functions and the grammar of visualization II"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Workflow"
-      url: "https://r4ds.had.co.nz/workflow-basics.html"
-      type: "reading"
-    - title: "A layered grammar of graphics"
-      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
-      type: "paper"
-  assignments:
-    release:
-      - title: "Homework 1"
-        type: "homework"
-        release_date: "09/25/2020"
+# - date: "09/25/2020"
+#   topic: "R functions and the grammar of visualization II"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Workflow"
+#       url: "https://r4ds.had.co.nz/workflow-basics.html"
+#       type: "reading"
+#     - title: "A layered grammar of graphics"
+#       url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+#       type: "paper"
+#   assignments:
+#     release:
+#       - title: "Homework 1"
+#         type: "homework"
+#         release_date: "09/25/2020"
 
-- module: "Module 2: Basic Visualization and Data Engineering"
-  color: "blue"
+# - module: "Module 2: Basic Visualization and Data Engineering"
+#   color: "blue"
 
 
-- date: "09/29/2020"
-  topic: "R functions and the grammar of visualization II"
-  instructor: "zhenyuan_lu"
-  materials:
-    - title: "Workflow"
-      url: "https://r4ds.had.co.nz/workflow-basics.html"
-      type: "reading"
-    - title: "A layered grammar of graphics"
-      url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
-      type: "paper"
-  assignments:
-    deadline:
-      - title: "Group arrangement"
-        type: "project"
-        due_date: "09/28/2020"
-        time: "23:59"
-        timezone: "ET"
+# - date: "09/29/2020"
+#   topic: "R functions and the grammar of visualization II"
+#   instructor: "zhenyuan_lu"
+#   materials:
+#     - title: "Workflow"
+#       url: "https://r4ds.had.co.nz/workflow-basics.html"
+#       type: "reading"
+#     - title: "A layered grammar of graphics"
+#       url: "https://vita.had.co.nz/papers/layered-grammar.pdf"
+#       type: "paper"
+#   assignments:
+#     deadline:
+#       - title: "Group arrangement"
+#         type: "project"
+#         due_date: "09/28/2020"
+#         time: "23:59"
+#         timezone: "ET"
 
-- date: "10/02/2020"
-  topic: "Data Visualization Concepts I"
-  instructor: "zhenyuan_lu"
+# - date: "10/02/2020"
+#   topic: "Data Visualization Concepts I"
+#   instructor: "zhenyuan_lu"
 
-- date: "10/06/2020"
-  topic: "Data Visualization Concepts II & Basic data visualization in R I"
-  instructor: "zhenyuan_lu"
-  guest_lecturer: "nan"
-  guest_topic: "Visualization and Color Design"
-  materials:
-    - title: "Data Visualization with ggplot2"
-      url: "https://r4ds.had.co.nz/workflow-basics.html"
-      type: "reading"
-    - title: "Quickly Exploring Data"
-      description: "RGC Chapter"
-      type: "reading"
-      optional: true
-  assignments:
-    deadline:
-      - title: "Homework 1"
-        type: "homework"
-        due_date: "10/05/2020"
-        time: "23:59"
-        timezone: "ET"
+# - date: "10/06/2020"
+#   topic: "Data Visualization Concepts II & Basic data visualization in R I"
+#   instructor: "zhenyuan_lu"
+#   guest_lecturer: "nan"
+#   guest_topic: "Visualization and Color Design"
+#   materials:
+#     - title: "Data Visualization with ggplot2"
+#       url: "https://r4ds.had.co.nz/workflow-basics.html"
+#       type: "reading"
+#     - title: "Quickly Exploring Data"
+#       description: "RGC Chapter"
+#       type: "reading"
+#       optional: true
+#   assignments:
+#     deadline:
+#       - title: "Homework 1"
+#         type: "homework"
+#         due_date: "10/05/2020"
+#         time: "23:59"
+#         timezone: "ET"
 
-# ...continuing with same pattern for remaining sessions...
+# # ...continuing with same pattern for remaining sessions...
 
-- module: "Module 3: Advanced Visualization"
-  color: "blue"
-  sessions:
-    # ...sessions formatted similarly...
+# - module: "Module 3: Advanced Visualization"
+#   color: "blue"
+#   sessions:
+#     # ...sessions formatted similarly...
 
-- module: "Final Presentations"
-  color: "green"
-  sessions:
-    - dates: ["12/01/2020", "12/04/2020", "12/08/2020", "12/11/2020"]
-      topic: "Project Presentations"
-      instructor: "zhenyuan_lu"
-      assignments:
-        deadline:
-          - title: "Final Project and Slides"
-            type: "project" 
-            due_date: "11/30/2020"
-            time: "23:59"
-            timezone: "ET"
+# - module: "Final Presentations"
+#   color: "green"
+#   sessions:
+#     - dates: ["12/01/2020", "12/04/2020", "12/08/2020", "12/11/2020"]
+#       topic: "Project Presentations"
+#       instructor: "zhenyuan_lu"
+#       assignments:
+#         deadline:
+#           - title: "Final Project and Slides"
+#             type: "project" 
+#             due_date: "11/30/2020"
+#             time: "23:59"
+#             timezone: "ET"

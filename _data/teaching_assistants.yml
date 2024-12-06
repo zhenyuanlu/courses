@@ -1,33 +1,16 @@
-- id: 'john_doe'
-  name: "John Doe"
-  title: "Teaching Assistant"
-  image: "/assets/images/staff/husky.jpg"
-  bio: "Graduate student specializing in machine learning."
-  office: 'Room 102, University Building'
-  office_hours: "Wednesday 3-5 PM"
-  links:
-    - name: "Email"
-      url: "mailto:john.doe@northeastern.edu"
-      icon: "fas fa-envelope"
+# _data/teaching_assistants.yml
 
-- id: 'bob_smith'
-  name: "Bob Smith"
-  title: "Teaching Assistant"
-  image: "/assets/images/husky.jpg"
-  bio: "Graduate student specializing in machine learning."
-  office: 'Room 102, University Building'
-  office_hours: "Wednesday 3-5 PM"
-  links:
-    - name: "Email"
-      url: "mailto:john.doe@northeastern.edu"
-      icon: "fas fa-envelope"
-
-
-- id: "anuja_nanal_fa20"
+- id: 'anuja_nanal'
   name: "Anuja Nanal"
   title: "Teaching Assistant"
-  email: "nanal.a@northeastern.edu"
   image: "/assets/images/staff/AnujaNanal.jpg"
-  office_hours:
-    time: "Thu 10:00am to 11:00am"
-    location: "Zoom"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:nanal.a@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses: 
+    - slug: "ie6600-bos-fa20"
+      office: "Zoom"
+      office_hours: "Thur 10:00am to 11:00am ET"
+

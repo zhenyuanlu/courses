@@ -59,7 +59,7 @@
                 {% endif %}
                 
                 {% if item.instructor %}
-                  {% assign instructor = site.data.instructors | where: 'id', item.instructor | first %}
+                  {% assign instructor = processed_instructors | where: 'id', item.instructor | first %}
                   {% if instructor %}
                     <div class="text-sm text-gray-500">
                       <span>Instructor: {{ instructor.name }}</span>
@@ -68,7 +68,7 @@
                 {% endif %}
 
                 {% if item.guest_lecturer %}
-                  {% assign guest = site.data.guest_lecturers | where: 'id', item.guest_lecturer | first %}
+                  {% assign guest = processed_guest_lecturers | where: 'id', item.guest_lecturer | first %}
                   {% if guest %}
                     <!-- For Guest Section (update this part) -->
                     {% if guest.topic %}

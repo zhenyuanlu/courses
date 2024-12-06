@@ -1,85 +1,81 @@
-- id: 'jane_doe'
-  name: "Jane Doe"
-  title: "Data Scientist"
-  company: "TechCorp"
-  company_logo: 
-      url: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.png"
-      width: 8   # Tailwind size (e.g., w-6 translates to width: 1.5rem)
-      height:    # Tailwind size (e.g., h-6 translates to height: 1.5rem)
-  image: "/assets/images/staff/husky.jpg"
-  bio: "Expert in big data analytics and AI applications."
-  date: "Wed 03/15"
-  topic: "Real-world Applications of Graph Algorithms"
-  links:
-    - name: "LinkedIn"
-      url: "test"
-      icon: "fa-brands fa-linkedin-in"
+# _data/guest_lecturers.yml
 
-
-- id: 'xiaozang_li_fa24_van'
+- id: 'xiaozang_li'
   name: "Xiaozang Li"
-  title: "Cloud Architect" 
+  title: "Cloud Architect"
+  image: "/assets/images/staff/lucian.jpg"
+  bio: "Google Cloud Customer Engineer with 10+ years experience, former Amazon engineer. Expertise in cloud architecture."
   company: "Google"
-  company_logo:
+  company_logo: 
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/24px-Google_%22G%22_logo.svg.png?20230822192911"
     width: 5
     height:
-  image: "/assets/images/staff/lucian.jpg"
-  bio: "Google Cloud Customer Engineer with 10+ years experience, former Amazon engineer. Expertise in cloud architecture."
   date: "TBD"
   topic: "Cloud Architecture and Infrastructure"
   links:
     - name: "LinkedIn"
       url: "https://www.linkedin.com/in/xiaozangli/"
       icon: "fa-brands fa-linkedin-in"
+  courses: 
+    - slug: "ie7945-van-fa24"
+      topic: "Cloud Architecture"
 
-- id: 'jinhui_zhao_fa24_van'
+- id: 'jinhui_zhao'
   name: "Jinhui Zhao" 
   title: "Software Engineer, Tech Lead"
+  image: "/assets/images/staff/hui2.jpg"
+  bio: "Technical Lead and Full Stack Engineer with 10+ years experience, formerly at TikTok and Amazon."
   company: "Suno"
   company_logo:
     url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67XAuEiPDDrQJ3g-TY6Zyy2kYe1wefm8OXQ&s"
     width: 8
     height: 
-  image: "/assets/images/staff/hui2.jpg"
-  bio: "Technical Lead and Full Stack Engineer with 10+ years experience, formerly at TikTok and Amazon."
   date: "TBD"
   topic: "Full Stack Development"
   links:
     - name: "LinkedIn"
       url: "https://www.linkedin.com/in/jinhui-zhao-7ab2a186/"
       icon: "fa-brands fa-linkedin-in"
+  courses: 
+    - slug: "ie7945-van-fa24"
+      topic: "Industry in a Nutshell"
 
-- id: 'shihan_tian_fa24_van'
+- id: 'shihan_tian'
   name: "Shihan Tian"
   title: "Software Engineer"
+  image: "/assets/images/staff/tian.jpg"
+  bio: "Meta Software Engineer with 7+ years experience, former Amazon engineer. Expertise in full stack development."
   company: "Meta"
   company_logo:
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Meta-Logo.png/2560px-Meta-Logo.png"
     width: 10
     height:
-  image: "/assets/images/staff/tian.jpg"
-  bio: "Meta Software Engineer with 7+ years experience, former Amazon engineer. Expertise in full stack development."
   date: "TBD"
   topic: "Software Engineering at Meta"
   links:
     - name: "LinkedIn"
       url: "https://www.linkedin.com/in/shihan-tian-evesmilenice/"
       icon: "fa-brands fa-linkedin-in"
+  courses: 
+    - slug: "ie7945-van-fa24"
+      topic: "Industry in a Nutshell"
 
-- id: 'zhuohan_yu_fa24_van'
+- id: 'zhuohan_yu'
   name: "Zhuohan Yu"
   title: "Senior Data Scientist"
-  company: "Genpact" 
+  image: "/assets/images/staff/zhuohan.jpg"
+  bio: "Senior Data Scientist with 7+ years experience in data science and machine learning."
+  company: "Genpact"
   company_logo:
     url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Genpact_logo.svg/800px-Genpact_logo.svg.png"
     width: 10
     height:
-  image: "/assets/images/staff/zhuohan.jpg"
-  bio: "Senior Data Scientist with 7+ years experience in data science and machine learning."
-  date: "TBD" 
+  date: "TBD"
   topic: "Data Science and Machine Learning"
   links:
     - name: "LinkedIn"
       url: "https://www.linkedin.com/in/zhuohan-yu-a689488b/"
       icon: "fa-brands fa-linkedin-in"
+  courses: 
+    - slug: "ie7945-van-fa24"
+      topic: "Industry in a Nutshell"

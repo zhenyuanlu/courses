@@ -1139,6 +1139,14 @@ video {
   top: 1rem;
 }
 
+.-right-2 {
+  right: -0.5rem;
+}
+
+.-top-2 {
+  top: -0.5rem;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1359,6 +1367,10 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .w-1\.5 {

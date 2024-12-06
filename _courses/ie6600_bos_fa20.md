@@ -15,6 +15,8 @@ location: "Online via Zoom"
 credits: 4
 description: "This course covers basics of R and R Shiny for data preprocessing and visualization. Students learn static and interactive visualization, dashboard development, and platforms that reveal patterns through careful attention to color encoding, shape selection, spatial layout, and annotation."
 
+schedule_file: "ie6600-bos-fa20"
+
 technologies:
   - r
   - shiny
@@ -29,16 +31,16 @@ platforms:
     url: "https://northeastern.zoom.us"
 
 instructors:
-  - zhenyuan_lu_fa20_bos
+  - zhenyuan_lu
 teaching_assistants:
-  - anuja_nanal_fa20
+  - anuja_nanal
 specialist:
-  - kate_kryder_fa20
-  - jodi_bolognese_fa20
+  - kate_kryder
+  - jodi_bolognese
 guest_lecturers:
-  - jinhui_zhao_fa20_bos
-  - qibin_tan_fa20_bos
-  - wenxin_liu_fa20_bos
+  - jinhui_zhao
+  - qibin_tan
+  - wenxin_liu
 
 textbooks:
   required:
@@ -58,7 +60,6 @@ textbooks:
       authors: "Xie, Yihui, et al."
       url: "https://bookdown.org/yihui/rmarkdown/"
 
-schedule_file: "ie6600_bos_fa20"
 
 grading:
   categories:

@@ -109,7 +109,10 @@ layout: default
 
   <!-- Course Materials -->
   {% include course_materials.html %}
-  
+
+  <!-- Include the staff data processor to have processed_instructors, etc. -->
+  {% include staff_data_processor.html course_slug=page.slug %}
+
   <!-- Teaching Staff -->
   {% include teaching_staff_card.html %}
 

@@ -1,7 +1,7 @@
 ---
 layout: course
 slug: "ie7945-van-fa24"
-title: "AI/ML Master's Project" 
+title: "AI/ML Master Project" 
 subtitle: "Artificial Intelligence/Machine Learning Master's Project"
 campus: "Vancouver"
 university: "Northeastern University"
@@ -14,6 +14,8 @@ location: "Vancouver 1426"
 dates: "09/04/2024 – 12/06/2024"
 credits: 4
 description: "This course offers students a culminating experience to demonstrate proficiency in key concepts learned throughout their programs in core and elective courses. Designed to reinforce concepts in ethics and basic research principles, beyond an emphasis on technical knowledge."
+
+schedule_file: "ie7945_van_fa24"
 
 technologies:
   - python
@@ -32,12 +34,12 @@ platforms:
     url: "https://ie7945fa24.atlassian.net/jira/software/projects/VANFA24/boards/1"
 
 instructors:
-  - zhenyuan_lu_fa24_van
+  - zhenyuan_lu
 guest_lecturers:
-  - xiaozang_li_fa24_van
-  - jinhui_zhao_fa24_van
-  - shihan_tian_fa24_van
-  - zhuohan_yu_fa24_van
+  - xiaozang_li
+  - jinhui_zhao
+  - shihan_tian
+  - zhuohan_yu
 
 course_platform: 
   - name: "Piazza"
@@ -52,8 +54,6 @@ course_platform:
     url: "https://github.com/zhenyuanlu/course-ie7945"
   - name: "OverLeaf"
     url: "https://www.overleaf.com"
-
-schedule_file: "ie7945_van_fa24"
 
 course_materials:
   - title: "Course Repository"

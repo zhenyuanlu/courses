@@ -1,0 +1,131 @@
+{% comment %}
+  Main staff data processor that handles:
+  1. Processing instructors, TAs, specialists and guest lecturers
+  2. Merging default and course-specific values
+  3. Handling nested data structures
+  4. Preparing data for template consumption
+{% endcomment %}
+
+{% assign course_slug = include.course_slug %}
+{% unless course_slug %}
+  {% assign course_slug = page.slug %}
+{% endunless %}
+
+{% assign processed_instructors = "" | split: "," %}
+{% assign processed_teaching_assistants = "" | split: "," %}
+{% assign processed_specialists = "" | split: "," %}
+{% assign processed_guest_lecturers = "" | split: "," %}
+{% assign core_instructor_id = nil %}
+
+{% comment %} Process Instructors {% endcomment %}
+{% for instructor in site.data.instructors %}
+  {% assign course_entry = instructor.courses | where: 'slug', course_slug | first %}
+  {% if course_entry %}
+    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
+    {% assign merged_instructor = instructor %}
+    
+    {% comment %} Override office if course-specific exists {% endcomment %}
+    {% if course_entry.office %}
+      {% assign merged_instructor = merged_instructor | merge: {'office': course_entry.office} %}
+    {% endif %}
+    
+    {% comment %} Override office hours if course-specific exists {% endcomment %}
+    {% if course_entry.office_hours %}
+      {% assign merged_instructor = merged_instructor | merge: {'office_hours': course_entry.office_hours} %}
+    {% endif %}
+    
+    {% comment %} Keep track of core instructor {% endcomment %}
+    {% if instructor.core == true %}
+      {% assign core_instructor_id = instructor.id %}
+    {% endif %}
+    
+    {% assign processed_instructors = processed_instructors | push: merged_instructor %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Process Teaching Assistants {% endcomment %}
+{% for ta in site.data.teaching_assistants %}
+  {% assign course_entry = ta.courses | where: 'slug', course_slug | first %}
+  {% if course_entry %}
+    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
+    {% assign merged_ta = ta %}
+    
+    {% if course_entry.office %}
+      {% assign merged_ta = merged_ta | merge: {'office': course_entry.office} %}
+    {% endif %}
+    
+    {% if course_entry.office_hours %}
+      {% assign merged_ta = merged_ta | merge: {'office_hours': course_entry.office_hours} %}
+    {% endif %}
+    
+    {% if course_entry.email %}
+      {% assign merged_ta = merged_ta | merge: {'email': course_entry.email} %}
+    {% endif %}
+    
+    {% if course_entry.section %}
+      {% assign merged_ta = merged_ta | merge: {'section': course_entry.section} %}
+    {% endif %}
+    
+    {% assign processed_teaching_assistants = processed_teaching_assistants | push: merged_ta %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Process Specialists {% endcomment %}
+{% for specialist in site.data.specialists %}
+  {% assign course_entry = specialist.courses | where: 'slug', course_slug | first %}
+  {% if course_entry %}
+    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
+    {% assign merged_specialist = specialist %}
+    
+    {% if course_entry.office %}
+      {% assign merged_specialist = merged_specialist | merge: {'office': course_entry.office} %}
+    {% endif %}
+    
+    {% if course_entry.office_hours %}
+      {% assign merged_specialist = merged_specialist | merge: {'office_hours': course_entry.office_hours} %}
+    {% endif %}
+    
+    {% if course_entry.email %}
+      {% assign merged_specialist = merged_specialist | merge: {'email': course_entry.email} %}
+    {% endif %}
+    
+    {% assign processed_specialists = processed_specialists | push: merged_specialist %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Process Guest Lecturers {% endcomment %}
+{% for guest in site.data.guest_lecturers %}
+  {% assign course_entry = guest.courses | where: 'slug', course_slug | first %}
+  {% if course_entry %}
+    {% comment %} Handle nested merging of default and course-specific values {% endcomment %}
+    {% assign merged_guest = guest %}
+    
+    {% comment %} Handle nested company_logo structure {% endcomment %}
+    {% if guest.company_logo %}
+      {% assign merged_guest = merged_guest | merge: {
+        'company_logo': {
+          'url': guest.company_logo.url,
+          'width': guest.company_logo.width,
+          'height': guest.company_logo.height
+        }
+      } %}
+    {% endif %}
+    
+    {% if course_entry.topic %}
+      {% assign merged_guest = merged_guest | merge: {'topic': course_entry.topic} %}
+    {% endif %}
+    
+    {% if course_entry.date %}
+      {% assign merged_guest = merged_guest | merge: {'date': course_entry.date} %}
+    {% endif %}
+    
+    {% assign processed_guest_lecturers = processed_guest_lecturers | push: merged_guest %}
+  {% endif %}
+{% endfor %}
+
+{% comment %} Make processed data available to templates {% endcomment %}
+{% assign processed_instructors = processed_instructors %}
+{% assign processed_teaching_assistants = processed_teaching_assistants %}
+{% assign processed_specialists = processed_specialists %}
+{% assign processed_guest_lecturers = processed_guest_lecturers %}
+{% assign core_instructor_id = core_instructor_id %}

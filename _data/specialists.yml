@@ -1,0 +1,30 @@
+# _data/specialists.yml
+
+- id: "kate_kryder"
+  name: "Kate Kryder"
+  title: "Data Visualization Specialist"
+  image: "/assets/images/staff/kate.jpg"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:k.kryder@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-bos-fa20"
+      office: "See course slides for booking link"
+      office_hours: "By appointment"
+
+
+- id: "jodi_bolognese"
+  name: "Jodi Bolognese"
+  title: "Engineering Librarian"
+  image: "/assets/images/staff/jodi.jpg"
+  bio: ""
+  links:
+    - name: "Email"
+      url: "mailto:j.bolognese@northeastern.edu"
+      icon: "fa-regular fa-envelope"
+  courses:
+    - slug: "ie6600-bos-fa20"
+      office: "See course slides for booking link"
+      office_hours: "By appointment"
