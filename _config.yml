@@ -14,7 +14,7 @@ kramdown:
 author:
   name: "Zhenyuan Lu"
   email: "zh.lu@northeastern.edu"
-  url: "https://zhenyuanlu.com"
+  url: "https://zhenyuanlu.com/courses"
 
 plugins:
   - jekyll-feed
