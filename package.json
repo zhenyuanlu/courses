@@ -17,7 +17,7 @@
     "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
     "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
     "build:thumbnails": "node thumb_gen/generate_thumbnails.js",
-    "watch:thumbnails": "node scripts/watch-thumbnails.js",
+    "watch:thumbnails": "node thumb_gen/watch-thumbnails.js",
     "build": "npm run build:thumbnails && npm run build:css && jekyll build",
     "start": "concurrently \"npm run watch:css\" \"npm run watch:thumbnails\" \"jekyll serve\""
   },
