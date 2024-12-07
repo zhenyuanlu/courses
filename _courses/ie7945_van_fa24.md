@@ -1,6 +1,5 @@
 ---
 layout: course
-image: "/assets/images/attnnet.png"
 slug: "ie7945-van-fa24"
 title: "AI/ML Master Project" 
 subtitle: "Artificial Intelligence/Machine Learning Master's Project"
