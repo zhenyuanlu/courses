@@ -79,15 +79,14 @@ keywords: "AI/ML, Capstone Project, Master's Project, Industry Partnership"
 <div class="mb-4">
 <h3 class="text-2xl font-bold mb-4">Team Projects (Industry Partner)</h3>
   <div class="bg-white rounded-xl pt-0.5 pb-0.5 pl-8 pr-8 shadow-sm" markdown='1'>
+  <div class="text-sm text-gray-500 italic">
+  (Before 10/24) 
+  </div>
 
-<div class="text-sm text-gray-500 italic">
-(Before 10/24) 
-</div>
-
-| Project    | Team Members     | Industry Partner       | Instructor              |
-|------------|------------------|------------------------|-------------------------|
-| **Clasibot 2.0: Towards Autonomous Bookkeeping**                     | Li Bao, Priya Hiteshkumar Daiya, Haritha Rathnam Kuppala, Suraju Ibiyemi | Classibot.com          | **Zhenyuan Lu**          |
-| **Live Timeless: Health Dashboard & AI Coach**                      | Yuanyuan Chen (She/Her), Ravi Teja Chintalapudi, Maharshi Shukla, Mohammed Rayyan Sami | Live Timeless          | **Zhenyuan Lu**          |
+| Project    | Team Members     | Industry Partner       |
+|------------|------------------|------------------------|
+| **Clasibot 2.0: Towards Autonomous Bookkeeping**  | Li Bao, Priya Hiteshkumar Daiya, Haritha Rathnam Kuppala, Suraju Ibiyemi | Classibot.com          | 
+| **Live Timeless: Health Dashboard & AI Coach**   | Yuanyuan Chen (She/Her), Ravi Teja Chintalapudi, Maharshi Shukla, Mohammed Rayyan Sami | Live Timeless | 
 
   </div>
 </div>
@@ -99,9 +98,9 @@ keywords: "AI/ML, Capstone Project, Master's Project, Industry Partnership"
 (After 10/24) 
 </div>
 
-| Project    | Team Members     | Industry Partner       | Instructor              |
-|------------|------------------|------------------------|-------------------------|
-| **Data Science Project**                     | Li Bao, Priya Hiteshkumar Daiya, Haritha Rathnam Kuppala, Suraju Ibiyemi, Yuanyuan Chen (She/Her), Ravi Teja Chintalapudi, Maharshi Shukla, Mohammed Rayyan Sami  | Yaniv Talmor    | **Zhenyuan Lu**          |
+| Project    | Team Members     | Industry Partner       |
+|------------|------------------|------------------------|
+| **Data Science Project**                     | Li Bao, Priya Hiteshkumar Daiya, Haritha Rathnam Kuppala, Suraju Ibiyemi, Yuanyuan Chen (She/Her), Ravi Teja Chintalapudi, Maharshi Shukla, Mohammed Rayyan Sami  | Yaniv Talmor    |
   
   </div>
 </div>
