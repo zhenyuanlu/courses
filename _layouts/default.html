@@ -24,89 +24,85 @@
   <meta name="keywords" content="Machine Learning, Deep Learning, {{ page.keywords | join: ', ' }}">
   <meta name="author" content="{{ site.author.name }}">
 
-  <!-- Open Graph (OG) Meta for Social Media -->
-  <head>
-    <!-- Keep your existing Google Analytics and basic meta tags -->
-  
-    <!-- Dynamic meta tags for social sharing -->
-    {% if page.layout == 'course' %}
-      <!-- Course-specific meta tags -->
-      <meta property="og:title" content="{{ page.title }} - {{ page.course_code }} | {{ site.title }}">
-      <meta property="og:description" content="{{ page.description }}">
-      <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
-      <meta property="og:image:width" content="1200">
-      <meta property="og:image:height" content="630">
-      <meta property="og:type" content="website">
-      <meta property="og:site_name" content="{{ site.title }}">
-      <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-  
-      <!-- Twitter Card meta tags -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="{{ page.title }} - {{ page.course_code }}">
-      <meta name="twitter:description" content="{{ page.description }}">
-      <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
-      
-      <!-- LinkedIn meta tags -->
-      <meta property="linkedin:title" content="{{ page.title }} - {{ page.course_code }}">
-      <meta property="linkedin:description" content="{{ page.description }}">
-      <meta property="linkedin:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
-      <meta property="linkedin:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-  
-      <!-- Structured Data for Courses -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Course",
-        "name": "{{ page.title }}",
-        "description": "{{ page.description }}",
-        "provider": {
-          "@type": "Organization",
-          "name": "{{ page.university }}",
-          "sameAs": "{{ site.url }}"
-        },
-        "courseCode": "{{ page.course_code }}",
-        "educationalLevel": "{{ page.level }}",
-        "image": "{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png",
-        "instructor": {
-          "@type": "Person",
-          "name": "Dr. Zhenyuan Lu"
-        }
+
+  <!-- Dynamic meta tags for social sharing -->
+  {% if page.layout == 'course' %}
+    <!-- Course-specific meta tags -->
+    <meta property="og:title" content="{{ page.title }} - {{ page.course_code }} | {{ site.title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} - {{ page.course_code }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
+    
+    <!-- LinkedIn meta tags -->
+    <meta property="linkedin:title" content="{{ page.title }} - {{ page.course_code }}">
+    <meta property="linkedin:description" content="{{ page.description }}">
+    <meta property="linkedin:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png">
+    <meta property="linkedin:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+    <!-- Structured Data for Courses -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "provider": {
+        "@type": "Organization",
+        "name": "{{ page.university }}",
+        "sameAs": "{{ site.url }}"
+      },
+      "courseCode": "{{ page.course_code }}",
+      "educationalLevel": "{{ page.level }}",
+      "image": "{{ site.url }}{{ site.baseurl }}/assets/images/thumbnails/{{ page.slug }}.png",
+      "instructor": {
+        "@type": "Person",
+        "name": "Dr. Zhenyuan Lu"
       }
-      </script>
-    {% else %}
-      <!-- Default meta tags for non-course pages -->
-      <meta property="og:title" content="{{ page.title | default: site.title }}">
-      <meta property="og:description" content="{{ page.description | default: site.description }}">
-      <meta property="og:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
-      <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
-      <meta property="og:type" content="website">
-      
-      <!-- Twitter Card meta tags -->
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-      <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-      <meta name="twitter:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
-      
-      <!-- LinkedIn meta tags -->
-      <meta property="linkedin:title" content="{{ page.title | default: site.title }}">
-      <meta property="linkedin:description" content="{{ page.description | default: site.description }}">
-      <meta property="linkedin:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
-      
-      <!-- Default structured data -->
-      <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "{{ page.title | default: site.title }}",
-        "description": "{{ page.description | default: site.description }}",
-        "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
-        "image": "{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}"
-      }
-      </script>
-    {% endif %}
+    }
+    </script>
+  {% else %}
+    <!-- Default meta tags for non-course pages -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+    <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+    <meta name="twitter:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
+    
+    <!-- LinkedIn meta tags -->
+    <meta property="linkedin:title" content="{{ page.title | default: site.title }}">
+    <meta property="linkedin:description" content="{{ page.description | default: site.description }}">
+    <meta property="linkedin:image" content="{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}">
+    
+    <!-- Default structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ page.title | default: site.title }}",
+      "description": "{{ page.description | default: site.description }}",
+      "url": "{{ site.url }}{{ site.baseurl }}{{ page.url }}",
+      "image": "{{ page.image | default: '/assets/images/thumbnails/landing-page.png' | prepend: site.baseurl | prepend: site.url }}"
+    }
+    </script>
+  {% endif %}
   
-    <!-- Keep your existing styles and scripts -->
-  </head>
+
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">

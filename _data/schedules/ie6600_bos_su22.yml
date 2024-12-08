@@ -17,7 +17,7 @@
   guest_lecturer: null
   materials:
     - title: "<b>T02</b>: Basic R I"
-      url: "/courses/slides/t02BasicR.pdf"
+      url: "/courses/assets/course_materials/slides/t02BasicR.pdf"
       type: "slides"
     - title: "<b>T02</b>: Intro R I"
       url: "/courses/slides/t02IntroR.pdf"
