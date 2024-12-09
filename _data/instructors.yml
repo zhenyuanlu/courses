@@ -1,10 +1,10 @@
 # _data/instructors.yml
 - id: 'zhenyuan_lu'
   core: true
-  name: "Zhenyuan Lu"
+  name: "Zhenyuan Lu, PhD"
   title: "Deep Learning Scientist and AI/ML Adjunct Faculty"
   image: "/assets/images/staff/z.png"
-  bio: "I am a deep learning scientist and adjunct factulty at Northeastern University. I received my PhD from Northeastern University focusing on AI/ML."
+  bio: "I am passionate about teaching and sharing what I have learned with amazing students."
   office: 'Boston, MA, and Zoom'
   office_hours: ""
   links:
