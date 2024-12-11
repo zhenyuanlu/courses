@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+{% capture current_month %}{{ 'now' | date: "%-m" }}{% endcapture %}
+
+{% if current_month == "12" %}
+  {% assign is_christmas = true %}
+{% else %}
+  {% assign is_christmas = false %}
+{% endif %}
+<head>
+{% if is_christmas %}
+<style>
+/* Snowfall Animation */
+.snowflake {
+position: fixed;
+top: -10px;
+color: white;
+animation: fall linear forwards;
+z-index: 1000;
+pointer-events: none;
+text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fall {
+0% {
+    transform: translateY(0) rotate(0deg);
+}
+100% {
+    transform: translateY(100vh) rotate(360deg);
+}
+}
+
+
+{% for i in (1..50) %}
+.snowflake:nth-child({{ i }}) {
+left: {{ i | times: 2 }}%;
+font-size: {{ 10 | plus: i | modulo: 15 | plus: 10 }}px;
+animation-duration: {{ 5 | plus: i | modulo: 3 | plus: 5 }}s;
+animation-delay: -{{ i | modulo: 5 }}s;
+opacity: 0.{{ 5 | plus: i | modulo: 4 }};
+}
+{% endfor %}
+
+
+.christmas-theme {
+background-color: #f8f9ff !important;
+}
+
+.christmas-header {
+background-color: rgba(255, 255, 255, 0.8) !important;
+backdrop-filter: blur(8px);
+}
+
+.christmas-accent {
+color: #dc2626 !important;
+border-color: #dc2626 !important;
+}
+</style>
+{% endif %}
+</head>
+<body class="{% if is_christmas %}christmas-theme{% endif %}">
+  {% if is_christmas %}
+  <div class="snowfall-container" aria-hidden="true">
+    {% for i in (1..50) %}
+      <div class="snowflake">❄</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  {{ content }}
+
+
+</body>
+
+{% if is_christmas %}
+  <script>
+    // Dynamically create and remove snowflakes for better performance
+    document.addEventListener('DOMContentLoaded', function() {
+      const container = document.querySelector('.snowfall-container');
+      
+      function createSnowflake() {
+        const flake = document.createElement('div');
+        flake.className = 'snowflake';
+        flake.style.left = Math.random() * 100 + '%';
+        flake.innerHTML = '❄';
+        container.appendChild(flake);
+        
+        // Remove snowflake after animation
+        flake.addEventListener('animationend', () => {
+          flake.remove();
+        });
+      }
+      
+      // Create new snowflakes periodically
+      setInterval(createSnowflake, 200);
+    });
+  </script>
+  {% endif %}
