@@ -193,9 +193,9 @@ If you have difficulty keeping up with any materials or homework for personal re
 <div class="mb-4">
 <h3 class="text-2xl font-bold mb-4">Individual Project</h3>
   <div class="bg-white rounded-xl pt-0.5 pb-0.5 pl-8 pr-8 shadow-sm" markdown='1'>
-  | Project | Materials | Individual | Instructor  |
-  |------------------------|-------------------------|-------------------------|-------------------------|
-  | **Contrastive Learning, Self-supervsied Learning**  |   [References](https://github.com/zhenyuanlu/course-ie7945/blob/main/reference_examples/ssl.md)       | Rida Khan  | **Zhenyuan Lu**          |
+  | Project | Materials | Individual |
+  |------------------------|-------------------------|-------------------------|
+  | **Contrastive Learning, Self-supervsied Learning**  |   [References](https://github.com/zhenyuanlu/course-ie7945/blob/main/reference_examples/ssl.md)       | Rida Khan  |
 
   </div>
 </div>
