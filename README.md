@@ -1,3 +1,11 @@
+# LuZen  Jekyll Theme (course/event version)
+
+Well, this is a Jekyll theme that I actually have created for my own courses and educational website working with ChatGPT and claude. I named it **LuZen-course/event** as an educational, event-based, and course-focused theme. Whether you're an instructor managing multiple classes, a conference organizer listing sessions, or a university department showcasing courses. If you like it feel free to use it.
+
+This theme heavily built on Tailwind CSS styling. You can:
+- Present courses, workshops, or lectures with rich metadata.
+- Manage event schedules and sessions using YAML data files for easy updates.
+- Highlight instructors, TAs, and guest speakers in an organized, searchable manner.
 
 ## Prerequisites
 
@@ -165,3 +173,5 @@ Special thanks to **ChatGPT** and **Claude** for refining all the code.
 
 4. **Image Not Displaying:**
    - **Solution:** Verify that image paths in your YAML and HTML files are correct and that images are placed in the `assets/images/` directory.
+
+
