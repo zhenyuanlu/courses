@@ -50,16 +50,19 @@ course_materials:
       - description: "Course outline and policies."
         url: "https://github.com/zhenyuanlu/course-ie7945"
         type: "github"
+        importance: required
   - title: "Teaching style"
     files:
       - description: "There’s no speed limit."
         url: "https://sive.rs/kimo"
         type: "url"
+        importance: recommended
   - title: "Python from Scratch"
     files:
       - description: "Python from Zero to Advance."
         url: "https://zhenyuanlu.com/python-notebook/"
         type: "url"
+        importance: supplementary
 
 announcements:
   - title: <i class="fa-solid fa-gift"></i>
