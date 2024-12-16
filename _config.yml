@@ -11,6 +11,10 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+google_analytics_id: G-GHCNZ4G83S
+
+icon_set: "fontawesome"  # options: lucide or fontawesome
+
 author:
   name: "Zhenyuan Lu"
   email: "zh.lu@northeastern.edu"
@@ -20,6 +24,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-last-modified-at
   - jekyll-email-protect
   
 include:
@@ -38,3 +43,6 @@ collections:
   courses:
     output: true
     permalink: /:slug/
+
+sass:
+  style: compressed
