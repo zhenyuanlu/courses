@@ -31,6 +31,10 @@ Before setting up the project, ensure you have the following installed on your s
 - **Git:** For version control and cloning the repository  
   [Download Git](https://git-scm.com/downloads)
 
+## Acknowledgements
+
+Big &#10084; to **ChatGPT** and **Claude** for refining all the code. 
+
 ## Installation
 
 ### 1. Clone the Repository
@@ -123,55 +127,5 @@ npm run dev
 ```
 Your site will be accessible at `http://localhost:4000`, and Tailwind CSS will automatically rebuild when you make changes to your CSS files.
 
-
-### Description of Key Directories and Files
-
-- **`_config.yml`**: Jekyll configuration file.
-- **`_data/`**: Contains YAML files with data for courses, instructors, TAs, and guest lecturers.
-- **`_includes/`**: Reusable components like navigation bar and course cards.
-- **`_layouts/`**: Layout templates for different page types.
-- **`_pages/`**: Markdown files for individual pages like the homepage and course pages.
-- **`assets/`**:
-  - **`css/`**: Tailwind CSS styles.
-  - **`js/`**: JavaScript files for additional functionality.
-  - **`images/`**: Image assets used throughout the site.
-- **`postcss.config.js`**: Configuration for PostCSS.
-- **`tailwind.config.js`**: Configuration for Tailwind CSS.
-- **`package.json`**: Node.js dependencies and scripts.
-- **`Gemfile`**: Ruby gems dependencies.
-- **`README.md`**: Project documentation.
-
-## Acknowledgements
-
-Special thanks to **ChatGPT** and **Claude** for refining all the code.
-
----
-
-## Troubleshooting
-
-### Common Issues
-
-1. **Jekyll Serve Stuck at Configuration File:**
-   - **Solution:** Ensure that all plugins are correctly configured and that there are no syntax errors in `_config.yml`. Run Jekyll in verbose mode to identify issues:
-     ```bash
-     bundle exec jekyll serve --verbose
-     ```
-
-2. **Tailwind CSS Not Applying:**
-   - **Solution:** Make sure that Tailwind CSS is correctly built and linked in your layout files. Verify that `postcss.config.js` and `tailwind.config.js` are properly configured.
-   - **Rebuild CSS:**
-     ```bash
-     npm run build:css
-     ```
-
-3. **Missing Dependencies:**
-   - **Solution:** Ensure all Ruby gems and npm packages are installed.
-     ```bash
-     bundle install
-     npm install
-     ```
-
-4. **Image Not Displaying:**
-   - **Solution:** Verify that image paths in your YAML and HTML files are correct and that images are placed in the `assets/images/` directory.
 
 
