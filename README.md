@@ -1,6 +1,6 @@
-# LuZen  Jekyll Theme (course/event version)
+# Zenlu  Jekyll Theme (course/event version)
 
-Well, this is a Jekyll theme that I actually have created for my own courses and educational website working with ChatGPT and claude. I named it **LuZen-course/event** as an educational, event-based, and course-focused theme. Whether you're an instructor managing multiple classes, a conference organizer listing sessions, or a university department showcasing courses. If you like it feel free to use it.
+Well, this is a Jekyll theme that I actually have created for my own courses and educational website working with ChatGPT and claude. I named it **Zenlu-course/event** as an educational, event-based, and course-focused theme. Whether you're an instructor managing multiple classes, a conference organizer listing sessions, or a university department showcasing courses. If you like it feel free to use it.
 
 This theme heavily built on Tailwind CSS styling. You can:
 - Present courses, workshops, or lectures with rich metadata.
