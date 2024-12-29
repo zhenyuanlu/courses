@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include instructor_hero.html instructor_id='zhenyuan_lu' %}
+{% include core/instructor_hero.html instructor_id='zhenyuan_lu' %}
 
 <main class="max-w-6xl mx-auto px-4 py-6">
   <!-- Search and Filters -->
@@ -84,12 +84,12 @@ layout: default
     
     <!-- Render Active Courses -->
     {% for course in active_courses %}
-      {% include course_card.html course=course %}
+      {% include core/course_card.html course=course %}
     {% endfor %}
 
     <!-- Render Past Courses -->
     {% for course in past_courses %}
-      {% include course_card.html course=course %}
+      {% include core/course_card.html course=course %}
     {% endfor %}
   </div>
 

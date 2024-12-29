@@ -86,7 +86,7 @@ layout: default
             {{ course.zoom }}
           </div>
           {% endif %}
-          {% include share_menu.html %}
+          {% include shared/share_menu.html %}
         </div>
       </div>
     </div>
@@ -99,25 +99,25 @@ layout: default
 <main class="max-w-6xl mx-auto px-4 pt-4 pb-8">
   
   <!-- Announcement -->
-  {% include announcement.html %}
+  {% include course/announcement.html %}
 
   <!-- Upcoming Deadlines -->
-  {% include upcoming_deadlines.html %}
+  {% include course/upcoming_deadlines.html %}
 
   <!-- Course Schedule -->
-  {% include course_platform.html %}
+  {% include course/course_platform.html %}
 
   <!-- Course Materials -->
-  {% include course_materials.html %}
+  {% include course/course_materials.html %}
 
   <!-- Include the staff data processor to have processed_instructors, etc. -->
-  {% include staff_data_processor.html course_slug=page.slug %}
+  {% include course/staff_data_processor.html course_slug=page.slug %}
 
   <!-- Teaching Staff -->
-  {% include teaching_staff_card.html %}
+  {% include course/teaching_staff_card.html %}
 
   <!-- Course Schedule -->
-  {% include course_schedule.html schedule_file=page.schedule_file %}
+  {% include course/course_schedule.html schedule_file=page.schedule_file %}
 
 
   <!-- Course Content -->
@@ -129,7 +129,7 @@ layout: default
     </div>
 
   
-  {% comment %}{% include share_buttons.html %} {% endcomment %}
+  {% comment %}{% include shared/share_buttons.html %} {% endcomment %}
   
 
 </main>

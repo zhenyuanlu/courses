@@ -62,14 +62,14 @@ course_materials:
 Plagiarism, cheating, and any form of unauthorized collaboration will not be tolerated and will be handled in accordance with University policies described in the Student Handbook. For additional information on Northeastern University’s [Academic Integrity Policy](http://www.northeastern.edu/osccr/academic-integrity-policy/){:target="_blank"}.
 {% endcapture %}
 
-{% include course_section_gen.html title="Polices" content=polices %}
+{% include shared/course_section_gen.html title="Polices" content=polices %}
 
 
 <!-- Accomodation -->
 {% capture accomodation %}
 If you have a disability, I encourage you to contact the [Disability Resource Center](http://www.northeastern.edu/drc/about-the-drc/){:target="_blank"} to register and request accommodations. Also, please discuss your needs with me as early in the semester as possible.
 {% endcapture %}
-{% include course_section_gen.html title="Accommodations for Students with Disabilities" content=accomodation %}
+{% include shared/course_section_gen.html title="Accommodations for Students with Disabilities" content=accomodation %}
 
 
 <!-- Wecare -->
@@ -79,4 +79,4 @@ Eating healthy food, having regular exercise, avoiding alcohol and drugs, gettin
 If you have difficulty keeping up with any materials or homework for personal reasons, please let me know early. If you or your friends/classmates appear to be struggling or having trouble coping with stress, we strongly encourage you to seek support at the [We Care](https://studentlife.northeastern.edu/we-care/){:target="_blank"} program at NEU. At Northeastern, a student is never alone when struggling with a demanding situation.
 
 {% endcapture %}
-{% include course_section_gen.html title="Taking Care of Yourself" content=wecare %}
+{% include shared/course_section_gen.html title="Taking Care of Yourself" content=wecare %}

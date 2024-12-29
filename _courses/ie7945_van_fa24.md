@@ -145,7 +145,7 @@ keywords: "AI/ML, Capstone Project, Master's Project, Industry Partnership"
 - Apply advanced algorithm design techniques to solve complex problems.
 {% endcapture %}
 
-{% include course_section_gen.html title="Course Objectives" content=course_objectives %}
+{% include shared/course_section_gen.html title="Course Objectives" content=course_objectives %}
 
 
 <!-- Polices-->
@@ -153,14 +153,14 @@ keywords: "AI/ML, Capstone Project, Master's Project, Industry Partnership"
 Plagiarism, cheating, and any form of unauthorized collaboration will not be tolerated and will be handled in accordance with University policies described in the Student Handbook. For additional information on Northeastern University’s [Academic Integrity Policy](http://www.northeastern.edu/osccr/academic-integrity-policy/){:target="_blank"}.
 {% endcapture %}
 
-{% include course_section_gen.html title="Polices" content=polices %}
+{% include shared/course_section_gen.html title="Polices" content=polices %}
 
 
 
 {% capture ai %}
 AI tools, including ChatGPT, are encouraged to assist in your work. However, your unique intellectual contributions are essential. Use AI to enhance, not replace, your efforts.
 {% endcapture %}
-{% include course_section_gen.html title="AI Tools" content=ai %}
+{% include shared/course_section_gen.html title="AI Tools" content=ai %}
 
 
 {% capture requirement %}
@@ -170,7 +170,7 @@ AI tools, including ChatGPT, are encouraged to assist in your work. However, you
   - Students who do not contribute significantly may receive an adjusted grade.
   - Students who miss the Exit Interview and Showcase Day will receive a failing grade.
 {% endcapture %}
-{% include course_section_gen.html title="Requirments" content=requirement %}
+{% include shared/course_section_gen.html title="Requirments" content=requirement %}
 
 
 
@@ -178,7 +178,7 @@ AI tools, including ChatGPT, are encouraged to assist in your work. However, you
 {% capture accomodation %}
 If you have a disability, I encourage you to contact the [Disability Resource Center](http://www.northeastern.edu/drc/about-the-drc/){:target="_blank"} to register and request accommodations. Also, please discuss your needs with me as early in the semester as possible.
 {% endcapture %}
-{% include course_section_gen.html title="Accommodations for Students with Disabilities" content=accomodation %}
+{% include shared/course_section_gen.html title="Accommodations for Students with Disabilities" content=accomodation %}
 
 
 <!-- Wecare -->
@@ -188,7 +188,7 @@ Eating healthy food, having regular exercise, avoiding alcohol and drugs, gettin
 If you have difficulty keeping up with any materials or homework for personal reasons, please let me know early. If you or your friends/classmates appear to be struggling or having trouble coping with stress, we strongly encourage you to seek support at the [We Care](https://studentlife.northeastern.edu/we-care/){:target="_blank"} program at NEU. At Northeastern, a student is never alone when struggling with a demanding situation.
 
 {% endcapture %}
-{% include course_section_gen.html title="Taking Care of Yourself" content=wecare %}
+{% include shared/course_section_gen.html title="Taking Care of Yourself" content=wecare %}
 
 
 

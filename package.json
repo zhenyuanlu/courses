@@ -1,25 +1,32 @@
 {
+  "name": "zenlu",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
+    "alpinejs": "^3.14.7",
     "autoprefixer": "^10.4.20",
     "gray-matter": "^4.0.3",
     "handlebars": "^4.7.8",
     "js-yaml": "^4.1.0",
+    "lucide": "^0.469.0",
     "postcss": "^8.4.49",
-    "puppeteer": "^23.10.1",
+    "puppeteer": "^23.11.1",
     "tailwindcss": "^3.4.16"
   },
-  "name": "zenlu",
-  "version": "1.0.0",
-  "main": "postcss.config.js", 
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.24.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --minify",
-    "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
     "build:thumbnails": "node thumb_gen/generate_thumbnails.js",
+    "build": "npm run build:css && bundle exec jekyll build && npm run build:thumbnails",
+
+    "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/styles.css --watch",
     "watch:thumbnails": "node thumb_gen/watch-thumbnails.js",
-    "build": "npm run build:thumbnails && npm run build:css && bundle exec jekyll build",
-    "start": "concurrently \"npm run watch:css\" \"npm run watch:thumbnails\" \"jekyll serve\""
+    "start": "concurrently \"npm run watch:css\" \"bundle exec jekyll serve\" \"npm run watch:thumbnails\""
   },
   "keywords": [],
   "author": "",

@@ -2,10 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
-{% include google_tag.html %}
+{% include core/google_tag.html %}
 
 <!-- SEO -->
-{% include head_seo.html %}
+{% include core/head_seo.html %}
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
@@ -29,7 +29,3 @@
 <!-- Alpine.js -->
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-
-<!-- JavaScript -->
-<!-- <script src="{{ '/assets/js/navbar.js' | relative_url }}" defer></script> -->
-<!-- <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script> -->
